@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SchoolService.Models.AndroidJsonModel.Huzurghiab_Model>
+<div class="col-lg-12 col-md-12">
+    <div class="col-lg-12 col-md-12" id="PipoBox_Loading" style="text-align:center;padding-top:20px;display:none">
+        <img src="~/Content/AdminContent/z3mill/ajax-load.gif" />
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-hover" id="sample-table-4">
+            <thead>
+                <tr>
+                    <th class="center">غیبت / تاخیر</th>
+                    <th class="center">تاریخ</th>
+                    <th class="center">توضیحات</th>
+                    <th class="center">میزان تاخیر</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @if (item.Takhir == "")
+                        {
+                            <td class="center">غیبت</td>
+                        }
+                        else
+                        {
+                            <td class="center">تاخیر</td>
+                        }
+                        <td class="center">@item.Tarikh</td>
+                        <td class="center">@item.Tovzihat</td>
+                        <td class="center">@item.Takhir</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p style="text-align: center;font-size: 20px;color: #c80b0b;margin-top: 10px;border-top: 1px solid;padding: 20px;border-top-color: lightgray;">در حال حاضر هیچ حضور غیابی برای دانش آموز در این ماه ثبت نشده است !</p>
+    }
+</div>

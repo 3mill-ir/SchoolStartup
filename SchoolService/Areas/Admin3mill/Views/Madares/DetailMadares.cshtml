@@ -1,0 +1,190 @@
+﻿@model SchoolService.Models.DataModel.Madaares
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+
+
+}
+@section js_Requested
+{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/Chart.js/Chart.min.js"></script>
+
+}
+
+@section js_Handler
+{
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+        });
+        $("a[id^='PipoModalLink1_']").click('action', function () {
+
+            var temp = $(this).attr('id').split("_");
+            var myid = temp[1];
+            $("#PipoModalBody_1").empty();
+            $("#PipoModalBody_1").append('<p> @Resource.Resource.View_AreYouShure' + ' (#' + myid + ')</p>');
+            var $self = $("#PipoModalForm_1");
+            $self.attr('action', '/Admin3mill/Modir/DeleteModir?ModirId=' + myid + '&NemayandegiId=' + '@ViewBag.NemayandegiId');
+        });
+        $("a[id^='PipoModalLink2_']").click('action', function () {
+
+            var temp = $(this).attr('id').split("_");
+            var myid = temp[1];
+            $("#PipoModalBody_2").empty();
+            $("#PipoModalBody_2").append('<p> @Resource.Resource.View_AreYouShure' + ' (#' + myid + ')</p>');
+            var $self = $("#PipoModalForm_2");
+            $self.attr('action', '/Admin3mill/Madares/DeleteMadares?MadaresId=' + myid + '&NemayandegiId=' + '@ViewBag.NemayandegiId');
+        });
+    </script>
+
+
+
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: BASIC EXAMPLE -->
+        <div class="container-fluid container-fullw bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row margin-top-30">
+                        <div class="col-lg-6 col-md-12">
+                            <fieldset>
+
+                                <legend>
+                                    مشخصات مدرسه
+                                </legend>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("شناسه مدرسه"):
+                                        @Html.DisplayFor(model => model.ID)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("نام مدرسه"):
+                                        @Html.DisplayFor(model => model.NaameMadrese)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("مقطع تحصیلی"):
+                                        @Html.DisplayFor(model => model.Maghaate.NaameMaghta)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("سال تحصیلی"):
+                                        @Html.DisplayFor(model => model.SaleTahsili.Sal)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("کد مدرسه"):
+                                        @Html.DisplayFor(model => model.KodeMadrese)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("آدرس"):
+                                        @Html.DisplayFor(model => model.Address)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.Label("شماره تلفن"):
+                                        @if (!string.IsNullOrEmpty(Model.Telephon))
+                                        {
+                                            @Html.Label(Model.Telephon, new { style = "direction:ltr;" })
+                                        }
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("موسسین"):
+                                        @Html.DisplayFor(model => model.Moassesin)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("استان"):
+                                        @Html.DisplayFor(model => model.AddressCity.AddressState.Name)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("شهرستان"):
+                                        @Html.DisplayFor(model => model.AddressCity.Name)
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        @if (Model.ModirID == null)
+                        {
+                            <div class="col-lg-6 col-md-12">
+                                <nav id="cl-effect-9" class="links cl-effect-9">
+                                    <a href="@Url.Action("AddModir", "Modir", new { MadreseId = Model.ID, NemayandegiId = ViewBag.NemayandegiId })"><span>هنوز مدیری برای این مدرسه تعریف نشده است</span><span>تعریف مدیر جدید</span></a>
+                                </nav>
+                            </div>
+                        }
+                        else
+                        {
+                            @Html.Action("DetailModir", "Modir", new { ModirId = Model.ModirID, ParrentId = Model.F_ParrentID })
+                        }
+                        <a @*href="@Url.Action("DeleteModir", "Modir", new { ModirId = Model.ID})"*@ class="btn btn-wide btn-red ladda-button " style="width:100%;" data-style="zoom-in" id="PipoModalLink2_@Model.ID" data-toggle="modal" data-target="#PipoModal_2">
+                            <span class=" ladda-label">  @Resource.Resource.Delete</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end: BASIC TABLE -->
+        @*Default Modal*@
+        <div class="modal fade" id="PipoModal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title center" id="myModalLabel_2">
+                            <img src="~/Content/AdminContent/z3mill/alert-icon.png" alt="Alert" height="81" width="90" />
+                        </h4>
+                    </div>
+                    <div id="PipoModalBody_2" class="modal-body">
+                        @Resource.Resource.View_AreYouShure
+                    </div>
+                    @using (Html.BeginForm("DeleteModir", "Modir", new { PostId = "_postid_", Page = ViewBag.PaginationCount }, FormMethod.Post, new { Id = "PipoModalForm_2" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                @Resource.Resource.View_Close
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                @Resource.Resource.View_Yes
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        @*/Default Modal*@
+    </div>
+</div>

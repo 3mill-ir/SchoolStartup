@@ -1,0 +1,131 @@
+﻿@model int
+@using PagedList.Mvc;
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+    <link href="~/Content/AdminContent/vendor/sweetalert/sweet-alert.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/ie9.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/toastr/toastr.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/DataTables/css/DT_bootstrap.css" rel="stylesheet" media="screen">
+}
+@section js_Requested{
+    <script src="~/Content/AdminContent/vendor/sweetalert/sweet-alert.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/toastr/toastr.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+}
+@section js_Handler
+{
+    <script src="~/Content/AdminContent/assets/js/ui-notifications.js"></script>
+    <script src="~/Content/AdminContent/assets/js/table-data.js"></script>
+    <script src="~/Scripts/PipoDateInput.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            TableData.init();
+            UINotifications.init("@ViewBag.jsNotifyMessage");
+            $(".cs-options>ul>li")[0].click();
+            $(".cs-select").removeClass("cs-active");
+            CallAjax($(".cs-selected").attr("data-value"));
+            $(".cs-options>ul>li").click(function () {
+                var From = $("#From").val();
+                var To = $("#To").val();
+                var c = $(".cs-selected").attr("data-value");
+                CallAjax(c, From, To);
+            });
+            $("#PipoSubmit").click(function () {
+                var From = $("#From").val();
+                var To = $("#To").val();
+                var c = $(".cs-selected").attr("data-value");
+                CallAjax(c, From, To);
+            });
+        });
+        function CallAjax(c, From, To) {
+            var formData = new FormData();
+            $(function () {
+                document.getElementById('AddTicket_Loading').style.display = 'block';
+                document.getElementById('form-field-select-1').disabled = true;
+                $.ajax({
+                    url: '@Url.Action("_RizNomaratLoad")',
+                    type: "Get",
+                    dataType: "html",
+                    data: { KelasId: '@ViewBag.KelasId', DarsId: c, DateFrom: From, DateTo: To, NemayandegiId: '@ViewBag.NemayandegiId', ModirId: '@ViewBag.ModirId' },
+                    success: function (data) {
+                        document.getElementById('AddTicket_Loading').style.display = 'none';
+                        $("#PipoAjaxBox").empty();
+                        $("#PipoAjaxBox").append(data);
+                        document.getElementById('form-field-select-1').disabled = false;
+                    },
+                    error: function (xhr) {
+                        document.getElementById('AddTicket_Loading').style.display = 'none';
+                        document.getElementById('form-field-select-1').disabled = false;
+                    }
+                });
+            })
+        }
+    </script>
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryajax")
+<div class="main-content" style="margin-bottom:600px;">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: DYNAMIC TABLE -->
+        <div class="container-fluid container-fullw bg-white">
+            <div class="row">
+                <div class="col-md-10 col-md-push-1">
+                    @if (ViewBag.Doroos != null)
+                    {
+                        <div class="row">
+                            <div class="form-group center col-lg-4">
+                                @Html.Label(Resource.Resource.View_SelectDars)
+                                @Html.DropDownList("DarsId", ViewData["Doroos"] as SelectList, new { id = "form-field-select-1", @class = "cs-select cs-skin-elastic" })
+                            </div>
+                            <div class="form-group center col-lg-3">
+                                @Html.Label("تاریخ مورد نظر را انتخاب کنید")
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                    <input id="From" name="DateFrom" type="text" class="form-control text-center form-white" placeholder="YYYY/MM/DD : از تاریخ" style="direction: ltr;">
+                                </div>
+                            </div>
+                            <div class="form-group center col-lg-3">
+                                @Html.Label("تاریخ مورد نظر را انتخاب کنید")
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                    <input id="To" name="DateTo" type="text" class="form-control text-center form-white" placeholder="YYYY/MM/DD : تا تاریخ" style="direction: ltr;">
+                                </div>
+                            </div>
+                            <div class="form-group center col-lg-2">
+                                <button style="margin-top: 23px;" type="submit" class="btn btn-wide btn-dark-green ladda-button " id="PipoSubmit">
+                                    <span class="ladda-label">اعمال فیلتر</span>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <p>هیچ درسی جهت نمایش ریز نمرات وجود ندارد !</p>
+                    }
+                </div>
+                <div class="col-sm-12" id="AddTicket_Loading" style="text-align:center;padding:20px 0;display:none">
+                    <img src="../../Content/AdminContent/z3mill/ajax-load.gif" />
+                </div>
+                <div id="PipoAjaxBox" class="row">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end: DYNAMIC TABLE -->
+</div>

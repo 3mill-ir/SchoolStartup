@@ -1,0 +1,41 @@
+﻿
+
+
+<section id="page-title padding-bottom-0" style="font-family: PipoFont !important;">
+    <div class="row">
+        <div class="col-sm-8">
+            <h1 class="mainTitle">
+                <div class="static-tooltip">
+    @ViewBag.PageTittle_Tittle
+    @Html.Raw(@ViewBag.PageTittle_TittleExtra)
+                </div>
+</h1>
+        <span class="mainDescription">@ViewBag.PageTittle_Description <small class="block">@ViewBag.PageTittle_ContactUS</small></span>
+    </div>
+    <div class="col-sm-3 pull-left">
+        <div class="panel panel-transparent">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+
+                    <strong>
+                        میانبر
+                    </strong>
+
+                </div>
+            </div>
+            <div class="panel-body center" style="padding:0px 15px 0px 15px">
+                <div class="space12">
+                    <div class="btn-group-vertical">
+                        @foreach (var path in (List<SchoolService.Areas.Admin3mill.Models.PageTitle>)ViewBag.PathLog)
+                        {
+                            <a style="font-family: PipoFont !important;" class="btn btn-wide btn-scroll btn-scroll-top  @path.HtmlAttribute" href="~/Admin3mill/@path.ControllerName/@path.ActionName@path.RouteValue">
+                                <span>@path.Pagetitle</span>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

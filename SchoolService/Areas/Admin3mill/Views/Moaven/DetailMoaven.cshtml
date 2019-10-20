@@ -1,0 +1,144 @@
+﻿@model SchoolService.Models.DataModel.Karmandaan
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+
+
+}
+@section js_Requested
+{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/Chart.js/Chart.min.js"></script>
+
+}
+
+@section js_Handler
+{
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+        });
+
+        $("a[id^='PipoModalLink_']").click('action', function () {
+            var temp = $(this).attr('id').split("_");
+            var myid = temp[1];
+            $("#PipoModalBody").empty();
+            $("#PipoModalBody").append('<p> @Resource.Resource.View_AreYouShure' + ' (#' + myid + ')</p>');
+            var $self = $("#PipoModalForm");
+            $self.attr('action', '/Admin3mill/Moaven/DeleteMoaven?MoavenId=' + myid+'&NemayandegiId='+'@ViewBag.NemayandegiId'+'&ModirId='+'@ViewBag.ModirId');
+        });
+    </script>
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: BASIC EXAMPLE -->
+        <div class="container-fluid container-fullw bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row margin-top-30">
+                        <div class="col-lg-6 col-md-12 col-lg-push-3">
+                            <fieldset>
+                                <legend>
+                                    مشخصات معاون
+                                </legend>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("شناسه"):
+                                        @Html.DisplayFor(model => model.ID)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("نام کاربری"):
+                                        @Html.Label(ViewBag.Username as string)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("نام"):
+                                        @Html.DisplayFor(model => model.UserInformation.FirstName)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("نام خانوادگی"):
+                                        @Html.DisplayFor(model => model.UserInformation.LastName)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("کد ملی"):
+                                        @Html.DisplayFor(model => model.UserInformation.CodeMelli)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("شماره تماس"):
+                                        @Html.DisplayFor(model => model.Mobile)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("آدرس"):
+                                        @Html.DisplayFor(model => model.Address)
+                                    </label>
+                                </div>
+                                <a @*href="@Url.Action("DeleteMoaven", "Moaven", new { MoavenId = Model.ID})"*@ class="btn btn-wide btn-red ladda-button " style="width:100%;" data-style="zoom-in" id="PipoModalLink_@Model.ID" data-toggle="modal" data-target="#PipoModal">
+                                    <span class="ladda-label">@Resource.Resource.Delete</span>
+                                </a>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end: BASIC TABLE -->
+        @*Default Modal*@
+        <div class="modal fade" id="PipoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title center" id="myModalLabel">
+                            <img src="~/Content/AdminContent/z3mill/alert-icon.png" alt="Alert" height="81" width="90" />
+                        </h4>
+                    </div>
+                    <div id="PipoModalBody" class="modal-body">
+                        @Resource.Resource.View_AreYouShure
+                    </div>
+                    @using (Html.BeginForm("DeleteMoaven", "Moaven", new { PostId = "_postid_" }, FormMethod.Post, new { Id = "PipoModalForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                @Resource.Resource.View_Close
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                @Resource.Resource.View_Yes
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        @*/Default Modal*@
+    </div>
+</div>

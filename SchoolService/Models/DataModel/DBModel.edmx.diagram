@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e3491caac49d42c9b9f43af20a8a7c1b" Name="Diagram1" ZoomLevel="112">
+        <EntityTypeShape EntityType="SchoolDBModel.AddressCity" Width="1.5" PointX="3.75" PointY="26.625" />
+        <EntityTypeShape EntityType="SchoolDBModel.AddressState" Width="1.5" PointX="1.5" PointY="26.875" />
+        <EntityTypeShape EntityType="SchoolDBModel.BarnameEmtehani" Width="1.5" PointX="21" PointY="30.875" />
+        <EntityTypeShape EntityType="SchoolDBModel.BarnameHaftegi" Width="1.5" PointX="18" PointY="28.25" />
+        <EntityTypeShape EntityType="SchoolDBModel.Check" Width="1.5" PointX="15" PointY="39" />
+        <EntityTypeShape EntityType="SchoolDBModel.DaneshAmuz" Width="1.5" PointX="17.75" PointY="36.125" />
+        <EntityTypeShape EntityType="SchoolDBModel.Doroos" Width="1.5" PointX="11.25" PointY="29.625" />
+        <EntityTypeShape EntityType="SchoolDBModel.Farakhanha" Width="1.5" PointX="12.75" PointY="44.25" />
+        <EntityTypeShape EntityType="SchoolDBModel.Hazine" Width="1.5" PointX="12.75" PointY="39.375" />
+        <EntityTypeShape EntityType="SchoolDBModel.HozoorGhiab" Width="1.5" PointX="20.25" PointY="44.75" />
+        <EntityTypeShape EntityType="SchoolDBModel.HozoorGhiabKelasi" Width="1.5" PointX="22.5" PointY="40.5" />
+        <EntityTypeShape EntityType="SchoolDBModel.Karmandaan" Width="1.5" PointX="10.5" PointY="44.375" />
+        <EntityTypeShape EntityType="SchoolDBModel.Kelas" Width="1.5" PointX="8.25" PointY="29.375" />
+        <EntityTypeShape EntityType="SchoolDBModel.Madaares" Width="1.5" PointX="6" PointY="28.375" />
+        <EntityTypeShape EntityType="SchoolDBModel.Maghaate" Width="1.5" PointX="0.75" PointY="30.25" />
+        <EntityTypeShape EntityType="SchoolDBModel.Mapping_Farakhanha_Kelas" Width="1.5" PointX="18" PointY="33.125" />
+        <EntityTypeShape EntityType="SchoolDBModel.Mapping_Moallem_Doroos" Width="1.5" PointX="15.75" PointY="32.625" />
+        <EntityTypeShape EntityType="SchoolDBModel.Moallem" Width="1.5" PointX="13.5" PointY="34.5" />
+        <EntityTypeShape EntityType="SchoolDBModel.Nemayandegi" Width="1.5" PointX="3.75" PointY="33.75" />
+        <EntityTypeShape EntityType="SchoolDBModel.NomreEmtehani" Width="1.5" PointX="26.25" PointY="34.75" />
+        <EntityTypeShape EntityType="SchoolDBModel.NomreKelasi" Width="1.5" PointX="20.25" PointY="35.25" />
+        <EntityTypeShape EntityType="SchoolDBModel.Ovlia" Width="1.5" PointX="10.5" PointY="37.875" />
+        <EntityTypeShape EntityType="SchoolDBModel.Paaye" Width="1.5" PointX="3" PointY="30" />
+        <EntityTypeShape EntityType="SchoolDBModel.Pardakht" Width="1.5" PointX="15" PointY="42.5" />
+        <EntityTypeShape EntityType="SchoolDBModel.Payamha" Width="1.5" PointX="10.5" PointY="41" />
+        <EntityTypeShape EntityType="SchoolDBModel.SaleTahsili" Width="1.5" PointX="3.75" PointY="38.125" />
+        <EntityTypeShape EntityType="SchoolDBModel.SchoolLog" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SchoolDBModel.Service" Width="1.5" PointX="8.25" PointY="47.75" />
+        <EntityTypeShape EntityType="SchoolDBModel.TaklifKelasi" Width="1.5" PointX="23.25" PointY="33.25" />
+        <EntityTypeShape EntityType="SchoolDBModel.TaklifKelasiJami" Width="1.5" PointX="20.25" PointY="26" />
+        <EntityTypeShape EntityType="SchoolDBModel.TashvighTanbihKelasi" Width="1.5" PointX="23.25" PointY="29.25" />
+        <EntityTypeShape EntityType="SchoolDBModel.UserInformation" Width="1.5" PointX="8.25" PointY="40.625" />
+        <AssociationConnector Association="SchoolDBModel.FK_AddressCity_AddressState" />
+        <AssociationConnector Association="SchoolDBModel.FK_Madaares_AddressCity" />
+        <AssociationConnector Association="SchoolDBModel.FK_Nemayandegi_AddressCity" />
+        <AssociationConnector Association="SchoolDBModel.FK_BarnameEmtehani_Kelas" />
+        <AssociationConnector Association="SchoolDBModel.FK_BarnameEmtehani_Mapping_Moallem_Doroos" />
+        <AssociationConnector Association="SchoolDBModel.FK_NomreEmtehani_BarnameEmtehani" />
+        <AssociationConnector Association="SchoolDBModel.FK_BarnameHaftegi_Kelas" />
+        <AssociationConnector Association="SchoolDBModel.FK_BarnameHaftegi_Mapping_Moallem_Doroos" />
+        <AssociationConnector Association="SchoolDBModel.FK_HozoorGhiab_BarnameHaftegi" />
+        <AssociationConnector Association="SchoolDBModel.FK_NomreKelasi_BarnameHaftegi1" />
+        <AssociationConnector Association="SchoolDBModel.FK_TaklifKelasiJami_BarnameHaftegi" />
+        <AssociationConnector Association="SchoolDBModel.FK_TaklifKelasiShakhsi_BarnameHaftegi" />
+        <AssociationConnector Association="SchoolDBModel.FK_TashvighTanbihKelasi_BarnameHaftegi" />
+        <AssociationConnector Association="SchoolDBModel.FK_Check_Hazine" />
+        <AssociationConnector Association="SchoolDBModel.FK_DaneshAmuz_Kelas" />
+        <AssociationConnector Association="SchoolDBModel.FK_DaneshAmuz_Ovlia" />
+        <AssociationConnector Association="SchoolDBModel.FK_HozoorGhiab_DaneshAmuz" />
+        <AssociationConnector Association="SchoolDBModel.FK_NomreEmtehani_DaneshAmuz" />
+        <AssociationConnector Association="SchoolDBModel.FK_NomreKelasi_DaneshAmuz" />
+        <AssociationConnector Association="SchoolDBModel.FK_TaklifKelasiShakhsi_DaneshAmuz" />
+        <AssociationConnector Association="SchoolDBModel.FK_TashvighTanbihKelasi_DaneshAmuz" />
+        <AssociationConnector Association="SchoolDBModel.FK_Doroos_Madaares" />
+        <AssociationConnector Association="SchoolDBModel.FK_Doroos_Paaye" />
+        <AssociationConnector Association="SchoolDBModel.FK_Mapping_Moallem_Doroos_Doroos" />
+        <AssociationConnector Association="SchoolDBModel.FK_Farakhanha_Karmandaan" />
+        <AssociationConnector Association="SchoolDBModel.FK_Mapping_Farakhanha_Kelas_Farakhanha" />
+        <AssociationConnector Association="SchoolDBModel.FK_Hazine_Ovlia" />
+        <AssociationConnector Association="SchoolDBModel.FK_Hazine_Service" />
+        <AssociationConnector Association="SchoolDBModel.FK_Pardakht_Hazine" />
+        <AssociationConnector Association="SchoolDBModel.FK_HozoorGhiabKelasi_HozoorGhiab" />
+        <AssociationConnector Association="SchoolDBModel.FK_Moaven_UserInformation" />
+        <AssociationConnector Association="SchoolDBModel.FK_Kelas_Madaares" />
+        <AssociationConnector Association="SchoolDBModel.FK_Kelas_Paaye" />
+        <AssociationConnector Association="SchoolDBModel.FK_Mapping_Farakhanha_Kelas_Kelas" />
+        <AssociationConnector Association="SchoolDBModel.FK_TaklifKelasiJami_Kelas" />
+        <AssociationConnector Association="SchoolDBModel.FK_Madaares_Agency" />
+        <AssociationConnector Association="SchoolDBModel.FK_Madaares_Maghaate" />
+        <AssociationConnector Association="SchoolDBModel.FK_Madaares_SaleTahsili" />
+        <AssociationConnector Association="SchoolDBModel.FK_Moallem_Madaares" />
+        <AssociationConnector Association="SchoolDBModel.FK_Service_Madaares" />
+        <AssociationConnector Association="SchoolDBModel.FK_UserInformation_Madaares" />
+        <AssociationConnector Association="SchoolDBModel.FK_Paaye_Maghaate" />
+        <AssociationConnector Association="SchoolDBModel.FK_Mapping_Moallem_Doroos_Moallem" />
+        <AssociationConnector Association="SchoolDBModel.FK_Moallem_UserInformation" />
+        <AssociationConnector Association="SchoolDBModel.FK_Ovlia_UserInformation" />
+        <AssociationConnector Association="SchoolDBModel.FK_Payamha_UserInformation" />
+        <AssociationConnector Association="SchoolDBModel.FK_Payamha_UserInformation1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

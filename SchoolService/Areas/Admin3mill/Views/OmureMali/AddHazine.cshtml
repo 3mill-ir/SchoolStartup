@@ -1,0 +1,98 @@
+﻿@model SchoolService.Models.DataModel.Hazine
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" />
+    <link rel="stylesheet" href="~/Content/AdminContent/z3mill/main.css">
+    <link href="~/Content/AdminContent/vendor/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/sweet-alert.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/ie9.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/toastr/toastr.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="~/Content/DateTimePicker/jquery.Bootstrap-PersianDateTimePicker.css" />
+}
+@section js_Requested
+{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/spin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/ladda.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/sweetalert/sweet-alert.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/toastr/toastr.min.js"></script>
+    <script src="~/Content/DateTimePicker/jquery.Bootstrap-PersianDateTimePicker.js"></script>
+    <script src="~/Content/DateTimePicker/jalaali.js"></script>
+}
+
+@section js_Handler
+{
+    <script src="~/Content/AdminContent/assets/js/form-elements.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-buttons.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAigjOSg1VbxQCNeFkQdDxf5t0-2ubADd4&libraries=geometry&callback=myMap"></script>
+    <script src="~/Scripts/PipoGMaps.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-notifications.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            FormElements.init();
+            UIButtons.init();
+            UINotifications.init("@ViewBag.jsNotifyMessage");
+        });
+    </script>
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: BASIC EXAMPLE -->
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="container-fluid container-fullw bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row margin-top-30">
+                            <div class="col-lg-6 col-md-12 col-lg-push-3">
+                                <fieldset>
+                                    <legend>
+                                        مشخصات هزینه<span class="symbol required"></span>
+                                    </legend>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("نوع سرویس")
+                                        </label>
+                                        @Html.DropDownListFor(model => model.F_ServiceId, ViewData["Services"] as List<SelectListItem>, new { @class = "cs-select cs-skin-elastic" })
+                                        @Html.ValidationMessageFor(model => model.F_ServiceId)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("مبلغ جهت پرداخت")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.Bedehi, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "مبلغ جهت پرداخت را وارد کنید", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.Bedehi)
+                                    </div>
+                                    <button type="submit" class="btn btn-wide btn-dark-green ladda-button " style="width:100%;" data-style="zoom-in" id="PipoSubmit">
+                                        <span class="ladda-label">@Resource.Resource.Submit</span>
+                                    </button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

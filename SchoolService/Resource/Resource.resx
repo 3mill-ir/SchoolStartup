@@ -1,0 +1,1347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutApplication" xml:space="preserve">
+    <value>درباره سامانه</value>
+  </data>
+  <data name="AboutCompany" xml:space="preserve">
+    <value>درباره شرکت</value>
+  </data>
+  <data name="AppilicationVersion" xml:space="preserve">
+    <value>نسخه 1.0.0</value>
+  </data>
+  <data name="ApplicationHelp" xml:space="preserve">
+    <value>راهنمای سامانه</value>
+  </data>
+  <data name="CMS_Name" xml:space="preserve">
+    <value>سامانه مدیریت مدرسه سولدا</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>راهنما</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="Unauthorized_Access_Error" xml:space="preserve">
+    <value>شما مجوز دسترسی به این بخش را ندارید</value>
+  </data>
+  <data name="View_AddStation" xml:space="preserve">
+    <value>تعریف مرکز جدید</value>
+  </data>
+  <data name="View_AreYouShure" xml:space="preserve">
+    <value>آیا اطمینان خاطر دارید ؟</value>
+  </data>
+  <data name="View_Author" xml:space="preserve">
+    <value>طراحی و توسعه دلیوری</value>
+  </data>
+  <data name="View_ClientActivityReport" xml:space="preserve">
+    <value>گزارش عملکرد کاربران</value>
+  </data>
+  <data name="View_ClientManagement" xml:space="preserve">
+    <value>مدیریت کاربران</value>
+  </data>
+  <data name="View_Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="View_Dashboard" xml:space="preserve">
+    <value>داشبورد</value>
+  </data>
+  <data name="View_Description" xml:space="preserve">
+    <value>پنل مدیریت دلیوری</value>
+  </data>
+  <data name="View_EditStation" xml:space="preserve">
+    <value>ویرایش مرکز </value>
+  </data>
+  <data name="View_ListClient" xml:space="preserve">
+    <value>لیست کاربران</value>
+  </data>
+  <data name="View_ListStation" xml:space="preserve">
+    <value>لیست مراکز</value>
+  </data>
+  <data name="View_MainNavigation_Tittle" xml:space="preserve">
+    <value>منوی مدیریت</value>
+  </data>
+  <data name="View_Report" xml:space="preserve">
+    <value>گزارشگیری</value>
+  </data>
+  <data name="View_StationActivityReport" xml:space="preserve">
+    <value>گزارش عملکرد مراکز</value>
+  </data>
+  <data name="View_StationManagement" xml:space="preserve">
+    <value>مدیریت مراکز</value>
+  </data>
+  <data name="View_Tittle" xml:space="preserve">
+    <value>پنل مدیریت</value>
+  </data>
+  <data name="View_ValidationError" xml:space="preserve">
+    <value>فیلد مورد نظر را تکمیل کنید</value>
+  </data>
+  <data name="View_Yes" xml:space="preserve">
+    <value>بلی</value>
+  </data>
+  <data name="View_RequestManagement" xml:space="preserve">
+    <value>مدیریت درخواست ها</value>
+  </data>
+  <data name="View_AreYouShureToAccept" xml:space="preserve">
+    <value>آیا اطمینان خاطر دارید که درخواست را تایید کنید ؟</value>
+  </data>
+  <data name="View_AreYouShureToReject" xml:space="preserve">
+    <value>آیا اطمینان خاطر دارید که درخواست را رد کنید ؟</value>
+  </data>
+  <data name="View_AreYouShureToPay" xml:space="preserve">
+    <value>آیا از پرداخت مبلغ اطمینان خاطر دارید ؟</value>
+  </data>
+  <data name="View_SingleStationActivityReport" xml:space="preserve">
+    <value>گزارش عملکرد مرکز</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>پیدا کن</value>
+  </data>
+  <data name="Delivery_Address" xml:space="preserve">
+    <value>آدرس مقصد جهت ارسال سفارش</value>
+  </data>
+  <data name="View_DeliveryList" xml:space="preserve">
+    <value>لیست ارسال ها</value>
+  </data>
+  <data name="Ticket_ReplySend" xml:space="preserve">
+    <value>ثبت و ارسال</value>
+  </data>
+  <data name="PageTittle_ContactUS" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="PageTittle_Dashboard" xml:space="preserve">
+    <value>داشبورد</value>
+  </data>
+  <data name="PageTittle_ManageAccount" xml:space="preserve">
+    <value>مدیریت حساب</value>
+  </data>
+  <data name="View_AddEmployee" xml:space="preserve">
+    <value>افزودن معاون جدید</value>
+  </data>
+  <data name="View_AddParent" xml:space="preserve">
+    <value>افزودن والد جدید</value>
+  </data>
+  <data name="View_AddStudents" xml:space="preserve">
+    <value>افزودن دانش آموز جدید</value>
+  </data>
+  <data name="View_AddTeacher" xml:space="preserve">
+    <value>افزودن معلم جدید</value>
+  </data>
+  <data name="View_EmployeesManagement" xml:space="preserve">
+    <value>مدیریت معاونین</value>
+  </data>
+  <data name="View_ListEmployees" xml:space="preserve">
+    <value>لیست معاونین</value>
+  </data>
+  <data name="View_ListParents" xml:space="preserve">
+    <value>لیست والدین</value>
+  </data>
+  <data name="View_ListStudents" xml:space="preserve">
+    <value>لیست دانش آموزان</value>
+  </data>
+  <data name="View_ListTeachers" xml:space="preserve">
+    <value>لیست معلمین</value>
+  </data>
+  <data name="View_ParentsManagement" xml:space="preserve">
+    <value>مدیریت والدین</value>
+  </data>
+  <data name="View_StudentManagement" xml:space="preserve">
+    <value>مدیریت دانش اموزان</value>
+  </data>
+  <data name="View_TeacherManagement" xml:space="preserve">
+    <value>مدیریت معلمین</value>
+  </data>
+  <data name="PageTittle_AddEmployee" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageTittle_DetailEmployee" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageTittle_EditEmployee" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageTittle_ListEmployees" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageTittle_AddMoaven" xml:space="preserve">
+    <value>افزودن معاون جدید</value>
+  </data>
+  <data name="PageTittle_DetailMoaven" xml:space="preserve">
+    <value>جزئیات مشخصات معاون مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditMoaven" xml:space="preserve">
+    <value>ویرایش مشخصات معاون مورد نظر</value>
+  </data>
+  <data name="PageTittle_ListMoaven" xml:space="preserve">
+    <value>لیست معاونین</value>
+  </data>
+  <data name="CodeMelli" xml:space="preserve">
+    <value>کد ملی</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>شماره همراه</value>
+  </data>
+  <data name="PageTittle_AddDaneshAmooz" xml:space="preserve">
+    <value>افزودن دانش آموز جدید</value>
+  </data>
+  <data name="PageTittle_AddMoallem" xml:space="preserve">
+    <value>افزودن معلم</value>
+  </data>
+  <data name="PageTittle_AddOvlia" xml:space="preserve">
+    <value>افزودن والد جدید</value>
+  </data>
+  <data name="PageTittle_DetailDaneshAmooz" xml:space="preserve">
+    <value>جزئیات مشخصات دانش آموز مورد نظر</value>
+  </data>
+  <data name="PageTittle_DetailMoallem" xml:space="preserve">
+    <value>جزئیات مشخصات معلم مورد نظر</value>
+  </data>
+  <data name="PageTittle_DetailOvlia" xml:space="preserve">
+    <value>جزئیات مشخصات والد مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditDaneshAmooz" xml:space="preserve">
+    <value>ویرایش مشخصات دانش آموز مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditMoallem" xml:space="preserve">
+    <value>ویرایش مشخصات معلم مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditOvlia" xml:space="preserve">
+    <value>ویرایش مشخصات والد مورد نظر</value>
+  </data>
+  <data name="PageTittle_ListDaneshAmooz" xml:space="preserve">
+    <value>لیست دانش آموزان</value>
+  </data>
+  <data name="PageTittle_ListMoallem" xml:space="preserve">
+    <value>لیست معلمین</value>
+  </data>
+  <data name="PageTittle_ListOvlia" xml:space="preserve">
+    <value>لیست والدین</value>
+  </data>
+  <data name="Jensiat" xml:space="preserve">
+    <value>جنسیت</value>
+  </data>
+  <data name="Valiye" xml:space="preserve">
+    <value>ولی دانش آموز</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>پاک کردن</value>
+  </data>
+  <data name="View_AddDoroos" xml:space="preserve">
+    <value>افزودن درس جدید</value>
+  </data>
+  <data name="View_AddKelas" xml:space="preserve">
+    <value>افزودن کلاس جدید</value>
+  </data>
+  <data name="View_AddMadares" xml:space="preserve">
+    <value>افزودن مدرسه جدید</value>
+  </data>
+  <data name="View_AddMaghaate" xml:space="preserve">
+    <value>افزودن مقطع جدید</value>
+  </data>
+  <data name="View_AddModir" xml:space="preserve">
+    <value>افزودن مدیر جدید</value>
+  </data>
+  <data name="View_AddNemayandegi" xml:space="preserve">
+    <value>افزودن نمایندگی جدید</value>
+  </data>
+  <data name="View_AddPaaye" xml:space="preserve">
+    <value>افزودن پایه جدید</value>
+  </data>
+  <data name="View_DoroosManagement" xml:space="preserve">
+    <value>مدیریت دروس</value>
+  </data>
+  <data name="View_KelasManagement" xml:space="preserve">
+    <value>مدیریت کلاس ها</value>
+  </data>
+  <data name="View_ListDoroos" xml:space="preserve">
+    <value>لیست دروس</value>
+  </data>
+  <data name="View_ListKelas" xml:space="preserve">
+    <value>لیست کلاس ها</value>
+  </data>
+  <data name="View_ListMadares" xml:space="preserve">
+    <value>لیست مدارس</value>
+  </data>
+  <data name="View_ListMaghaate" xml:space="preserve">
+    <value>لیست مقاطع</value>
+  </data>
+  <data name="View_ListModir" xml:space="preserve">
+    <value>لیست مدیر ها</value>
+  </data>
+  <data name="View_ListNemayandegi" xml:space="preserve">
+    <value>لیست نمایندگی ها</value>
+  </data>
+  <data name="View_ListPaaye" xml:space="preserve">
+    <value>لیست پایه ها</value>
+  </data>
+  <data name="View_MadaresManagement" xml:space="preserve">
+    <value>مدیریت مدارس</value>
+  </data>
+  <data name="View_MaghaateManagement" xml:space="preserve">
+    <value>مدیریت مقاطع</value>
+  </data>
+  <data name="View_ModirManagement" xml:space="preserve">
+    <value>مدیریت مدیر ها</value>
+  </data>
+  <data name="View_NemayandegiManagement" xml:space="preserve">
+    <value>مدیریت نمایندگی ها</value>
+  </data>
+  <data name="View_PaayeManagement" xml:space="preserve">
+    <value>مدیریت پایه ها</value>
+  </data>
+  <data name="PageTittle_AddMaghaate" xml:space="preserve">
+    <value>افزودن مقطع جدید</value>
+  </data>
+  <data name="PageTittle_AddNemayandegi" xml:space="preserve">
+    <value>افزودن نمایندگی جدید</value>
+  </data>
+  <data name="PageTittle_AddPaaye" xml:space="preserve">
+    <value>افزودن پایه جدید</value>
+  </data>
+  <data name="PageTittle_DetailMaghaate" xml:space="preserve">
+    <value>جزئیات مقطع مورد نظر</value>
+  </data>
+  <data name="PageTittle_DetailNemayandegi" xml:space="preserve">
+    <value>جزئیات نمایندگی مورد نظر</value>
+  </data>
+  <data name="PageTittle_DetailPaaye" xml:space="preserve">
+    <value>جزئیات پایه مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditMaghaate" xml:space="preserve">
+    <value>ویرایش مقطع مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditNemayandegi" xml:space="preserve">
+    <value>ویرایش نمایندگی مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditPaaye" xml:space="preserve">
+    <value>ویرایش پایه مورد نظر</value>
+  </data>
+  <data name="PageTittle_ListMaghaate" xml:space="preserve">
+    <value>لیست مقاطع</value>
+  </data>
+  <data name="PageTittle_ListNemayandegi" xml:space="preserve">
+    <value>لیست نمایندگی ها</value>
+  </data>
+  <data name="PageTittle_ListPaaye" xml:space="preserve">
+    <value>لیست پایه ها</value>
+  </data>
+  <data name="NaameMaghta" xml:space="preserve">
+    <value>نام مقطع</value>
+  </data>
+  <data name="NaamePaaye" xml:space="preserve">
+    <value>نام پایه</value>
+  </data>
+  <data name="PageTittle_AddModir" xml:space="preserve">
+    <value>افزودن مدیر جدید</value>
+  </data>
+  <data name="PageTittle_DetailModir" xml:space="preserve">
+    <value>جزئیات مدیر مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditModir" xml:space="preserve">
+    <value>ویرایش مدیر مورد نظر</value>
+  </data>
+  <data name="PageTittle_ListModir" xml:space="preserve">
+    <value>لیست مدیران</value>
+  </data>
+  <data name="PageTittle_AddMadares" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageTittle_DetailMadares" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageTittle_EditMadares" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageTittle_ListMadares" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CodeMadrese" xml:space="preserve">
+    <value>کد مدرسه</value>
+  </data>
+  <data name="NaameMadrese" xml:space="preserve">
+    <value>نام مدرسه</value>
+  </data>
+  <data name="SaletTahsili" xml:space="preserve">
+    <value>سال تحصیلی</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>شماره تماس</value>
+  </data>
+  <data name="PageTittle_AddDoroos" xml:space="preserve">
+    <value>افزودن درس جدید</value>
+  </data>
+  <data name="PageTittle_AddKelas" xml:space="preserve">
+    <value>افزودن کلاس جدید</value>
+  </data>
+  <data name="PageTittle_DetailDoroos" xml:space="preserve">
+    <value>جزئیات درس مورد نظر</value>
+  </data>
+  <data name="PageTittle_DetailKelas" xml:space="preserve">
+    <value>جزئیات کلاس مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditDoroos" xml:space="preserve">
+    <value>ویرایش درس مورد نظر</value>
+  </data>
+  <data name="PageTittle_EditKelas" xml:space="preserve">
+    <value>ویرایش کلاس مورد نظر</value>
+  </data>
+  <data name="PageTittle_ListDoroos" xml:space="preserve">
+    <value>لیست درس ها</value>
+  </data>
+  <data name="PageTittle_ListKelas" xml:space="preserve">
+    <value>لیست کلاس ها</value>
+  </data>
+  <data name="MaxZang" xml:space="preserve">
+    <value>حداکثر زنگ ها</value>
+  </data>
+  <data name="NaameKelas" xml:space="preserve">
+    <value>نام کلاس</value>
+  </data>
+  <data name="NaameDoroos" xml:space="preserve">
+    <value>نام درس</value>
+  </data>
+  <data name="Sabet" xml:space="preserve">
+    <value>ثابت</value>
+  </data>
+  <data name="ZaribeDars" xml:space="preserve">
+    <value>ضریب درس</value>
+  </data>
+  <data name="Maghaate_AddMaghaate_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن مقطع جدید</value>
+  </data>
+  <data name="Maghaate_ListMaghaate_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Maghaate_ListMaghaate_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Maghaate_ListMaghaate_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست مقاطع</value>
+  </data>
+  <data name="Maghaate_AddMaghaate_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Maghaate_AddMaghaate_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Maghaate_DetailMaghaate_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Maghaate_DetailMaghaate_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Maghaate_DetailMaghaate_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات مقطع</value>
+  </data>
+  <data name="Maghaate_EditMaghaate_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Maghaate_EditMaghaate_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Maghaate_EditMaghaate_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش مقطع</value>
+  </data>
+  <data name="Paaye_AddPaaye_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Paaye_AddPaaye_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Paaye_AddPaaye_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن پایه جدید</value>
+  </data>
+  <data name="Paaye_DetailPaaye_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Paaye_DetailPaaye_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Paaye_DetailPaaye_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات پایه</value>
+  </data>
+  <data name="Paaye_EditPaaye_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Paaye_EditPaaye_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Paaye_EditPaaye_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش پایه</value>
+  </data>
+  <data name="Paaye_ListPaaye_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Paaye_ListPaaye_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Paaye_ListPaaye_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست پایه</value>
+  </data>
+  <data name="Location_AddCity_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Location_AddCity_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Location_AddCity_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن شهر جدید</value>
+  </data>
+  <data name="Location_DetailCity_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Location_DetailCity_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Location_DetailCity_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات شهر</value>
+  </data>
+  <data name="Location_EditCity_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Location_EditCity_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Location_EditCity_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش شهر</value>
+  </data>
+  <data name="Location_ListCity_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Location_ListCity_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Location_ListCity_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست شهر</value>
+  </data>
+  <data name="DaneshAmooz_AddDaneshAmooz_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="DaneshAmooz_AddDaneshAmooz_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DaneshAmooz_AddDaneshAmooz_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن دانش آموز جدید</value>
+  </data>
+  <data name="DaneshAmooz_DetailDaneshAmooz_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="DaneshAmooz_DetailDaneshAmooz_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DaneshAmooz_DetailDaneshAmooz_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات دانش آموز</value>
+  </data>
+  <data name="DaneshAmooz_EditDaneshAmooz_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="DaneshAmooz_EditDaneshAmooz_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DaneshAmooz_EditDaneshAmooz_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش دانش آموز</value>
+  </data>
+  <data name="DaneshAmooz_ListDaneshAmooz_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="DaneshAmooz_ListDaneshAmooz_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DaneshAmooz_ListDaneshAmooz_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست دانش آموزان</value>
+  </data>
+  <data name="Doroos_AddDoroos_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Doroos_AddDoroos_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Doroos_AddDoroos_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن درس جدید</value>
+  </data>
+  <data name="Doroos_DetailDoroos_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Doroos_DetailDoroos_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Doroos_DetailDoroos_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات درس</value>
+  </data>
+  <data name="Doroos_EditDoroos_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Doroos_EditDoroos_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Doroos_EditDoroos_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش درس</value>
+  </data>
+  <data name="Doroos_ListDoroos_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Doroos_ListDoroos_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Doroos_ListDoroos_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست دروس</value>
+  </data>
+  <data name="Kelas_AddKelas_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Kelas_AddKelas_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Kelas_AddKelas_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن کلاس جدید</value>
+  </data>
+  <data name="Kelas_DetailKelas_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Kelas_DetailKelas_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Kelas_DetailKelas_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات کلاس</value>
+  </data>
+  <data name="Kelas_EditKelas_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Kelas_EditKelas_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Kelas_EditKelas_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش کلاس</value>
+  </data>
+  <data name="Kelas_ListKelas_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Kelas_ListKelas_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Kelas_ListKelas_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست کلاس</value>
+  </data>
+  <data name="Madares_AddMadares_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Madares_AddMadares_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Madares_AddMadares_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن مدرسه جدید</value>
+  </data>
+  <data name="Madares_DetailMadares_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Madares_DetailMadares_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Madares_DetailMadares_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات مدرسه</value>
+  </data>
+  <data name="Madares_EditMadares_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Madares_EditMadares_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Madares_EditMadares_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش مدرسه</value>
+  </data>
+  <data name="Madares_ListMadares_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Madares_ListMadares_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Madares_ListMadares_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست مدارس</value>
+  </data>
+  <data name="Moallem_AddMoallem_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Moallem_AddMoallem_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Moallem_AddMoallem_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن معلم جدید</value>
+  </data>
+  <data name="Moallem_DetailMoallem_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Moallem_DetailMoallem_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Moallem_DetailMoallem_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات معلم</value>
+  </data>
+  <data name="Moallem_EditMoallem_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Moallem_EditMoallem_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Moallem_EditMoallem_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش معلم</value>
+  </data>
+  <data name="Moallem_ListMoallem_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Moallem_ListMoallem_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Moallem_ListMoallem_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست معلم ها</value>
+  </data>
+  <data name="Moaven_AddMoaven_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Moaven_AddMoaven_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Moaven_AddMoaven_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن معاون جدید</value>
+  </data>
+  <data name="Moaven_DetailMoaven_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Moaven_DetailMoaven_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Moaven_DetailMoaven_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات معاون</value>
+  </data>
+  <data name="Moaven_EditMoaven_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Moaven_EditMoaven_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Moaven_EditMoaven_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش معاون</value>
+  </data>
+  <data name="Moaven_ListMoaven_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Moaven_ListMoaven_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Moaven_ListMoaven_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست معاون ها</value>
+  </data>
+  <data name="Modir_AddModir_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Modir_AddModir_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Modir_AddModir_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن مدیر جدید</value>
+  </data>
+  <data name="Modir_DetailModir_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Modir_DetailModir_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Modir_DetailModir_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات مدیر</value>
+  </data>
+  <data name="Modir_EditModir_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Modir_EditModir_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Modir_EditModir_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش مدیر</value>
+  </data>
+  <data name="Modir_ListModir_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Modir_ListModir_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Modir_ListModir_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست مدیر ها</value>
+  </data>
+  <data name="Nemayandegi_AddNemayandegi_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Nemayandegi_AddNemayandegi_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Nemayandegi_AddNemayandegi_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن نمایندگی جدید</value>
+  </data>
+  <data name="Nemayandegi_DetailNemayandegi_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Nemayandegi_DetailNemayandegi_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Nemayandegi_DetailNemayandegi_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات نمایندگی</value>
+  </data>
+  <data name="Nemayandegi_EditNemayandegi_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Nemayandegi_EditNemayandegi_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Nemayandegi_EditNemayandegi_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش نمایندگی</value>
+  </data>
+  <data name="Nemayandegi_ListNemayandegi_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Nemayandegi_ListNemayandegi_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Nemayandegi_ListNemayandegi_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست نمایندگی ها</value>
+  </data>
+  <data name="Ovlia_AddOvlia_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Ovlia_AddOvlia_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Ovlia_AddOvlia_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن ولی جدید</value>
+  </data>
+  <data name="Ovlia_DetailOvlia_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Ovlia_DetailOvlia_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Ovlia_DetailOvlia_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات ولی</value>
+  </data>
+  <data name="Ovlia_EditOvlia_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Ovlia_EditOvlia_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Ovlia_EditOvlia_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش ولی</value>
+  </data>
+  <data name="Ovlia_ListOvlia_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Ovlia_ListOvlia_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Ovlia_ListOvlia_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست اولیا</value>
+  </data>
+  <data name="Paaye_DetailPaaye_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Location_AddState_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Location_AddState_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Location_AddState_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن استان جدید</value>
+  </data>
+  <data name="Location_DetailState_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Location_DetailState_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Location_DetailState_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات استان</value>
+  </data>
+  <data name="Location_EditState_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Location_EditState_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Location_EditState_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش استان</value>
+  </data>
+  <data name="Location_ListState_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Location_ListState_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Location_ListState_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست استان ها</value>
+  </data>
+  <data name="Account_AccountManageNamayandegi_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Account_AccountManageNamayandegi_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Account_AccountManageNamayandegi_Tittle_PageTittle" xml:space="preserve">
+    <value>مدیریت حساب</value>
+  </data>
+  <data name="Account_AccountManageModir_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Account_AccountManageModir_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Account_AccountManageModir_Tittle_PageTittle" xml:space="preserve">
+    <value>مدیریت حساب</value>
+  </data>
+  <data name="Account_AccountManageMoaven_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Account_AccountManageMoaven_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Account_AccountManageMoaven_Tittle_PageTittle" xml:space="preserve">
+    <value>مدیریت حساب</value>
+  </data>
+  <data name="Account_AccountManageMoallem_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Account_AccountManageMoallem_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Account_AccountManageMoallem_Tittle_PageTittle" xml:space="preserve">
+    <value>مدیریت حساب</value>
+  </data>
+  <data name="Account_AccountManageOvlia_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Account_AccountManageOvlia_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Account_AccountManageOvlia_Tittle_PageTittle" xml:space="preserve">
+    <value>مدیریت حساب</value>
+  </data>
+  <data name="DoroosFogholade_AddDoroos_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="DoroosFogholade_AddDoroos_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DoroosFogholade_AddDoroos_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن درس جدید</value>
+  </data>
+  <data name="DoroosFogholade_DetailDoroos_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="DoroosFogholade_DetailDoroos_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DoroosFogholade_DetailDoroos_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات درس</value>
+  </data>
+  <data name="DoroosFogholade_EditDoroos_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="DoroosFogholade_EditDoroos_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DoroosFogholade_EditDoroos_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش درس</value>
+  </data>
+  <data name="DoroosFogholade_ListDoroos_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="DoroosFogholade_ListDoroos_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DoroosFogholade_ListDoroos_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست دروس</value>
+  </data>
+  <data name="DaneshAmooz_GozaresheTahsili_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="DaneshAmooz_GozaresheTahsili_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DaneshAmooz_GozaresheTahsili_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات دانش آموز</value>
+  </data>
+  <data name="NaameService" xml:space="preserve">
+    <value>نام سرویس</value>
+  </data>
+  <data name="Bedehi" xml:space="preserve">
+    <value>بدهی</value>
+  </data>
+  <data name="OmureMali_AddCheck_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="OmureMali_AddCheck_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_AddCheck_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن چک جدید</value>
+  </data>
+  <data name="OmureMali_AddHazine_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="OmureMali_AddHazine_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_AddHazine_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن هزینه جدید</value>
+  </data>
+  <data name="OmureMali_AddPardakht_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="OmureMali_AddPardakht_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_AddPardakht_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن پرداخت جدید</value>
+  </data>
+  <data name="OmureMali_AddServices_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="OmureMali_AddServices_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_AddServices_Tittle_PageTittle" xml:space="preserve">
+    <value>افزودن سرویس جدید</value>
+  </data>
+  <data name="OmureMali_DetailCheck_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_DetailCheck_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_DetailCheck_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات چک</value>
+  </data>
+  <data name="OmureMali_DetailHazine_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_DetailHazine_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_DetailHazine_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات هزینه</value>
+  </data>
+  <data name="OmureMali_DetailPardakht_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_DetailPardakht_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_DetailPardakht_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات پرداخت</value>
+  </data>
+  <data name="OmureMali_DetailServices_ContactUs_PageTittle1" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_DetailServices_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_DetailServices_Tittle_PageTittle" xml:space="preserve">
+    <value>جزییات سرویس</value>
+  </data>
+  <data name="OmureMali_EditCheck_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_EditCheck_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_EditCheck_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش چک</value>
+  </data>
+  <data name="OmureMali_EditHazine_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_EditHazine_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_EditHazine_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش هزینه</value>
+  </data>
+  <data name="OmureMali_EditPardakht_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_EditPardakht_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_EditPardakht_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش پرداخت</value>
+  </data>
+  <data name="OmureMali_EditServices_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_EditServices_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_EditServices_Tittle_PageTittle" xml:space="preserve">
+    <value>ویرایش سرویس</value>
+  </data>
+  <data name="OmureMali_ListCheck_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_ListCheck_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_ListCheck_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست چک ها</value>
+  </data>
+  <data name="OmureMali_ListHazine_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_ListHazine_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_ListHazine_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست هزینه ها</value>
+  </data>
+  <data name="OmureMali_ListPardakht_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_ListPardakht_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_ListPardakht_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست پرداخت ها</value>
+  </data>
+  <data name="OmureMali_ListServices_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="OmureMali_ListServices_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="OmureMali_ListServices_Tittle_PageTittle" xml:space="preserve">
+    <value>لیست سرویس ها</value>
+  </data>
+  <data name="Tarikh" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="AzBabate" xml:space="preserve">
+    <value>از بابت</value>
+  </data>
+  <data name="MablaghePardakhti" xml:space="preserve">
+    <value>مبلغ پرداختی</value>
+  </data>
+  <data name="TarikhePardakht" xml:space="preserve">
+    <value>تاریخ پرداخت</value>
+  </data>
+  <data name="MablagheCheck" xml:space="preserve">
+    <value>مبلغ چک</value>
+  </data>
+  <data name="TarikheCheck" xml:space="preserve">
+    <value>تاریخ چک</value>
+  </data>
+  <data name="VaziateVosul" xml:space="preserve">
+    <value>وضعیت وصول</value>
+  </data>
+  <data name="Bargasht" xml:space="preserve">
+    <value>برگشت چک</value>
+  </data>
+  <data name="Vosul" xml:space="preserve">
+    <value>وصول چک</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>نام سرویس</value>
+  </data>
+  <data name="View_AddService" xml:space="preserve">
+    <value>افزودن خدمت جدید</value>
+  </data>
+  <data name="View_ListServices" xml:space="preserve">
+    <value>لیست خدمات</value>
+  </data>
+  <data name="View_ServiceManagement" xml:space="preserve">
+    <value>مدیریت خدمات</value>
+  </data>
+  <data name="BarnameHaftegi_Edit_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="BarnameHaftegi_Edit_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="BarnameHaftegi_Edit_Tittle_PageTittle" xml:space="preserve">
+    <value>برنامه هفتگی</value>
+  </data>
+  <data name="BarnameEmtehani_Create_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="BarnameEmtehani_Create_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="BarnameEmtehani_Create_Tittle_PageTittle" xml:space="preserve">
+    <value>برنامه امتحانی</value>
+  </data>
+  <data name="BarnameHaftegi_Create_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="BarnameHaftegi_Create_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="BarnameHaftegi_Create_Tittle_PageTittle" xml:space="preserve">
+    <value>برنامه هفتگی</value>
+  </data>
+  <data name="View_AddStudentsWithExcel" xml:space="preserve">
+    <value>افزودن دانش آموز با فایل اکسل</value>
+  </data>
+  <data name="DaneshAmooz_SabteNomre_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="DaneshAmooz_SabteNomre_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="DaneshAmooz_SabteNomre_Tittle_PageTittle" xml:space="preserve">
+    <value>ثبت نمره کلاسی</value>
+  </data>
+  <data name="Kelas_SabteNomre_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Kelas_SabteNomre_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Kelas_SabteNomre_Tittle_PageTittle" xml:space="preserve">
+    <value>ثبت نمرات کلاسی</value>
+  </data>
+  <data name="Kelas_RizNomarat_ContactUs_PageTittle" xml:space="preserve">
+    <value>ارتباط با ما </value>
+  </data>
+  <data name="Kelas_RizNomarat_Description_PageTittle" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Kelas_RizNomarat_Tittle_PageTittle" xml:space="preserve">
+    <value>ریز نمرات کلاس</value>
+  </data>
+  <data name="View_SelectDars" xml:space="preserve">
+    <value>درس مورد نظر را انتخاب کنید</value>
+  </data>
+</root>

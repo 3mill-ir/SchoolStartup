@@ -1,0 +1,138 @@
+﻿@model SchoolService.Models.DataModel.Check
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+
+
+}
+@section js_Requested
+{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/Chart.js/Chart.min.js"></script>
+
+}
+
+@section js_Handler
+{
+    <script>
+    jQuery(document).ready(function () {
+        Main.init();
+    });
+
+    $("a[id^='PipoModalLink_']").click('action', function () {
+        var temp = $(this).attr('id').split("_");
+        var myid = temp[1];
+        $("#PipoModalBody").empty();
+        $("#PipoModalBody").append('<p> @Resource.Resource.View_AreYouShure' + ' (#' + myid + ')</p>');
+            var $self = $("#PipoModalForm");
+            $self.attr('action', '/Admin3mill/OmureMali/DeleteCheck?CheckId=' + myid + '&NemayandegiId=' + '@ViewBag.NemayandegiId' + '&ModirId=' + '@ViewBag.ModirId' + '&HazineId=' + '@Model.F_HazineId' + '&OvliaId=' + '@Model.Hazine.F_OvliaId');
+        });
+    </script>
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: BASIC EXAMPLE -->
+        <div class="container-fluid container-fullw bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row margin-top-30">
+                        <div class="col-lg-6 col-md-12 col-lg-push-3">
+                            <fieldset>
+                                <legend>
+                                    اطلاعات چک
+                                </legend>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("شناسه"):
+                                        @Html.DisplayFor(model => model.ID)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("از بابت"):
+                                        @Html.DisplayFor(model => model.Hazine.Service.ServiceName)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("تاریخ چک"):
+                                        @Html.Label(SchoolService.Areas.Admin3mill.Models.Tools.JalaliDateWithoutHour(Model.TarikheCheck ?? default(DateTime)))
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("مبلغ چک"):
+                                        @Html.DisplayFor(model => model.MablagheCheck)
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("بانک"):
+                                        @Html.DisplayFor(model => model.Bank)
+                                    </label>
+                                </div>
+                                <a class="btn btn-wide btn-red ladda-button " style="width:100%;" data-style="zoom-in" id="PipoModalLink_@Model.ID" data-toggle="modal" data-target="#PipoModal">
+                                    <span class="ladda-label">@Resource.Resource.Delete</span>
+                                </a>
+                                <a href="@Url.Action("VosuleCheck", "OmureMali", new { CheckId = Model.ID, F_HazineId = Model.F_HazineId })" class="btn btn-wide btn-dark-green ladda-button col-md-6" data-style="zoom-in">
+                                    <span class="ladda-label">@Resource.Resource.Vosul</span>
+                                </a>
+                                <a href="@Url.Action("BargashteCheck", "OmureMali", new { CheckId = Model.ID, F_HazineId = Model.F_HazineId })" class="btn btn-wide btn-dark-orange ladda-button col-md-6" data-style="zoom-in">
+                                    <span class="ladda-label">@Resource.Resource.Bargasht</span>
+                                </a>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end: BASIC TABLE -->
+        @*Default Modal*@
+        <div class="modal fade" id="PipoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title center" id="myModalLabel">
+                            <img src="~/Content/AdminContent/z3mill/alert-icon.png" alt="Alert" height="81" width="90" />
+                        </h4>
+                    </div>
+                    <div id="PipoModalBody" class="modal-body">
+                        @Resource.Resource.View_AreYouShure
+                    </div>
+                    @using (Html.BeginForm("DeleteCheck", "OmureMali", new { PostId = "_postid_", Page = ViewBag.PaginationCount }, FormMethod.Post, new { Id = "PipoModalForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                @Resource.Resource.View_Close
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                @Resource.Resource.View_Yes
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        @*/Default Modal*@
+    </div>
+</div>

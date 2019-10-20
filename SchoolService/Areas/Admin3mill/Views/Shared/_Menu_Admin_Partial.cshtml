@@ -1,0 +1,128 @@
+﻿@using SchoolService.Infrastructure
+
+
+<li class="@Url.MakeActive_All_Action("ListNemayandegi_AddNemayandegi")">
+    <a href="javascript:void(0)">
+        <div class="item-content">
+            <div class="item-media">
+                <span class="fa fa-sitemap fa-lg" style="color: #ffffff; "></span>
+            </div>
+            <div class="item-inner">
+                <span class="title">@Resource.Resource.View_NemayandegiManagement</span><i class="icon-arrow"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sub-menu">
+        <li class="@Url.MakeActiveAction("ListNemayandegi")">
+            <a href="@Url.Action("ListNemayandegi", "Nemayandegi")">
+                <i class="fa fa-list-alt"></i>
+                <span class="title">@Resource.Resource.View_ListNemayandegi</span>
+            </a>
+        </li>
+        <li class="@Url.MakeActiveAction("AddNemayandegi")">
+            <a href="@Url.Action("AddNemayandegi", "Nemayandegi")">
+                <i class="fa fa-plus"></i>
+                <span class="title">@Resource.Resource.View_AddNemayandegi</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+
+    <li class="@Url.MakeActive_All_Action("ListMaghaate_AddMaghaate")">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span class="fa fa-sort-amount-asc fa-lg" style="color: #ffffff; "></span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_MaghaateManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListMaghaate")">
+                <a href="@Url.Action("ListMaghaate", "Maghaate")">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListMaghaate</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddMaghaate")">
+                <a href="@Url.Action("AddMaghaate", "Maghaate")">
+                    <i class="fa fa-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddMaghaate</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="@Url.MakeActive_All_Action("ListPaaye_AddPaaye")">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span class="fa fa-tasks fa-lg" style="color: #ffffff; "></span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_PaayeManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListPaaye")">
+                <a href="@Url.Action("ListPaaye", "Paaye")">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListPaaye</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddPaaye")">
+                <a href="@Url.Action("AddPaaye", "Paaye")">
+                    <i class="fa fa-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddPaaye</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+   
+    <li class="@Url.MakeActive_All_Action("ListDoroos_AddDoroos")">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span class="fa fa-book fa-lg" style="color: #ffffff; "></span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_DoroosManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListDoroos")">
+                <a href="@Url.Action("ListDoroos", "Doroos")">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListDoroos</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddDoroos")">
+                <a href="@Url.Action("AddDoroos", "Doroos")">
+                    <i class="fa fa-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddDoroos</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+@if (ViewBag.MenuAccessNemyandegiAlias=="Admin")
+{ 
+       <div class="navbar-title">
+                        <span>منوی مدیریت نمایندگی</span>
+                    </div>
+
+        @Html.Partial("_Menu_Nemayandegi_Partial")
+}
+@*@if (ViewBag.MenuAccessmadreseAlias == "Admin")
+{
+    <div class="navbar-title">
+        <span>منوی مدیریت مدرسه</span>
+    </div>
+
+    @Html.Partial("_Menu_Modir_Partial")
+}*@

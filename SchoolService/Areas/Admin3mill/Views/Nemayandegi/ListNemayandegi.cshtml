@@ -1,0 +1,125 @@
+﻿@model IEnumerable<SchoolService.Models.DataModel.Nemayandegi>
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+    <link href="~/Content/AdminContent/vendor/sweetalert/sweet-alert.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/ie9.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/toastr/toastr.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/DataTables/css/DT_bootstrap.css" rel="stylesheet" media="screen">
+
+}
+@section js_Requested{
+    <script src="~/Content/AdminContent/vendor/sweetalert/sweet-alert.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/toastr/toastr.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/DataTables/jquery.dataTables.min.js"></script>
+
+}
+@section js_Handler
+{
+    <script src="~/Content/AdminContent/assets/js/ui-notifications.js"></script>
+    <script src="~/Content/AdminContent/assets/js/table-data.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            TableData.init();
+            UINotifications.init("@ViewBag.jsNotifyMessage");
+        });
+
+        $("a[id^='PipoModalLink_']").click('action', function () {
+            var temp = $(this).attr('id').split("_");
+            var myid = temp[1];
+            $("#PipoModalBody").empty();
+            $("#PipoModalBody").append('<p> @Resource.Resource.View_AreYouShure' + ' (#' + myid + ')</p>');
+            var $self = $("#PipoModalForm");
+            $self.attr('action', '/Admin3mill/Nemayandegi/ChangeDisplayNemayandegi?NemayandegiId=' + myid);
+        });
+    </script>
+
+
+}
+@{
+    string color = "#9fda9f";
+    string icon = "fa fa-check-square";
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: DYNAMIC TABLE -->
+        <div class="container-fluid container-fullw bg-white">
+            <div class="row">
+                <div class="col-md-6 col-lg-push-3">
+                    <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayName(Resource.Resource.ID)</th>
+                                <th>@Html.DisplayName(Resource.Resource.FirstName)</th>
+                                <th class="center"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                if (item.Status != true)
+                                {
+                                    color = "#da9f9f";
+                                    icon = "fa fa-square";
+                                }
+                                else
+                                {
+                                    color = "#9fda9f";
+                                    icon = "fa fa-check-square";
+                                }
+                                <tr style="background-color:@color">
+                                    <td>@item.ID</td>
+                                    <td>@item.Name</td>
+                                    <td>
+                                        <a href="@Url.Action("DetailNemayandegi", "Nemayandegi", new { NemayandegiId = item.ID })" class="btn btn-transparent btn-xs" data-toggle="tooltip" data-placement="top" title="جزئیات"><i class="fa fa-info-circle"></i></a>
+                                        <a href="@Url.Action("EditNemayandegi", "Nemayandegi", new { NemayandegiId = item.ID })" class="btn btn-transparent btn-xs" data-toggle="tooltip" data-placement="top" title="ویرایش"><i class="fa fa-pencil"></i></a>
+                                        <a id="PipoModalLink_@item.ID" class="btn btn-transparent btn-xs tooltips" data-toggle="tooltip" data-placement="top" title="تغییر وضعیت نمایش"><i class="@icon fa-white" data-toggle="modal" data-target="#PipoModal"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- end: DYNAMIC TABLE -->
+        @*Default Modal*@
+        <div class="modal fade" id="PipoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title center" id="myModalLabel">
+                            <img src="~/Content/AdminContent/z3mill/alert-icon.png" alt="Alert" height="81" width="90" />
+                        </h4>
+                    </div>
+                    <div id="PipoModalBody" class="modal-body">
+                        @Resource.Resource.View_AreYouShure
+                    </div>
+                    @using (Html.BeginForm("ChangeDisplayNemayandegi", "Nemayandegi", new { PostId = "_postid_", Page = ViewBag.PaginationCount }, FormMethod.Post, new { Id = "PipoModalForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal">
+                                @Resource.Resource.View_Close
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                @Resource.Resource.View_Yes
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        @*/Default Modal*@
+    </div>
+</div>

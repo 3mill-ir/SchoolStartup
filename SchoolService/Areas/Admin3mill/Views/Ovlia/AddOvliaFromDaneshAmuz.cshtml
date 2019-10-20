@@ -1,0 +1,15 @@
+﻿<div class="input-group" style=" text-align: right;">
+    <label for="exampleInputEmail1" style=" width: 100%;">
+        @Html.DisplayName("نام ولی")
+    </label>
+    @Html.DropDownList("F_KelasID", ViewData["Ovlia"] as SelectList, new { @class = "js-example-data-array-selected form-control", tabindex = "-1", style = "display: none;width:300px;" })
+    <a data-toggle="modal" data-target="#PipoModal" style="border-radius: 30px;margin-right: 5px;" class="btn btn-dark-green btn-sm" title="افزودن والد"><i class="fa fa-plus"></i></a>
+    @Html.ValidationMessage("F_OvliaID")
+</div>
+
+<script>
+    jQuery(document).ready(function () {
+        UINotifications.init("@ViewBag.jsNotifyMessage");
+        FormElements.init();
+    });
+</script>

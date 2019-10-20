@@ -1,0 +1,128 @@
+﻿@using Microsoft.AspNet.Identity
+@model SchoolService.Models.ManageUserViewModel
+
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/jquery-file-upload/css/jquery.fileupload-ui.css">
+
+    <link href="~/Content/AdminContent/vendor/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" />
+    <link rel="stylesheet" href="~/Content/AdminContent/z3mill/main.css">
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-fileinput/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="~/Content/AdminContent/vendor/sweetalert/sweet-alert.css" rel="stylesheet" media="screen">
+<link href="~/Content/AdminContent/vendor/sweetalert/ie9.css" rel="stylesheet" media="screen">
+<link href="~/Content/AdminContent/vendor/toastr/toastr.min.css" rel="stylesheet" media="screen">
+}
+
+@section js_Requested{
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+
+    <link href="~/Content/AdminContent/vendor/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" media="screen">
+<script src="~/Content/AdminContent/vendor/sweetalert/sweet-alert.min.js"></script>
+<script src="~/Content/AdminContent/vendor/toastr/toastr.min.js"></script>
+
+
+}
+@section js_Handler
+{
+<script src="~/Content/AdminContent/assets/js/ui-notifications.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            UINotifications.init("@ViewBag.jsNotifyMessage");
+        });
+    </script>
+
+
+}
+
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: BASIC EXAMPLE -->
+        @using (Html.BeginForm("AccountManageNamayandegi", "Account", new { UsernameCO = @ViewBag.NemayandegiUserName, NemayandegiId = @ViewBag.NemayandegiId }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container-fluid container-fullw bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="text-align:center">
+                            @if (ViewBag.StatusMessage != null && !string.IsNullOrEmpty(ViewBag.StatusMessage))
+                            {
+                                <div role="alert" class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    @ViewBag.StatusMessage
+                                </div>
+                            }
+                            @if (ViewBag.CurrentPasswordError != null)
+                            {
+                                <div role="alert" class="alert alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    @ViewBag.CurrentPasswordError
+                                </div>
+                            }
+
+                        </div>
+                        <div class="row margin-top-30">
+                            <div class="col-lg-6 col-lg-offset-3 col-md-12">
+                                <fieldset>
+                                    <legend>
+                                        تغییر کلمه عبور
+                                    </legend>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("نام کاربری")
+                                        </label>
+
+                                        @Html.TextBox("Username", null, new { @class = "form-control", @id = "exampleInputEmail1", @type = "text", disabled = true, @Value = ViewBag.NemayandegiUserName })
+                                     
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("کلمه عبور")
+                                        </label>
+                                        @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.NewPassword)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("تکرار کلمه عبور")
+                                        </label>
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-green ladda-button btn-wide" data-style="contract" style="width:100%">
+                                            <span class="ladda-label"><i class="fa fa-save"></i>&nbsp; @Resource.Resource.Submit </span>
+                                        </button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+        <!-- end: BASIC EXAMPLE -->
+    </div>
+
+</div>

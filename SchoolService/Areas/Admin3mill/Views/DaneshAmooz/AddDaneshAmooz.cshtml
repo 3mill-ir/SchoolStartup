@@ -1,0 +1,276 @@
+﻿@model SchoolService.Models.DataModel.DaneshAmuz
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" />
+    <link rel="stylesheet" href="~/Content/AdminContent/z3mill/main.css">
+    <link href="~/Content/AdminContent/vendor/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/sweet-alert.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/ie9.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/toastr/toastr.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="~/Content/DateTimePicker/jquery.Bootstrap-PersianDateTimePicker.css" />
+}
+
+@section js_Requested
+{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/spin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/ladda.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/sweetalert/sweet-alert.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/toastr/toastr.min.js"></script>
+    <script src="~/Content/DateTimePicker/jquery.Bootstrap-PersianDateTimePicker.js"></script>
+    <script src="~/Content/DateTimePicker/jalaali.js"></script>
+}
+
+@section js_Handler
+{
+    <script src="~/Content/AdminContent/assets/js/form-elements.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-buttons.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-notifications.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            FormElements.init();
+            UIButtons.init();
+            UINotifications.init("@ViewBag.jsNotifyMessage");
+        });
+        function pipoClose()
+        {
+            var c = document.getElementById("PipoCloseButton").click();
+            var d = document.getElementById("PipoSubmit2");
+            d.disabled = false;
+            d.removeAttribute("data-loading");
+            d.removeAttribute("disabled");
+        }
+    </script>
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryajax")
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: BASIC EXAMPLE -->
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="container-fluid container-fullw bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row margin-top-30">
+                            <div class="col-lg-6 col-md-12">
+                                <fieldset>
+                                    <legend>
+                                        مشخصات دانش آموز<span class="symbol required"></span>
+                                    </legend>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("نام")
+                                        </label>
+
+                                        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "نام را وارد کنید", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.FirstName)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("نام خانوادگی")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "نام خانوادگی را وارد کنید", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.LastName)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("کد ملی")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.CodeMelli, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "کد ملی را وارد کنید", @type = "number" })
+                                        @Html.ValidationMessageFor(model => model.CodeMelli)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("شماره شناسنامه")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.ShomareShenasname, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "شماره شناسنامه را وارد کنید", @type = "number" })
+                                        @Html.ValidationMessageFor(model => model.ShomareShenasname)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("جنسیت")
+                                        </label>
+                                        @Html.DropDownListFor(model => model.Jensiat, ViewData["Jensiat"] as List<SelectListItem>, new { @class = "cs-select cs-skin-elastic" })
+                                        @Html.ValidationMessageFor(model => model.Jensiat)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("تاریخ تولد")
+                                        </label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon" data-mddatetimepicker="true" data-targetselector="#exampleInput1" data-trigger="click" data-enabletimepicker="true" data-mdpersiandatetimepicker="" data-mdformat="yyyy/MM/dd HH:mm:ss" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1395,&quot;Month&quot;:6,&quot;Day&quot;:13,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" style="cursor: pointer;" data-original-title="" title="" data-mdpersiandatetimepickershowing="false">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </div>
+                                            @Html.TextBoxFor(model => model.TarikhTavallod, new { @class = "form-control", id = "exampleInput1", placeholder = "تاریخ تولد" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.TarikhTavallod)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("محل صدور")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.MahalleSodoor, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "محل صدور را وارد کنید", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.MahalleSodoor)
+                                    </div>
+                                  
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <fieldset>
+                                    <legend>
+                                        مشخصات کلی دانش آموز<span class="symbol required"></span>
+                                    </legend>
+                                    <div id="PipoCombo">
+                                        <div class="input-group" style=" text-align: right;">
+                                            <label for="exampleInputEmail1" style=" width: 100%;">
+                                                @Html.DisplayName("نام ولی")
+                                            </label>
+                                            @Html.DropDownListFor(model => model.F_OvliaID, ViewData["Ovlia"] as SelectList, new { @class = "js-example-data-array-selected form-control", tabindex = "-1", style = "display: none;width:300px;" })
+                                            <a data-toggle="modal" data-target="#PipoModal" style="border-radius: 30px;margin-right: 5px;" class="btn btn-dark-green btn-sm" title="افزودن والد"><i class="fa fa-plus"></i></a>
+                                            @Html.ValidationMessageFor(model => model.F_OvliaID)
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style=" text-align: right;">
+                                        <label for="exampleInputEmail1" style=" width: 100%;margin-top:10px;">
+                                            @Html.DisplayName("انتخاب کلاس درس")
+                                        </label>
+                                        @Html.DropDownListFor(model => model.F_KelasID, ViewData["Class"] as List<SelectListItem>, new { @class = "js-example-data-array-selected form-control", tabindex = "-1", style = "display: none;width:300px;" })
+                                        @Html.ValidationMessageFor(model => model.F_KelasID)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("نسبت ولی")
+                                        </label>
+                                        @Html.DropDownListFor(model => model.NesbateVali, ViewData["Nesbat"] as List<SelectListItem>, new { @class = "cs-select cs-skin-elastic" })
+                                        @Html.ValidationMessageFor(model => model.NesbateVali)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("توضیحات")
+                                        </label>
+                                        @Html.TextAreaFor(model => model.Tovzihat, new { @class = "form-control", @id = "form-field-22", @placeholder = "توضیحات را وارد کنید", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.Tovzihat)
+                                    </div>
+
+                                </fieldset>
+                                <button type="submit" class="btn btn-wide btn-dark-green ladda-button " style="width:100%;" data-style="zoom-in" id="PipoSubmit">
+                                    <span class="ladda-label">@Resource.Resource.Submit</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @*Default Modal*@
+        <div class="modal fade" id="PipoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title center" id="myModalLabel">
+                            افزودن والد جدید
+                        </h4>
+                    </div>
+                    @using (Ajax.BeginForm("AddOvliaFromDaneshAmuz", "Ovlia", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId }, new AjaxOptions
+                                {
+                                    UpdateTargetId = "PipoCombo",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "Post",
+                                    OnSuccess = "pipoClose"
+                                }, null))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="modal-footer">
+                            <fieldset style="text-align:right;">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("نام کاربری")
+                                    </label>
+                                    @Html.TextBox("Username", null, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "نام کاربری را وارد کنید", @type = "text" })
+                                    @Html.ValidationMessage("Username")
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("رمز عبور")
+                                    </label>
+                                    @Html.TextBox("Password", null, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "رمز عبور را وارد کنید", @type = "password" })
+                                    @Html.ValidationMessage("Password")
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("تکرار رمز عبور")
+                                    </label>
+                                    @Html.TextBox("ConfirmPassword", null, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "تکرار رمز عبور را وارد کنید", @type = "password" })
+                                    @Html.ValidationMessage("ConfirmPassword")
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("نام")
+                                    </label>
+                                    @Html.TextBox("UserInformation.FirstName", null, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "نام را وارد کنید", @type = "text" })
+                                    @Html.ValidationMessage("UserInformation.FirstName")
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("نام خانوادگی")
+                                    </label>
+                                    @Html.TextBox("UserInformation.LastName", null, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "نام خانوادگی را وارد کنید", @type = "text" })
+                                    @Html.ValidationMessage("UserInformation.FirstName")
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("کد ملی")
+                                    </label>
+                                    @Html.TextBox("UserInformation.CodeMelli",null, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "نام مرکز را وارد کنید", @type = "text" })
+                                    @Html.ValidationMessage("UserInformation.CodeMelli")
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                        @Html.DisplayName("شماره تماس")
+                                    </label>
+                                    <div class="input-group">
+                                        @Html.TextBox("Mobile",null, new { @class = "form-control input-mask-phone mypipostyle", Id = "form-fieldt-mask-2", placeholder = " (9**) ***-**** شماره همراه", style = "direction:ltr;text-align:right;" })
+                                        <span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+                                    </div>
+                                    @Html.ValidationMessage("Mobile")
+                                </div>
+
+                            </fieldset>
+                            <button type="button" class="btn btn-primary btn-o" data-dismiss="modal" id="PipoCloseButton">
+                                @Resource.Resource.View_Close
+                            </button>
+                            <button type="submit" class="btn btn-wide btn-dark-green ladda-button" data-style="zoom-in" id="PipoSubmit2">
+                                <span class="ladda-label">@Resource.Resource.View_Yes</span>
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        @*/Default Modal*@
+    </div>
+</div>

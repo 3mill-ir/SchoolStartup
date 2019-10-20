@@ -1,0 +1,44 @@
+﻿@using SchoolService.Infrastructure
+
+  
+    <li class="@Url.MakeActive_All_Action("ListMadares_AddMadares")">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span class="fa fa-bus fa-lg" style="color: #ffffff; "></span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_MadaresManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListMadares")">
+                <a href="@Url.Action("ListMadares", "Madares", new { NemayandegiId = ViewBag.NemayandegiId })">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListMadares</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("ListModir")">
+                <a href="@Url.Action("ListModir", "Modir", new { NemayandegiId = ViewBag.NemayandegiId })">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListModir</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddMadares")">
+                <a href="@Url.Action("AddMadares", "Madares", new { NemayandegiId = ViewBag.NemayandegiId })">
+                    <i class="fa fa-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddMadares</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+  
+@if (ViewBag.MenuAccessmadreseAlias == "Admin")
+{
+    <div class="navbar-title">
+        <span>منوی مدیریت مدرسه</span>
+    </div>
+
+    @Html.Partial("_Menu_Modir_Partial")
+}

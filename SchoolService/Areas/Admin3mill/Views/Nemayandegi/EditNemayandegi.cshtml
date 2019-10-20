@@ -1,0 +1,232 @@
+﻿@model SchoolService.Models.DataModel.Nemayandegi
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" />
+    <link rel="stylesheet" href="~/Content/AdminContent/z3mill/main.css">
+    <link href="~/Content/AdminContent/vendor/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/sweet-alert.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/sweetalert/ie9.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/toastr/toastr.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="~/Content/DateTimePicker/jquery.Bootstrap-PersianDateTimePicker.css" />
+}
+@section js_Requested
+{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/spin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/ladda.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/sweetalert/sweet-alert.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/toastr/toastr.min.js"></script>
+    <script src="~/Content/DateTimePicker/jquery.Bootstrap-PersianDateTimePicker.js"></script>
+    <script src="~/Content/DateTimePicker/jalaali.js"></script>
+}
+
+@section js_Handler
+{
+    <script src="~/Content/AdminContent/assets/js/form-elements.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-buttons.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAigjOSg1VbxQCNeFkQdDxf5t0-2ubADd4&libraries=geometry&callback=myMap"></script>
+    <script src="~/Scripts/PipoGMaps.js"></script>
+    <script src="~/Content/AdminContent/assets/js/ui-notifications.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            FormElements.init();
+            UIButtons.init();
+            UINotifications.init("@ViewBag.jsNotifyMessage");
+            $("#F_CityId").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetCity", "Utility")', // we are calling json method
+                dataType: 'json',
+                data: { id: $("#StateId").val() },
+                success: function (states) {
+                    // states contains the JSON formatted list
+                    // of states passed from the controller
+                    $.each(states, function (i, state) {
+                        $("#F_CityId").append('<option value="' + state.Value + '">' + state.Text + '</option>');
+                    }); // here we are adding option for States
+                    $("#F_CityId").trigger('change');
+                    $("#F_CityId").val(@Model.F_CityId);
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve states.' + ex);
+                }
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Dropdownlist Selectedchange event
+            $("#StateId").change(function () {
+                $("#F_CityId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetCity", "Utility")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#StateId").val() },
+                    success: function (states) {
+                        // states contains the JSON formatted list
+                        // of states passed from the controller
+                        $.each(states, function (i, state) {
+                            $("#F_CityId").append('<option value="' + state.Value + '">' + state.Text + '</option>');
+                        }); // here we are adding option for States
+                        $("#F_CityId").trigger('change');
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+}
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: BASIC EXAMPLE -->
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(model => model.ID)
+              @Html.HiddenFor(model => model.F_UserID)
+                    @Html.HiddenFor(model => model.AddressCity.F_StateId)
+            @Html.AntiForgeryToken()
+            <div class="container-fluid container-fullw bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row margin-top-30">
+                            <div class="col-lg-6 col-md-12">
+                                <fieldset>
+                                    <legend>
+                                        مشخصات عمومی<span class="symbol required"></span>
+                                    </legend>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("نام نمایندگی")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "نام را وارد کنید", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.Name)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("نام دارنده نمایندگی")
+                                        </label>
+
+                                        @Html.TextBoxFor(model => model.FirstName, null, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "نام دارنده نمایندگی", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.FirstName)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("نام خانوادگی دارنده نمایندگی")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.LastName, null, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "نام خانوادگی دارنده نمایندگی", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.LastName)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("شماره همراه")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.Mobile, null, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "شماره همراه", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.Mobile)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("شماره ثابت")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.Tell, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "شماره ثابت", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.Tell)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("ایمیل")
+                                        </label>
+                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "ایمیل", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.Email)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("آدرس نمایندگی")
+                                        </label>
+                                        @Html.TextAreaFor(model => model.AddressDetail, new { @class = "form-control", @id = "exampleInputEmail1", @placeholder = "آدرس نمایندگی", @type = "text" })
+                                        @Html.ValidationMessageFor(model => model.Name)
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <fieldset>
+                                    <legend>
+                                        اطلاعات حساب کاربری<span class="symbol required"></span>
+                                    </legend>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            @Html.DisplayName("نام کاربری")
+                                        </label>
+
+                                        @Html.TextBox("Username", null, new { @class = "form-control", @id = "exampleInputEmail1", @type = "text", disabled = true, @Value = ViewBag.NemayandegiUsername })
+                                        @Html.ValidationMessage("Username")
+                                    </div>
+                                    <div class="form-group">
+                                        <nav id="cl-effect-13" class="links cl-effect-13">
+                                            <a href="@Url.Action("AccountManageNamayandegi", "Account", new { UsernameCO = ViewBag.NemayandegiUsername, NemayandegiId = Model.ID })">
+                                                تغییر رمز عبور
+                                            </a>
+                                        </nav>
+                                    </div>
+                                
+
+                                </fieldset>
+                                <fieldset>
+                                    <legend>
+                                        اطلاعات محلی<span class="symbol required"></span>
+                                    </legend>
+                                    <div class="form-group">
+                                        <label for="form-field-select-1">
+                                            استان
+                                        </label>
+                                        @Html.DropDownList("StateId", ViewBag.StateList as SelectList, new { @class = "form-control" })
+
+                                        @Html.ValidationMessageFor(model => model.F_CityId)
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="form-field-select-1">
+                                            شهرستان
+                                        </label>
+                                        @Html.DropDownListFor(model => model.F_CityId, new SelectList(string.Empty, "Value", "Text"), "شهر", new { @class = "form-control" })
+
+                                        @Html.ValidationMessageFor(model => model.F_CityId)
+
+                                    </div>
+                                </fieldset>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-wide btn-dark-green ladda-button " style="width:100%;" data-style="zoom-in" id="PipoSubmit">
+                                        <span class="ladda-label">@Resource.Resource.Edit</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

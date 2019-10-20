@@ -1,0 +1,195 @@
+﻿@using SchoolService.Infrastructure
+
+<li class="@Url.MakeActive_All_Action("ListServices_AddService")">
+    <a href="javascript:void(0)">
+        <div class="item-content">
+            <div class="item-media">
+                <span class="fa fa-diamond fa-lg" style="color: #ffffff; "></span>
+            </div>
+            <div class="item-inner">
+                <span class="title">@Resource.Resource.View_ServiceManagement</span><i class="icon-arrow"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sub-menu">
+        <li class="@Url.MakeActiveAction("ListServices")">
+            <a href="@Url.Action("ListServices", "OmureMali", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                <i class="fa fa-list-alt"></i>
+                <span class="title">@Resource.Resource.View_ListServices</span>
+            </a>
+        </li>
+        <li class="@Url.MakeActiveAction("AddServices")">
+            <a href="@Url.Action("AddServices", "OmureMali", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                <i class="fa fa-plus"></i>
+                <span class="title">@Resource.Resource.View_AddService</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+    <li class="@Url.MakeActive_All_Action("ListMoaven_AddMoaven") ">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span>
+                        <span class="fa fa-group fa-lg" style="color: #ffffff; "></span>
+                    </span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_EmployeesManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListMoaven")">
+                <a href="@Url.Action("ListMoaven", "Moaven", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListEmployees</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddMoaven")">
+                <a href="@Url.Action("AddMoaven", "Moaven", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-user-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddEmployee</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="@Url.MakeActive_All_Action("ListMoallem_AddMoallem")">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span class="fa fa-user fa-lg" style="color: #ffffff; margin-right:3px;"></span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_TeacherManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListMoallem")">
+                <a href="@Url.Action("ListMoallem", "Moallem", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListTeachers</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddMoallem")">
+                <a href="@Url.Action("AddMoallem", "Moallem", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-user-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddTeacher</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="@Url.MakeActive_All_Action("ListDaneshAmooz_AddDaneshAmooz_AddDaneshAmoozWithExcel")">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span class="fa fa-graduation-cap fa-lg" style="color: #ffffff; "></span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_StudentManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListDaneshAmooz")">
+                <a href="@Url.Action("ListDaneshAmooz", "DaneshAmooz", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListStudents</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddDaneshAmooz")">
+                <a href="@Url.Action("AddDaneshAmooz", "DaneshAmooz", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-user-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddStudents</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddDaneshAmoozWithExcel")">
+                <a href="@Url.Action("AddDaneshAmoozWithExcel", "DaneshAmooz", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-file-excel-o"></i>
+                    <span class="title">@Resource.Resource.View_AddStudentsWithExcel</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="@Url.MakeActive_All_Action("ListOvlia_AddOvlia")">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span class="fa fa-home fa-lg" style="color: #ffffff; "></span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_ParentsManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListOvlia")">
+                <a href="@Url.Action("ListOvlia", "Ovlia", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListParents</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddOvlia")">
+                <a href="@Url.Action("AddOvlia", "Ovlia", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-user-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddParent</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+   
+    <li class="@Url.MakeActive_All_Action("ListDoroos_AddDoroos")">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span class="fa fa-book fa-lg" style="color: #ffffff; "></span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_DoroosManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListDoroos")">
+                <a href="@Url.Action("ListDoroos", "DoroosFogholade", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListDoroos</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddDoroos")">
+                <a href="@Url.Action("AddDoroos", "DoroosFogholade", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddDoroos</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="@Url.MakeActive_All_Action("ListKelas_AddKelas")">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <span class="fa fa-bell fa-lg" style="color: #ffffff; "></span>
+                </div>
+                <div class="item-inner">
+                    <span class="title">@Resource.Resource.View_KelasManagement</span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+            <li class="@Url.MakeActiveAction("ListKelas")">
+                <a href="@Url.Action("ListKelas", "Kelas", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-list-alt"></i>
+                    <span class="title">@Resource.Resource.View_ListKelas</span>
+                </a>
+            </li>
+            <li class="@Url.MakeActiveAction("AddKelas")">
+                <a href="@Url.Action("AddKelas", "Kelas", new { NemayandegiId = ViewBag.NemayandegiId, ModirId = ViewBag.ModirId })">
+                    <i class="fa fa-plus"></i>
+                    <span class="title">@Resource.Resource.View_AddKelas</span>
+                </a>
+            </li>
+        </ul>
+    </li>

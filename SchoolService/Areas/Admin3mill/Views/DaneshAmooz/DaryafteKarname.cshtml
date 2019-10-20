@@ -1,0 +1,155 @@
+﻿@model SchoolService.Models.DataModel.KarnameModel
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="~/Content/AdminContent/PrintStyle.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="~/Content/AdminContent/PrintStyle.css" type="text/css" />
+}
+@section js_Requested
+{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/Chart.js/Chart.min.js"></script>
+
+}
+<style>
+    @@media print {
+        .noprint {
+            display: none;
+        }
+
+        .print {
+            display: block !important;
+        }
+    }
+</style>
+@section js_Handler
+{
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+        });
+    </script>
+
+}
+<div class="main-content print">
+    <div class="wrap-content container" id="container">
+        <!-- start: BASIC EXAMPLE -->
+        <div class="container-fluid container-fullw bg-white print">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row margin-top-30">
+                        <div class="col-lg-10 col-md-12 col-md-push-1">
+                            <div class="row" id="PrintBox">
+                                <div class="col-md-12">
+                                    <div style="width:100%;height:150px;background-color:#e2e2e4;margin-bottom:5px;border:1px solid;border-color:lightgray;">
+                                        <div class="col-md-5" style="line-height: 30px;text-align:right;float:right;width:38%;">
+                                            <span>مدرسه : <strong style="font-size:10px;">@Model.Madrese</strong></span><br>
+                                            <span>استان : <strong>آذربایجان غربی</strong></span><br>
+                                            <span>شهر : <strong>ارومیه</strong></span><br>
+                                            <span>مقطع : <strong>@Model.Maghta</strong></span><br>
+                                            <span>سال تحصیلی : <strong>@Model.SaleTahsili</strong></span>
+                                        </div>
+                                        <div class="col-md-3" style="text-align: center;float:right;width:28%;line-height: 21px;">
+                                            <span>بسمه تعالی</span><br>
+                                            <img src="~/Content/AdminContent/assets/images/logosolda2.png" style="height:60px;width:60px;margin:2px 0;" /><br>
+                                            <span>سامانه مدیریت مدرسه سولدا</span><br>
+                                            <span>کارنامه تحصیلی</span><br>
+                                            <span>@Model.Mah ماه</span>
+                                        </div>
+                                        <div class="col-md-4" style="line-height: 24px;text-align:left;float:right;width:34%;">
+                                            <span>نام : <strong>@Model.FirstName</strong></span><br>
+                                            <span>نام خانوادگی : <strong>@Model.LastName</strong></span><br>
+                                            <span>نام پدر : <strong>@Model.FatherName</strong></span><br>
+                                            <span>کد ملی : <strong>@Model.CodeMelli</strong></span><br>
+                                            <span>پایه : <strong>@Model.Paaye</strong></span><br>
+                                            <span>کلاس : <strong>@Model.Kelas</strong></span>
+                                        </div>
+                                    </div>
+                                    <table class="table table-striped table-bordered" id="sample-table-2">
+                                        <thead>
+                                            <tr>
+                                                <th class="center" style="width:25%;">@Html.DisplayName("درس")</th>
+                                                <th class="center" style="width:48%;">@Html.DisplayName("نمرات")</th>
+                                                <th class="center" style="width:14%;">@Html.DisplayName("رتبه در کلاس")</th>
+                                                <th class="center" style="width:13%;">@Html.DisplayName("رتبه در مدرسه")</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Nomarat)
+                                            {
+                                                <tr>
+                                                    <td class="center">@item.NaameDars</td>
+                                                    <td class="center">@item.NomreDars</td>
+                                                    @if (!string.IsNullOrEmpty(item.RotbeDarKelas))
+                                                    {
+                                                        <td class="center">@item.RotbeDarKelas</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td class="center">-</td>
+                                                    }
+                                                    @if (!string.IsNullOrEmpty(item.RotbeDarMadrese))
+                                                    {
+                                                        <td class="center">@item.RotbeDarMadrese</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td class="center">-</td>
+                                                    }
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div style="width:100%;min-height:150px;margin-top:-15px;margin-bottom:5px; border:1px solid;border-color:lightgray;">
+                                        <div class="col-md-4" style="width:39%;float:right;">
+                                            <div class="print" id="PrintBox" style="border-radius: 5px;padding: 25px 0;text-align: center;margin-top: 20px;border:1px solid;border-color:lightgray;">
+                                                <span style="margin-top: -35px;float: right;margin-right: 20px;background-color: white;width: 80px;">معاون اجرایی</span>
+                                                <span>نام : <strong>@Model.MoavenFirstName</strong></span>
+                                                <span style="float:left;margin-left: 35px;">نام خانوادگی : <strong>@Model.MoavenLastName</strong></span><br><br>
+                                                <span style="margin-left: 105px;">امضا : </span>
+                                                <span style="float:left;margin-left: 35px;">تاریخ : </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4" style="width:39%;float:right;">
+                                            <div class="print" id="PrintBox" style="border-radius: 5px;padding: 25px 0;text-align: center;margin-top: 20px;border:1px solid;border-color:lightgray;">
+                                                <span style="margin-top: -35px;float: right;margin-right: 20px;background-color: white;width: 80px;">مدیریت</span>
+                                                <span>نام : <strong>@Model.ModirFirstName</strong></span>
+                                                <span style="float:left;margin-left: 35px;">نام خانوادگی : <strong>@Model.ModirLastName</strong></span><br><br>
+                                                <span style="margin-left: 105px;">امضا : </span>
+                                                <span style="float:left;margin-left: 35px;">تاریخ : </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4" style="width:22%;float:right;">
+                                            <div class="print" id="PrintBox" style="background-color: #e2e2e4;border-radius: 5px;padding: 25px 0;text-align: center;margin-top: 20px;border:1px solid;border-color:lightgray;">
+                                                <span>معدل کل : <strong>@Model.MoaddeleKol</strong></span><br>
+                                                <span>رتبه در کلاس : <strong>@Model.RotbeDarKelas</strong></span><br>
+                                                <span>رتبه در مدرسه : <strong>@Model.RotbeDarMadrese</strong></span><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a onclick="window.print()" class="btn btn-wide btn-info ladda-button noprint" style="width:100%;">
+                                <span class=" ladda-label">پرینت</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end: BASIC TABLE -->
+    </div>
+</div>

@@ -1,0 +1,113 @@
+﻿
+@{
+    Layout = "~/Areas/Admin3mill/Views/Shared/_Layout.cshtml";
+}
+@section CSS_Requested{
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/DataTables/css/DT_bootstrap.css" rel="stylesheet" media="screen">
+
+}
+@section js_Requested
+{
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/DataTables/jquery.dataTables.min.js"></script>
+
+
+}
+
+@section js_Handler
+{
+    <script src="~/Content/AdminContent/assets/js/table-data.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            TableData.init();
+        });
+    </script>
+
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryajax")
+<div class="main-content">
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        @Html.Partial("PageTittle")
+        <!-- end: PAGE TITLE -->
+        <!-- start: BASIC EXAMPLE -->
+        <div class="container-fluid container-fullw bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row margin-top-30">
+                        <div class="col-lg-12 col-md-12">
+                            <fieldset>
+                                <legend style="font-family:PipoFont;">
+                                    نمرات کلاسی و امتحانی
+                                </legend>
+                                @Html.Action("ListeDoroos", "Utility", new { NemayandegiId = ViewBag.NemayandegiId, MadreseId = ViewBag.MadreseId, KelasId = ViewBag.KelasId, DaneshAmoozId = ViewBag.DaneshAmoozId })
+                                <div class="col-lg-6 col-md-6" id="PipoBox_Loading" style="text-align:center;padding-top:20px;display:none">
+                                    <img src="~/Content/AdminContent/z3mill/ajax-load.gif" />
+                                </div>
+                                <div id="PipoBox">
+                                    <div class="col-lg-10 col-md-10">
+                                        <p style="text-align: center;font-size: 20px;">جهت مشاهده گزارش درس مورد نظر را انتخاب کنید</p>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <fieldset>
+                                <legend style="font-family:PipoFont;">
+                                    نمودار رشد تحصیلی
+                                </legend>
+                                @using (Ajax.BeginForm("GozaresheFilterShode", "Utility", new {NemayandegiId = ViewBag.NemayandegiId, MadreseId = ViewBag.MadreseId, DaneshAmoozId = ViewBag.DaneshAmoozId }, new AjaxOptions
+                                {
+                                    UpdateTargetId = "PipoNemudarBox",
+                                    InsertionMode = InsertionMode.Replace,
+                                    LoadingElementId = "PipoBox2_Loading",
+                                    HttpMethod = "Post"
+                                }, null))
+                                {
+                                    <div class="col-lg-10 col-md-10 col-md-push-2">
+                                        @*<div class="form-group center col-md-4">
+                                            @Html.Label("انتخاب تاریخ")
+                                            @Html.DropDownList("Mah", ViewData["ListTarikh"] as List<SelectListItem>, new { id = "form-field-select-1", @class = "cs-select cs-skin-elastic" })
+                                        </div>*@
+                                        <div class="form-group center col-md-6">
+                                            @Html.Label("انتخاب درس")
+                                            @Html.DropDownList("DarsId", ViewData["ListDoroos"] as SelectList, new { id = "form-field-select-1", @class = "cs-select cs-skin-elastic" })
+                                        </div>
+                                        <div class="col-md-4 center">
+                                            @Html.Label("اعمال فیلتر")
+                                            <button type="submit" class="btn btn-wide btn-dark-green ladda-button" style="width:100%;" id="PipoSubmit">
+                                                <span class="ladda-label">اعمال فیلتر</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                }
+                                <div class="col-lg-12 col-md-12" id="PipoBox2_Loading" style="text-align:center;padding-top:20px;display:none">
+                                    <img src="~/Content/AdminContent/z3mill/ajax-load.gif" />
+                                </div>
+                                <div class="col-lg-12 col-md-12" id="PipoNemudarBox">
+                                    <p style="text-align:center;">نمودار میانگین کل دروس بر اساس ماه</p>
+                                    @Html.Action("NemudareRoshdeTahsili", "Utility", new { DaneshAmoozId = ViewBag.DaneshAmoozId })
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end: BASIC TABLE -->
+    </div>
+</div>

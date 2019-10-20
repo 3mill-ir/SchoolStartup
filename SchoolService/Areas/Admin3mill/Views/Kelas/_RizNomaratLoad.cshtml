@@ -1,0 +1,58 @@
+﻿@model SchoolService.Models.DataModel.RizNomre_Model
+
+@{Layout = null;}
+
+@section js_Handler
+{
+    <script>
+        jQuery(document).ready(function () {
+            TableData.init();
+        });
+    </script>
+}
+<!-- start: DYNAMIC TABLE -->
+@using (Html.BeginForm("RizNomaratEdit", "Kelas", FormMethod.Post))
+{
+    @Html.Hidden("KelasId", ViewBag.KelasId as string);
+    @Html.Hidden("DarsId", ViewBag.DarsId as string);
+    @Html.Hidden("NemayandegiId", ViewBag.NemayandegiId as string);
+    @Html.Hidden("ModirId", ViewBag.ModirId as string);
+    <div class="col-md-8 col-md-push-2">
+        <button style="margin-bottom: 20px;width:100%;" type="submit" class="btn btn-wide btn-dark-green ladda-button ">
+            <span class="ladda-label">ویرایش ریز نمره</span>
+        </button>
+    </div>
+    <div class="col-md-12">
+        <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+            <thead>
+                <tr>
+                    <th class="center">@Html.DisplayName("نام دانش آموز")</th>
+                    @{int count = 0;}
+                    @foreach (var item in Model.Dates)
+                    {
+                        count++;
+                        <th class="center">@Html.DisplayName(SchoolService.Areas.Admin3mill.Models.Tools.SpecialJalaliFormat(item ?? default(DateTime)))</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @{int jj = 0;}
+                @foreach (var item in Model.DaneshAmoozan)
+                {
+                    <tr>
+                        <td class="center">@item.DaneshAmoozFullName</td>
+                        @foreach (var item2 in item.Nomarat)
+                        {
+                            <td class="center">
+                                <input style=" width: 25px; text-align: center;" value="@item2.NomreDars" name="model[@jj].NomreDars" />
+                                <input type="hidden" value="@item2.ID" name="model[@jj].ID" />
+                                @{jj++;}
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+<!-- end: DYNAMIC TABLE -->

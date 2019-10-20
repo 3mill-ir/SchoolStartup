@@ -1,0 +1,373 @@
+﻿@model SchoolService.Models.RegisterViewModel
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<!-- Template Name: 3Mill - Responsive Admin Template build with Twitter Bootstrap 3.x | Author: 3Mill -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- start: HEAD -->
+<!-- start: HEAD -->
+<head>
+    <title>@Resource.Resource.View_Tittle | ثبت با موفقیت</title>
+    <!-- start: META -->
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- end: META -->
+    <!-- start: PrintArea -->
+    <script src="~/Content/AdminContent/z3mill/PrintArea/jquery-1.10.2.js" type="text/JavaScript" language="javascript"></script>
+    <script src="~/Content/AdminContent/z3mill/PrintArea/jquery-ui-1.10.4.custom.js"></script>
+    <script src="~/Content/AdminContent/z3mill/PrintArea/jquery.PrintArea.js" type="text/JavaScript" language="javascript"></script>
+    <link type="text/css" rel="stylesheet" href="~/Content/AdminContent/z3mill/PrintArea/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/AdminContent/z3mill/PrintArea/PrintArea.css" />                <!-- Y : rel is stylesheet and media is in [all,print,empty,undefined] -->
+    <link type="text/css" rel="stylesheet" href="~/Content/AdminContent/z3mill/PrintArea/media_all.css" media="all" />   <!-- Y : rel is stylesheet and media is in [all,print,empty,undefined] -->
+    <link type="text/css" rel="" href="~/Content/AdminContent/z3mill/PrintArea/empty.css" />                    <!-- N : rel is not stylesheet -->
+    <link type="text/css" rel="noPrint" href="~/Content/AdminContent/z3mill/PrintArea/noPrint.css" />                  <!-- N : rel is not stylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/Content/AdminContent/z3mill/PrintArea/media_none.css" media="xyz" />   <!-- N : media not in [all,print,empty,undefined] -->
+    <link type="text/css" href="~/Content/AdminContent/z3mill/PrintArea/no_rel.css" media="print" /> <!-- N : no rel attribute -->
+    <link type="text/css" href="~/Content/AdminContent/z3mill/PrintArea/no_rel_no_media.css" /> <!-- N : no rel, no media attributes -->
+    <!-- end: PrintArea -->
+
+    <!-- start: GOOGLE FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <!-- end: GOOGLE FONTS -->
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/bootstrap/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/themify-icons/themify-icons.min.css">
+    <link href="~/Content/AdminContent/vendor/animate.css/animate.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/switchery/switchery.min.css" rel="stylesheet" media="screen">
+    <!-- end: MAIN CSS -->
+    <!-- start: 3Mill CSS -->
+    <link rel="stylesheet" href="~/Content/AdminContent/assets/css/styles.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/assets/css/plugins.css">
+    <link rel="stylesheet" href="~/Content/AdminContent/assets/css/themes/theme-1.css" id="skin_color" />
+    <link rel="stylesheet" href="~/Content/AdminContent/assets/css/rtl.css" />
+    <!-- end: 3Mill CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <link href="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/select2/select2.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" href="~/Content/AdminContent/vendor/jquery-file-upload/css/jquery.fileupload-ui.css">
+
+    <link href="~/Content/AdminContent/vendor/ladda-bootstrap/ladda-themeless.min.css" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" />
+    <link rel="stylesheet" href="~/Content/AdminContent/z3mill/main.css">
+
+    <link href="~/Content/AdminContent/vendor/bootstrap-fileinput/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+</head>
+<!-- end: HEAD -->
+<!-- start: BODY -->
+<body>
+    <div id="app">
+        <div>
+            <div class="wrap-content container" id="container">
+                <!-- start: PAGE TITLE -->
+                <section id="page-title">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h1 class="mainTitle">ثبت نام با موفقیت انجام گرفت</h1>
+                        </div>
+                        <ol class="breadcrumb">
+                            <li>
+                                <div class="logo margin-top-30">
+                                    <img src="~/Content/AdminContent/assets/images/logo.png" alt="3Mill" />
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+                <!-- end: PAGE TITLE -->
+                <!-- start: FIELDSET -->
+                <div class="container-fluid container-fullw bg-white PrintArea area1 all" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-login col-md-4 ">
+                                <!-- start: REGISTER BOX -->
+                                <div class="box-register">
+                                    <fieldset>
+                                        <legend>
+                                            اطلاعات مدیریت
+                                        </legend>
+                                        <div class="form-group">
+                                            <label>نام کاربری</label>
+                                            @Html.TextBoxFor(m => m.AdminUserName, new { @class = "form-control", placeholder = "نام", @readonly = "readonly" })
+                                        </div>
+                                        <div class="form-group">
+                                            <label>کلمه عبور</label>
+                                            @Html.TextBoxFor(m => m.AdminPassword, new { @class = "form-control", placeholder = "نام", @readonly = "readonly" })
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label>نام</label>
+                                                    @Html.TextBoxFor(m => m.AdminFirstName, new { @class = "form-control", placeholder = "نام", @readonly = "readonly" })
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label>نام خانوادگی</label>
+                                                    @Html.TextBoxFor(m => m.AdminLastName, new { @class = "form-control", placeholder = "نام خانوادگی", @readonly = "readonly" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <style>
+                                            .mypipostyle {
+                                                direction: ltr;
+                                                text-align: right;
+                                            }
+                                        </style>
+                                        <div class="form-group">
+                                            <label>شماره همراه</label>
+                                            <div class="input-group">
+                                                @Html.TextBoxFor(m => m.AdminMobileNumber, new { @class = "form-control input-mask-phone mypipostyle", Id = "form-fieldt-mask-2", placeholder = " (9**) ***-**** شماره همراه", @readonly = "readonly" })
+                                                <span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>ایمیل</label>
+                                            <div class="input-group">
+                                                @Html.TextBoxFor(m => m.AdminEmail, new { @class = "form-control", placeholder = "ایمیل", @readonly = "readonly" })  <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <!-- end: REGISTER BOX -->
+                            </div>
+                            <div class="page-break"></div>
+                            <div class="main-login col-md-4 ">
+                                <!-- start: REGISTER BOX -->
+                                <div class="box-register">
+                                    <fieldset>
+                                        <legend>
+                                            اطلاعات کارشناس
+                                        </legend>
+                                        <div class="form-group">
+                                            <label>نام کاربری</label>
+                                            @Html.TextBoxFor(m => m.ExpertUserName, new { @class = "form-control", placeholder = "نام", @readonly = "readonly" })
+                                        </div>
+                                        <div class="form-group">
+                                            <label>کلمه عبور</label>
+                                            @Html.TextBoxFor(m => m.ExpertPassword, new { @class = "form-control", placeholder = "نام", @readonly = "readonly" })
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label>نام</label>
+                                                    @Html.TextBoxFor(m => m.ExpertFirstName, new { @class = "form-control", placeholder = "نام", @readonly = "readonly" })
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label>نام خانوادگی</label>
+                                                    @Html.TextBoxFor(m => m.ExpertLastName, new { @class = "form-control", placeholder = "نام خانوادگی", @readonly = "readonly" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>شماره همراه</label>
+                                            <div class="input-group">
+                                                @Html.TextBoxFor(m => m.ExpertMobileNumber, new { @class = "form-control input-mask-phone mypipostyle", Id = "form-fieldt-mask-2", placeholder = " (9**) ***-**** شماره همراه", @readonly = "readonly" })
+                                                <span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>ایمیل</label>
+                                            <div class="input-group">
+                                                @Html.TextBoxFor(m => m.ExpertEmail, new { @class = "form-control", placeholder = "ایمیل", @readonly = "readonly" })  <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <!-- end: REGISTER BOX -->
+                            </div>
+                            <div class="page-break"></div>
+                            <div class="main-login col-md-4 ">
+                                <!-- start: REGISTER BOX -->
+                                <div class="box-register">
+                                    <fieldset>
+                                        <legend>
+                                            اطلاعات نویسنده
+                                        </legend>
+                                        <div class="form-group">
+                                            <label>نام کاربری</label>
+                                            @Html.TextBoxFor(m => m.AuthorUserName, new { @class = "form-control", placeholder = "نام", @readonly = "readonly" })
+                                        </div>
+                                        <div class="form-group">
+                                            <label>کلمه عبور</label>
+                                            @Html.TextBoxFor(m => m.AuthorPassword, new { @class = "form-control", placeholder = "نام", @readonly = "readonly" })
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label>نام</label>
+                                                    @Html.TextBoxFor(m => m.AuthorFirstName, new { @class = "form-control", placeholder = "نام", @readonly = "readonly" })
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label>نام خانوادگی</label>
+                                                    @Html.TextBoxFor(m => m.AuthorLastName, new { @class = "form-control", placeholder = "نام خانوادگی", @readonly = "readonly" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>شماره همراه</label>
+                                            <div class="input-group">
+                                                @Html.TextBoxFor(m => m.AuthorMobileNumber, new { @class = "form-control input-mask-phone mypipostyle", Id = "form-fieldt-mask-2", placeholder = " (9**) ***-**** شماره همراه", @readonly = "readonly" })
+                                                <span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>ایمیل</label>
+                                            <div class="input-group">
+                                                @Html.TextBoxFor(m => m.AuthorEmail, new { @class = "form-control", placeholder = "ایمیل", @readonly = "readonly" })  <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </fieldset>
+
+                                </div>
+
+                                <!-- end: REGISTER BOX -->
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- end: FIELDSET -->
+                <div class="row">
+                    <div class="form-actions">
+                        <div class="btn btn-green btn-wide b1 btn-scroll btn-scroll-top ti-printer">
+                            <span>&nbsp; چاپ </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- start: COPYRIGHT -->
+                <div class="copyright" style="text-align:center">
+                    &copy; <span class="current-year"></span><span class="text-bold text-uppercase"> @Resource.Resource.CMS_Name</span>
+                </div>
+                <!-- end: COPYRIGHT -->
+            </div>
+        </div>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    @*<script src="~/Content/AdminContent/vendor/jquery/jquery.min.js"></script>*@
+    <script src="~/Content/AdminContent/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/modernizr/modernizr.js"></script>
+    <script src="~/Content/AdminContent/vendor/jquery-cookie/jquery.cookie.js"></script>
+    <script src="~/Content/AdminContent/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/switchery/switchery.min.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+
+    <script src="~/Content/AdminContent/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/autosize/autosize.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/classie.js"></script>
+    <script src="~/Content/AdminContent/vendor/selectFx/selectFx.js"></script>
+    <script src="~/Content/AdminContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/spin.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/ladda-bootstrap/ladda.min.js"></script>
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+
+    <script src="~/Content/AdminContent/vendor/bootstrap-fileinput/jasny-bootstrap.js"></script>
+    <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- start: 3Mill JAVASCRIPTS -->
+    <script src="~/Content/AdminContent/assets/js/main.js"></script>
+    <!-- start: JavaScript Event Handlers for this page -->
+    <script src="~/Content/AdminContent/assets/js/ui-buttons.js"></script>
+    <script src="~/Content/AdminContent/assets/js/form-elements.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            FormElements.init();
+            UIButtons.init();
+        });
+    </script>
+    <!-- end: JavaScript Event Handlers for this page -->
+    <!-- end: 3Mill JAVASCRIPTS -->
+
+
+    <script>
+        $(document).ready(function () {
+
+            $("div.b1").click(function () {
+
+                var mode = "iframe";
+                var close = mode == "popup" && $("input#closePop").is(":checked");
+                var extraCss = $("input[name='extraCss']").val();
+
+                var print = "div.PrintArea.area1";
+                //$("input.selPA:checked").each(function(){
+                //    print += (print.length > 0 ? "," : "") + "div.PrintArea." + $(this).val();
+                //});
+
+                var keepAttr = [];
+
+
+                keepAttr.push("class");
+                keepAttr.push("id");
+                keepAttr.push("style");
+                keepAttr.push("on");
+
+
+                var headElements = '<meta charset="utf-8" />,<meta http-equiv="X-UA-Compatible" content="IE=edge"/>';
+
+                var options = { mode: mode, popClose: close, extraCss: extraCss, retainAttr: keepAttr, extraHead: headElements };
+
+                $(print).printArea(options);
+            });
+
+            $("input[name='mode']").click(function () {
+                if ($(this).val() == "iframe") $("#closePop").attr("checked", false);
+            });
+        });
+
+    </script>
+</body>
+<!-- end: BODY -->
+</html>

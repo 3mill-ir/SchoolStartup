@@ -1,0 +1,13 @@
+﻿@model IEnumerable<SchoolService.Models.DataModel.Doroos>
+<div class="col-lg-2 col-md-2">
+    @foreach (var item in Model)
+    {
+        @Ajax.ActionLink(item.NaameDars, "NomarateKelasiVaEmtehani", "Utility", new { NemayandegiId=@ViewBag.NemayandegiId, ModirId=@ViewBag.ModirId, DarsId = item.ID, DaneshAmoozId = ViewBag.DaneshAmoozId }, new AjaxOptions
+                           {
+                               UpdateTargetId = "PipoBox",
+                               InsertionMode = InsertionMode.Replace,
+                               LoadingElementId = "PipoBox_Loading",
+                               HttpMethod = "Get"
+                           }, new { style = "margin-bottom:10px;width:100%;", @class = "btn btn-wide btn-o btn-primary", data_keyboard = "false", data_backdrop = "static" })
+    }
+</div>

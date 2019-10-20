@@ -1,0 +1,2909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SchoolDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AddressCity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="F_StateId" Type="int" />
+          <Property Name="isDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="AddressState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="isDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="BarnameEmtehani">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_MoallemDoroosID" Type="int" />
+          <Property Name="F_KelasID" Type="int" />
+          <Property Name="TarikhKamel" Type="datetime" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BarnameHaftegi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_MoallemDoroosID" Type="int" />
+          <Property Name="F_KelasID" Type="int" />
+          <Property Name="Zang" Type="int" />
+          <Property Name="Ruz" Type="int" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="Fovgholade" Type="bit" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Check">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TarikheCheck" Type="datetime" />
+          <Property Name="MablagheCheck" Type="float" />
+          <Property Name="Bank" Type="nvarchar" MaxLength="50" />
+          <Property Name="VaziateVosul" Type="nvarchar" MaxLength="50" />
+          <Property Name="F_HazineId" Type="int" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DaneshAmuz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_KelasID" Type="int" />
+          <Property Name="F_OvliaID" Type="int" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="CodeMelli" Type="nvarchar(max)" />
+          <Property Name="ShomareShenasname" Type="nvarchar(max)" />
+          <Property Name="TarikhTavallod" Type="nvarchar(max)" />
+          <Property Name="MahalleSodoor" Type="nvarchar(max)" />
+          <Property Name="Jensiat" Type="bit" />
+          <Property Name="NesbateVali" Type="nvarchar(max)" />
+          <Property Name="Tovzihat" Type="nvarchar(max)" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Doroos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_PayeID" Type="int" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="NaameDars" Type="nvarchar(max)" />
+          <Property Name="ZaribeDars" Type="int" />
+          <Property Name="Sabet" Type="bit" />
+          <Property Name="F_MadaaresID" Type="int" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Farakhanha">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_KarmandanID" Type="int" />
+          <Property Name="Movzoo" Type="nvarchar(max)" />
+          <Property Name="Matn" Type="nvarchar(max)" />
+          <Property Name="TarikheFarakhan" Type="datetime" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Hazine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_ServiceId" Type="int" />
+          <Property Name="Tarikh" Type="datetime" />
+          <Property Name="F_OvliaId" Type="int" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Bedehi" Type="float" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HozoorGhiab">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tarikh" Type="datetime" />
+          <Property Name="Hafte" Type="int" />
+          <Property Name="isChecked" Type="bit" />
+          <Property Name="F_BarnameHaftegi" Type="int" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HozoorGhiabKelasi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_DaneshAmuzID" Type="int" />
+          <Property Name="Takhir" Type="float" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="Tovzihat" Type="nvarchar(max)" />
+          <Property Name="F_HozoorGhiabID" Type="int" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Karmandaan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_UserInfromation" Type="nvarchar" MaxLength="128" />
+          <Property Name="Semat" Type="nvarchar(max)" />
+          <Property Name="Mobile" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Kelas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_MadaresID" Type="int" />
+          <Property Name="F_PayeID" Type="int" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="NaameKelas" Type="nvarchar(max)" />
+          <Property Name="MaxZang" Type="int" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Madaares">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_NemayandegiID" Type="int" />
+          <Property Name="F_MaghaateID" Type="int" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="NaameMadrese" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Moassesin" Type="nvarchar(max)" />
+          <Property Name="Telephon" Type="nvarchar(max)" />
+          <Property Name="KodeMadrese" Type="nvarchar(max)" />
+          <Property Name="F_CityId" Type="int" />
+          <Property Name="F_SaleTahsiliId" Type="int" />
+          <Property Name="F_MadreseId" Type="int" />
+          <Property Name="ModirID" Type="int" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+          <Property Name="NomreType" Type="bit" />
+        </EntityType>
+        <EntityType Name="Maghaate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="NaameMaghta" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mapping_Farakhanha_Kelas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_FarakhanhaID" Type="int" />
+          <Property Name="F_KelasID" Type="int" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mapping_Moallem_Doroos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_MoallemID" Type="int" />
+          <Property Name="F_DoroosID" Type="int" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Moallem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Jensiat" Type="bit" />
+          <Property Name="NamePedar" Type="nvarchar(max)" />
+          <Property Name="ShomareShenasname" Type="nvarchar(max)" />
+          <Property Name="TarikhTavallod" Type="nvarchar(max)" />
+          <Property Name="MahaleSodoor" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="F_UserInformation" Type="nvarchar" MaxLength="128" />
+          <Property Name="Mobile" Type="nvarchar(max)" />
+          <Property Name="F_MadaaresID" Type="int" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Nemayandegi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_UserID" Type="nvarchar(max)" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="F_CityId" Type="int" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="Mobile" Type="nvarchar(max)" />
+          <Property Name="Tell" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="AddressDetail" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NomreEmtehani">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_DaneshAmuzID" Type="int" />
+          <Property Name="F_BarnameEmtehani" Type="int" />
+          <Property Name="Nomre" Type="nvarchar(max)" />
+          <Property Name="Tovzihat" Type="nvarchar(max)" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NomreKelasi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_DaneshAmuzID" Type="int" />
+          <Property Name="F_BarnameHaftegiID" Type="int" />
+          <Property Name="Nomre" Type="nvarchar(max)" />
+          <Property Name="Tovzihat" Type="nvarchar(max)" />
+          <Property Name="Hafte" Type="int" />
+          <Property Name="Tarikh" Type="datetime" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Ovlia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_UserInformationID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Mobile" Type="nvarchar(max)" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Paaye">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_MaghaateID" Type="int" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="NaamePaye" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Pardakht">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tarikh" Type="datetime" />
+          <Property Name="MablaghePardakhti" Type="float" />
+          <Property Name="F_HazineId" Type="int" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Payamha">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedDateOnUTC" Type="datetime" />
+          <Property Name="F_FromID" Type="nvarchar" MaxLength="128" />
+          <Property Name="F_ToID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Text" Type="nvarchar(max)" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="SaleTahsili">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sal" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="SchoolLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TableName" Type="nvarchar(max)" />
+          <Property Name="TableRecordID" Type="int" />
+          <Property Name="TableFields" Type="nvarchar(max)" />
+          <Property Name="UserID" Type="nvarchar(max)" />
+          <Property Name="DateOnUTC" Type="datetime" />
+          <Property Name="OperationID" Type="int" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="100" />
+          <Property Name="F_MadraseId" Type="int" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TaklifKelasi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_DaneshAmuzID" Type="int" />
+          <Property Name="F_BarnameHaftegiID" Type="int" />
+          <Property Name="Hafte" Type="int" />
+          <Property Name="Tarikh" Type="datetime" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="OnvaneTaklif" Type="nvarchar(max)" />
+          <Property Name="TovzihateTaklif" Type="nvarchar(max)" />
+          <Property Name="FileTaklif" Type="nvarchar(max)" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TaklifKelasiJami">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_KelasID" Type="int" />
+          <Property Name="F_BarnameHaftegiID" Type="int" />
+          <Property Name="Hafte" Type="int" />
+          <Property Name="Tarikh" Type="datetime" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="OnvaneTaklif" Type="nvarchar(max)" />
+          <Property Name="TovzihateTaklif" Type="nvarchar(max)" />
+          <Property Name="FileTaklif" Type="nvarchar(max)" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TashvighTanbihKelasi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_DaneshAmuzID" Type="int" />
+          <Property Name="F_BarnameHaftegiID" Type="int" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="Hafte" Type="int" />
+          <Property Name="Tarikh" Type="datetime" />
+          <Property Name="Tovzihat" Type="nvarchar(max)" />
+          <Property Name="Emtiaz" Type="int" />
+          <Property Name="F_ParrentID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserInformation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="F_MadaaresID" Type="int" />
+          <Property Name="CodeMelli" Type="nvarchar(max)" />
+          <Property Name="AndroidID" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_AddressCity_AddressState">
+          <End Role="AddressState" Type="Self.AddressState" Multiplicity="0..1" />
+          <End Role="AddressCity" Type="Self.AddressCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AddressCity">
+              <PropertyRef Name="F_StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BarnameEmtehani_Kelas">
+          <End Role="Kelas" Type="Self.Kelas" Multiplicity="0..1" />
+          <End Role="BarnameEmtehani" Type="Self.BarnameEmtehani" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BarnameEmtehani">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BarnameEmtehani_Mapping_Moallem_Doroos">
+          <End Role="Mapping_Moallem_Doroos" Type="Self.Mapping_Moallem_Doroos" Multiplicity="0..1" />
+          <End Role="BarnameEmtehani" Type="Self.BarnameEmtehani" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mapping_Moallem_Doroos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BarnameEmtehani">
+              <PropertyRef Name="F_MoallemDoroosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BarnameHaftegi_Kelas">
+          <End Role="Kelas" Type="Self.Kelas" Multiplicity="0..1" />
+          <End Role="BarnameHaftegi" Type="Self.BarnameHaftegi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BarnameHaftegi">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BarnameHaftegi_Mapping_Moallem_Doroos">
+          <End Role="Mapping_Moallem_Doroos" Type="Self.Mapping_Moallem_Doroos" Multiplicity="0..1" />
+          <End Role="BarnameHaftegi" Type="Self.BarnameHaftegi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mapping_Moallem_Doroos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BarnameHaftegi">
+              <PropertyRef Name="F_MoallemDoroosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Check_Hazine">
+          <End Role="Hazine" Type="Self.Hazine" Multiplicity="0..1" />
+          <End Role="Check" Type="Self.Check" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hazine">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Check">
+              <PropertyRef Name="F_HazineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DaneshAmuz_Kelas">
+          <End Role="Kelas" Type="Self.Kelas" Multiplicity="0..1" />
+          <End Role="DaneshAmuz" Type="Self.DaneshAmuz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaneshAmuz">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DaneshAmuz_Ovlia">
+          <End Role="Ovlia" Type="Self.Ovlia" Multiplicity="0..1" />
+          <End Role="DaneshAmuz" Type="Self.DaneshAmuz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ovlia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaneshAmuz">
+              <PropertyRef Name="F_OvliaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doroos_Madaares">
+          <End Role="Madaares" Type="Self.Madaares" Multiplicity="0..1" />
+          <End Role="Doroos" Type="Self.Doroos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Doroos">
+              <PropertyRef Name="F_MadaaresID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doroos_Paaye">
+          <End Role="Paaye" Type="Self.Paaye" Multiplicity="0..1" />
+          <End Role="Doroos" Type="Self.Doroos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paaye">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Doroos">
+              <PropertyRef Name="F_PayeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Farakhanha_Karmandaan">
+          <End Role="Karmandaan" Type="Self.Karmandaan" Multiplicity="0..1" />
+          <End Role="Farakhanha" Type="Self.Farakhanha" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Karmandaan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Farakhanha">
+              <PropertyRef Name="F_KarmandanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hazine_Ovlia">
+          <End Role="Ovlia" Type="Self.Ovlia" Multiplicity="0..1" />
+          <End Role="Hazine" Type="Self.Hazine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ovlia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Hazine">
+              <PropertyRef Name="F_OvliaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hazine_Service">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="Hazine" Type="Self.Hazine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Hazine">
+              <PropertyRef Name="F_ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HozoorGhiab_BarnameHaftegi">
+          <End Role="BarnameHaftegi" Type="Self.BarnameHaftegi" Multiplicity="0..1" />
+          <End Role="HozoorGhiab" Type="Self.HozoorGhiab" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HozoorGhiab">
+              <PropertyRef Name="F_BarnameHaftegi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HozoorGhiab_DaneshAmuz">
+          <End Role="DaneshAmuz" Type="Self.DaneshAmuz" Multiplicity="0..1" />
+          <End Role="HozoorGhiabKelasi" Type="Self.HozoorGhiabKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HozoorGhiabKelasi">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HozoorGhiabKelasi_HozoorGhiab">
+          <End Role="HozoorGhiab" Type="Self.HozoorGhiab" Multiplicity="0..1" />
+          <End Role="HozoorGhiabKelasi" Type="Self.HozoorGhiabKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HozoorGhiab">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HozoorGhiabKelasi">
+              <PropertyRef Name="F_HozoorGhiabID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kelas_Madaares">
+          <End Role="Madaares" Type="Self.Madaares" Multiplicity="0..1" />
+          <End Role="Kelas" Type="Self.Kelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kelas">
+              <PropertyRef Name="F_MadaresID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kelas_Paaye">
+          <End Role="Paaye" Type="Self.Paaye" Multiplicity="0..1" />
+          <End Role="Kelas" Type="Self.Kelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paaye">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kelas">
+              <PropertyRef Name="F_PayeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Madaares_AddressCity">
+          <End Role="AddressCity" Type="Self.AddressCity" Multiplicity="0..1" />
+          <End Role="Madaares" Type="Self.Madaares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressCity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Madaares">
+              <PropertyRef Name="F_CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Madaares_Agency">
+          <End Role="Nemayandegi" Type="Self.Nemayandegi" Multiplicity="0..1" />
+          <End Role="Madaares" Type="Self.Madaares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nemayandegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Madaares">
+              <PropertyRef Name="F_NemayandegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Madaares_Maghaate">
+          <End Role="Maghaate" Type="Self.Maghaate" Multiplicity="0..1" />
+          <End Role="Madaares" Type="Self.Madaares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maghaate">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Madaares">
+              <PropertyRef Name="F_MaghaateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Madaares_SaleTahsili">
+          <End Role="SaleTahsili" Type="Self.SaleTahsili" Multiplicity="0..1" />
+          <End Role="Madaares" Type="Self.Madaares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleTahsili">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Madaares">
+              <PropertyRef Name="F_SaleTahsiliId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Farakhanha_Kelas_Farakhanha">
+          <End Role="Farakhanha" Type="Self.Farakhanha" Multiplicity="0..1" />
+          <End Role="Mapping_Farakhanha_Kelas" Type="Self.Mapping_Farakhanha_Kelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Farakhanha">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mapping_Farakhanha_Kelas">
+              <PropertyRef Name="F_FarakhanhaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Farakhanha_Kelas_Kelas">
+          <End Role="Kelas" Type="Self.Kelas" Multiplicity="0..1" />
+          <End Role="Mapping_Farakhanha_Kelas" Type="Self.Mapping_Farakhanha_Kelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mapping_Farakhanha_Kelas">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Moallem_Doroos_Doroos">
+          <End Role="Doroos" Type="Self.Doroos" Multiplicity="0..1" />
+          <End Role="Mapping_Moallem_Doroos" Type="Self.Mapping_Moallem_Doroos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doroos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mapping_Moallem_Doroos">
+              <PropertyRef Name="F_DoroosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Moallem_Doroos_Moallem">
+          <End Role="Moallem" Type="Self.Moallem" Multiplicity="0..1" />
+          <End Role="Mapping_Moallem_Doroos" Type="Self.Mapping_Moallem_Doroos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moallem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mapping_Moallem_Doroos">
+              <PropertyRef Name="F_MoallemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moallem_Madaares">
+          <End Role="Madaares" Type="Self.Madaares" Multiplicity="0..1" />
+          <End Role="Moallem" Type="Self.Moallem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Moallem">
+              <PropertyRef Name="F_MadaaresID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moallem_UserInformation">
+          <End Role="UserInformation" Type="Self.UserInformation" Multiplicity="0..1" />
+          <End Role="Moallem" Type="Self.Moallem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Moallem">
+              <PropertyRef Name="F_UserInformation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moaven_UserInformation">
+          <End Role="UserInformation" Type="Self.UserInformation" Multiplicity="0..1" />
+          <End Role="Karmandaan" Type="Self.Karmandaan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Karmandaan">
+              <PropertyRef Name="F_UserInfromation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nemayandegi_AddressCity">
+          <End Role="AddressCity" Type="Self.AddressCity" Multiplicity="0..1" />
+          <End Role="Nemayandegi" Type="Self.Nemayandegi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressCity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Nemayandegi">
+              <PropertyRef Name="F_CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NomreEmtehani_BarnameEmtehani">
+          <End Role="BarnameEmtehani" Type="Self.BarnameEmtehani" Multiplicity="0..1" />
+          <End Role="NomreEmtehani" Type="Self.NomreEmtehani" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameEmtehani">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NomreEmtehani">
+              <PropertyRef Name="F_BarnameEmtehani" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NomreEmtehani_DaneshAmuz">
+          <End Role="DaneshAmuz" Type="Self.DaneshAmuz" Multiplicity="0..1" />
+          <End Role="NomreEmtehani" Type="Self.NomreEmtehani" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NomreEmtehani">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NomreKelasi_BarnameHaftegi1">
+          <End Role="BarnameHaftegi" Type="Self.BarnameHaftegi" Multiplicity="0..1" />
+          <End Role="NomreKelasi" Type="Self.NomreKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NomreKelasi">
+              <PropertyRef Name="F_BarnameHaftegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NomreKelasi_DaneshAmuz">
+          <End Role="DaneshAmuz" Type="Self.DaneshAmuz" Multiplicity="0..1" />
+          <End Role="NomreKelasi" Type="Self.NomreKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NomreKelasi">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ovlia_UserInformation">
+          <End Role="UserInformation" Type="Self.UserInformation" Multiplicity="0..1" />
+          <End Role="Ovlia" Type="Self.Ovlia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Ovlia">
+              <PropertyRef Name="F_UserInformationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paaye_Maghaate">
+          <End Role="Maghaate" Type="Self.Maghaate" Multiplicity="0..1" />
+          <End Role="Paaye" Type="Self.Paaye" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maghaate">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Paaye">
+              <PropertyRef Name="F_MaghaateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pardakht_Hazine">
+          <End Role="Hazine" Type="Self.Hazine" Multiplicity="0..1" />
+          <End Role="Pardakht" Type="Self.Pardakht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hazine">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Pardakht">
+              <PropertyRef Name="F_HazineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payamha_UserInformation">
+          <End Role="UserInformation" Type="Self.UserInformation" Multiplicity="0..1" />
+          <End Role="Payamha" Type="Self.Payamha" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payamha">
+              <PropertyRef Name="F_FromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payamha_UserInformation1">
+          <End Role="UserInformation" Type="Self.UserInformation" Multiplicity="0..1" />
+          <End Role="Payamha" Type="Self.Payamha" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payamha">
+              <PropertyRef Name="F_ToID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Service_Madaares">
+          <End Role="Madaares" Type="Self.Madaares" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="F_MadraseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaklifKelasiJami_BarnameHaftegi">
+          <End Role="BarnameHaftegi" Type="Self.BarnameHaftegi" Multiplicity="0..1" />
+          <End Role="TaklifKelasiJami" Type="Self.TaklifKelasiJami" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaklifKelasiJami">
+              <PropertyRef Name="F_BarnameHaftegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaklifKelasiJami_Kelas">
+          <End Role="Kelas" Type="Self.Kelas" Multiplicity="0..1" />
+          <End Role="TaklifKelasiJami" Type="Self.TaklifKelasiJami" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaklifKelasiJami">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaklifKelasiShakhsi_BarnameHaftegi">
+          <End Role="BarnameHaftegi" Type="Self.BarnameHaftegi" Multiplicity="0..1" />
+          <End Role="TaklifKelasi" Type="Self.TaklifKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaklifKelasi">
+              <PropertyRef Name="F_BarnameHaftegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaklifKelasiShakhsi_DaneshAmuz">
+          <End Role="DaneshAmuz" Type="Self.DaneshAmuz" Multiplicity="0..1" />
+          <End Role="TaklifKelasi" Type="Self.TaklifKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaklifKelasi">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TashvighTanbihKelasi_BarnameHaftegi">
+          <End Role="BarnameHaftegi" Type="Self.BarnameHaftegi" Multiplicity="0..1" />
+          <End Role="TashvighTanbihKelasi" Type="Self.TashvighTanbihKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TashvighTanbihKelasi">
+              <PropertyRef Name="F_BarnameHaftegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TashvighTanbihKelasi_DaneshAmuz">
+          <End Role="DaneshAmuz" Type="Self.DaneshAmuz" Multiplicity="0..1" />
+          <End Role="TashvighTanbihKelasi" Type="Self.TashvighTanbihKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TashvighTanbihKelasi">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserInformation_Madaares">
+          <End Role="Madaares" Type="Self.Madaares" Multiplicity="0..1" />
+          <End Role="UserInformation" Type="Self.UserInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserInformation">
+              <PropertyRef Name="F_MadaaresID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SchoolDBModelStoreContainer">
+          <EntitySet Name="AddressCity" EntityType="Self.AddressCity" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="AddressState" EntityType="Self.AddressState" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="BarnameEmtehani" EntityType="Self.BarnameEmtehani" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="BarnameHaftegi" EntityType="Self.BarnameHaftegi" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Check" EntityType="Self.Check" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="DaneshAmuz" EntityType="Self.DaneshAmuz" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Doroos" EntityType="Self.Doroos" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Farakhanha" EntityType="Self.Farakhanha" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Hazine" EntityType="Self.Hazine" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="HozoorGhiab" EntityType="Self.HozoorGhiab" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="HozoorGhiabKelasi" EntityType="Self.HozoorGhiabKelasi" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Karmandaan" EntityType="Self.Karmandaan" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Kelas" EntityType="Self.Kelas" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Madaares" EntityType="Self.Madaares" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Maghaate" EntityType="Self.Maghaate" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Mapping_Farakhanha_Kelas" EntityType="Self.Mapping_Farakhanha_Kelas" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Mapping_Moallem_Doroos" EntityType="Self.Mapping_Moallem_Doroos" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Moallem" EntityType="Self.Moallem" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Nemayandegi" EntityType="Self.Nemayandegi" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="NomreEmtehani" EntityType="Self.NomreEmtehani" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="NomreKelasi" EntityType="Self.NomreKelasi" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Ovlia" EntityType="Self.Ovlia" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Paaye" EntityType="Self.Paaye" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Pardakht" EntityType="Self.Pardakht" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Payamha" EntityType="Self.Payamha" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="SaleTahsili" EntityType="Self.SaleTahsili" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="SchoolLog" EntityType="Self.SchoolLog" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="TaklifKelasi" EntityType="Self.TaklifKelasi" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="TaklifKelasiJami" EntityType="Self.TaklifKelasiJami" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="TashvighTanbihKelasi" EntityType="Self.TashvighTanbihKelasi" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <EntitySet Name="UserInformation" EntityType="Self.UserInformation" Schema="11489_soldaschooluser" store:Type="Tables" />
+          <AssociationSet Name="FK_AddressCity_AddressState" Association="Self.FK_AddressCity_AddressState">
+            <End Role="AddressState" EntitySet="AddressState" />
+            <End Role="AddressCity" EntitySet="AddressCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BarnameEmtehani_Kelas" Association="Self.FK_BarnameEmtehani_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="BarnameEmtehani" EntitySet="BarnameEmtehani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BarnameEmtehani_Mapping_Moallem_Doroos" Association="Self.FK_BarnameEmtehani_Mapping_Moallem_Doroos">
+            <End Role="Mapping_Moallem_Doroos" EntitySet="Mapping_Moallem_Doroos" />
+            <End Role="BarnameEmtehani" EntitySet="BarnameEmtehani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BarnameHaftegi_Kelas" Association="Self.FK_BarnameHaftegi_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BarnameHaftegi_Mapping_Moallem_Doroos" Association="Self.FK_BarnameHaftegi_Mapping_Moallem_Doroos">
+            <End Role="Mapping_Moallem_Doroos" EntitySet="Mapping_Moallem_Doroos" />
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Check_Hazine" Association="Self.FK_Check_Hazine">
+            <End Role="Hazine" EntitySet="Hazine" />
+            <End Role="Check" EntitySet="Check" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DaneshAmuz_Kelas" Association="Self.FK_DaneshAmuz_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DaneshAmuz_Ovlia" Association="Self.FK_DaneshAmuz_Ovlia">
+            <End Role="Ovlia" EntitySet="Ovlia" />
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doroos_Madaares" Association="Self.FK_Doroos_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="Doroos" EntitySet="Doroos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doroos_Paaye" Association="Self.FK_Doroos_Paaye">
+            <End Role="Paaye" EntitySet="Paaye" />
+            <End Role="Doroos" EntitySet="Doroos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Farakhanha_Karmandaan" Association="Self.FK_Farakhanha_Karmandaan">
+            <End Role="Karmandaan" EntitySet="Karmandaan" />
+            <End Role="Farakhanha" EntitySet="Farakhanha" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hazine_Ovlia" Association="Self.FK_Hazine_Ovlia">
+            <End Role="Ovlia" EntitySet="Ovlia" />
+            <End Role="Hazine" EntitySet="Hazine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hazine_Service" Association="Self.FK_Hazine_Service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Hazine" EntitySet="Hazine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HozoorGhiab_BarnameHaftegi" Association="Self.FK_HozoorGhiab_BarnameHaftegi">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="HozoorGhiab" EntitySet="HozoorGhiab" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HozoorGhiab_DaneshAmuz" Association="Self.FK_HozoorGhiab_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="HozoorGhiabKelasi" EntitySet="HozoorGhiabKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HozoorGhiabKelasi_HozoorGhiab" Association="Self.FK_HozoorGhiabKelasi_HozoorGhiab">
+            <End Role="HozoorGhiab" EntitySet="HozoorGhiab" />
+            <End Role="HozoorGhiabKelasi" EntitySet="HozoorGhiabKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kelas_Madaares" Association="Self.FK_Kelas_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="Kelas" EntitySet="Kelas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kelas_Paaye" Association="Self.FK_Kelas_Paaye">
+            <End Role="Paaye" EntitySet="Paaye" />
+            <End Role="Kelas" EntitySet="Kelas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Madaares_AddressCity" Association="Self.FK_Madaares_AddressCity">
+            <End Role="AddressCity" EntitySet="AddressCity" />
+            <End Role="Madaares" EntitySet="Madaares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Madaares_Agency" Association="Self.FK_Madaares_Agency">
+            <End Role="Nemayandegi" EntitySet="Nemayandegi" />
+            <End Role="Madaares" EntitySet="Madaares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Madaares_Maghaate" Association="Self.FK_Madaares_Maghaate">
+            <End Role="Maghaate" EntitySet="Maghaate" />
+            <End Role="Madaares" EntitySet="Madaares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Madaares_SaleTahsili" Association="Self.FK_Madaares_SaleTahsili">
+            <End Role="SaleTahsili" EntitySet="SaleTahsili" />
+            <End Role="Madaares" EntitySet="Madaares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Farakhanha_Kelas_Farakhanha" Association="Self.FK_Mapping_Farakhanha_Kelas_Farakhanha">
+            <End Role="Farakhanha" EntitySet="Farakhanha" />
+            <End Role="Mapping_Farakhanha_Kelas" EntitySet="Mapping_Farakhanha_Kelas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Farakhanha_Kelas_Kelas" Association="Self.FK_Mapping_Farakhanha_Kelas_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="Mapping_Farakhanha_Kelas" EntitySet="Mapping_Farakhanha_Kelas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Moallem_Doroos_Doroos" Association="Self.FK_Mapping_Moallem_Doroos_Doroos">
+            <End Role="Doroos" EntitySet="Doroos" />
+            <End Role="Mapping_Moallem_Doroos" EntitySet="Mapping_Moallem_Doroos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Moallem_Doroos_Moallem" Association="Self.FK_Mapping_Moallem_Doroos_Moallem">
+            <End Role="Moallem" EntitySet="Moallem" />
+            <End Role="Mapping_Moallem_Doroos" EntitySet="Mapping_Moallem_Doroos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moallem_Madaares" Association="Self.FK_Moallem_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="Moallem" EntitySet="Moallem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moallem_UserInformation" Association="Self.FK_Moallem_UserInformation">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Moallem" EntitySet="Moallem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moaven_UserInformation" Association="Self.FK_Moaven_UserInformation">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Karmandaan" EntitySet="Karmandaan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nemayandegi_AddressCity" Association="Self.FK_Nemayandegi_AddressCity">
+            <End Role="AddressCity" EntitySet="AddressCity" />
+            <End Role="Nemayandegi" EntitySet="Nemayandegi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NomreEmtehani_BarnameEmtehani" Association="Self.FK_NomreEmtehani_BarnameEmtehani">
+            <End Role="BarnameEmtehani" EntitySet="BarnameEmtehani" />
+            <End Role="NomreEmtehani" EntitySet="NomreEmtehani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NomreEmtehani_DaneshAmuz" Association="Self.FK_NomreEmtehani_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="NomreEmtehani" EntitySet="NomreEmtehani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NomreKelasi_BarnameHaftegi1" Association="Self.FK_NomreKelasi_BarnameHaftegi1">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="NomreKelasi" EntitySet="NomreKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NomreKelasi_DaneshAmuz" Association="Self.FK_NomreKelasi_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="NomreKelasi" EntitySet="NomreKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ovlia_UserInformation" Association="Self.FK_Ovlia_UserInformation">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Ovlia" EntitySet="Ovlia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paaye_Maghaate" Association="Self.FK_Paaye_Maghaate">
+            <End Role="Maghaate" EntitySet="Maghaate" />
+            <End Role="Paaye" EntitySet="Paaye" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pardakht_Hazine" Association="Self.FK_Pardakht_Hazine">
+            <End Role="Hazine" EntitySet="Hazine" />
+            <End Role="Pardakht" EntitySet="Pardakht" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payamha_UserInformation" Association="Self.FK_Payamha_UserInformation">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Payamha" EntitySet="Payamha" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payamha_UserInformation1" Association="Self.FK_Payamha_UserInformation1">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Payamha" EntitySet="Payamha" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Service_Madaares" Association="Self.FK_Service_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaklifKelasiJami_BarnameHaftegi" Association="Self.FK_TaklifKelasiJami_BarnameHaftegi">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="TaklifKelasiJami" EntitySet="TaklifKelasiJami" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaklifKelasiJami_Kelas" Association="Self.FK_TaklifKelasiJami_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="TaklifKelasiJami" EntitySet="TaklifKelasiJami" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaklifKelasiShakhsi_BarnameHaftegi" Association="Self.FK_TaklifKelasiShakhsi_BarnameHaftegi">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="TaklifKelasi" EntitySet="TaklifKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaklifKelasiShakhsi_DaneshAmuz" Association="Self.FK_TaklifKelasiShakhsi_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="TaklifKelasi" EntitySet="TaklifKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TashvighTanbihKelasi_BarnameHaftegi" Association="Self.FK_TashvighTanbihKelasi_BarnameHaftegi">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="TashvighTanbihKelasi" EntitySet="TashvighTanbihKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TashvighTanbihKelasi_DaneshAmuz" Association="Self.FK_TashvighTanbihKelasi_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="TashvighTanbihKelasi" EntitySet="TashvighTanbihKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserInformation_Madaares" Association="Self.FK_UserInformation_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="UserInformation" EntitySet="UserInformation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchoolDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddressCity" EntityType="SchoolDBModel.AddressCity" />
+          <EntitySet Name="AddressState" EntityType="SchoolDBModel.AddressState" />
+          <EntitySet Name="BarnameEmtehani" EntityType="SchoolDBModel.BarnameEmtehani" />
+          <EntitySet Name="BarnameHaftegi" EntityType="SchoolDBModel.BarnameHaftegi" />
+          <EntitySet Name="Check" EntityType="SchoolDBModel.Check" />
+          <EntitySet Name="DaneshAmuz" EntityType="SchoolDBModel.DaneshAmuz" />
+          <EntitySet Name="Doroos" EntityType="SchoolDBModel.Doroos" />
+          <EntitySet Name="Farakhanha" EntityType="SchoolDBModel.Farakhanha" />
+          <EntitySet Name="Hazine" EntityType="SchoolDBModel.Hazine" />
+          <EntitySet Name="HozoorGhiab" EntityType="SchoolDBModel.HozoorGhiab" />
+          <EntitySet Name="HozoorGhiabKelasi" EntityType="SchoolDBModel.HozoorGhiabKelasi" />
+          <EntitySet Name="Karmandaan" EntityType="SchoolDBModel.Karmandaan" />
+          <EntitySet Name="Kelas" EntityType="SchoolDBModel.Kelas" />
+          <EntitySet Name="Madaares" EntityType="SchoolDBModel.Madaares" />
+          <EntitySet Name="Maghaate" EntityType="SchoolDBModel.Maghaate" />
+          <EntitySet Name="Mapping_Farakhanha_Kelas" EntityType="SchoolDBModel.Mapping_Farakhanha_Kelas" />
+          <EntitySet Name="Mapping_Moallem_Doroos" EntityType="SchoolDBModel.Mapping_Moallem_Doroos" />
+          <EntitySet Name="Moallem" EntityType="SchoolDBModel.Moallem" />
+          <EntitySet Name="Nemayandegi" EntityType="SchoolDBModel.Nemayandegi" />
+          <EntitySet Name="NomreEmtehani" EntityType="SchoolDBModel.NomreEmtehani" />
+          <EntitySet Name="NomreKelasi" EntityType="SchoolDBModel.NomreKelasi" />
+          <EntitySet Name="Ovlia" EntityType="SchoolDBModel.Ovlia" />
+          <EntitySet Name="Paaye" EntityType="SchoolDBModel.Paaye" />
+          <EntitySet Name="Pardakht" EntityType="SchoolDBModel.Pardakht" />
+          <EntitySet Name="Payamha" EntityType="SchoolDBModel.Payamha" />
+          <EntitySet Name="SaleTahsili" EntityType="SchoolDBModel.SaleTahsili" />
+          <EntitySet Name="SchoolLog" EntityType="SchoolDBModel.SchoolLog" />
+          <EntitySet Name="Service" EntityType="SchoolDBModel.Service" />
+          <EntitySet Name="TaklifKelasi" EntityType="SchoolDBModel.TaklifKelasi" />
+          <EntitySet Name="TaklifKelasiJami" EntityType="SchoolDBModel.TaklifKelasiJami" />
+          <EntitySet Name="TashvighTanbihKelasi" EntityType="SchoolDBModel.TashvighTanbihKelasi" />
+          <EntitySet Name="UserInformation" EntityType="SchoolDBModel.UserInformation" />
+          <AssociationSet Name="FK_AddressCity_AddressState" Association="SchoolDBModel.FK_AddressCity_AddressState">
+            <End Role="AddressState" EntitySet="AddressState" />
+            <End Role="AddressCity" EntitySet="AddressCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Madaares_AddressCity" Association="SchoolDBModel.FK_Madaares_AddressCity">
+            <End Role="AddressCity" EntitySet="AddressCity" />
+            <End Role="Madaares" EntitySet="Madaares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nemayandegi_AddressCity" Association="SchoolDBModel.FK_Nemayandegi_AddressCity">
+            <End Role="AddressCity" EntitySet="AddressCity" />
+            <End Role="Nemayandegi" EntitySet="Nemayandegi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BarnameEmtehani_Kelas" Association="SchoolDBModel.FK_BarnameEmtehani_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="BarnameEmtehani" EntitySet="BarnameEmtehani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BarnameEmtehani_Mapping_Moallem_Doroos" Association="SchoolDBModel.FK_BarnameEmtehani_Mapping_Moallem_Doroos">
+            <End Role="Mapping_Moallem_Doroos" EntitySet="Mapping_Moallem_Doroos" />
+            <End Role="BarnameEmtehani" EntitySet="BarnameEmtehani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NomreEmtehani_BarnameEmtehani" Association="SchoolDBModel.FK_NomreEmtehani_BarnameEmtehani">
+            <End Role="BarnameEmtehani" EntitySet="BarnameEmtehani" />
+            <End Role="NomreEmtehani" EntitySet="NomreEmtehani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BarnameHaftegi_Kelas" Association="SchoolDBModel.FK_BarnameHaftegi_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BarnameHaftegi_Mapping_Moallem_Doroos" Association="SchoolDBModel.FK_BarnameHaftegi_Mapping_Moallem_Doroos">
+            <End Role="Mapping_Moallem_Doroos" EntitySet="Mapping_Moallem_Doroos" />
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HozoorGhiab_BarnameHaftegi" Association="SchoolDBModel.FK_HozoorGhiab_BarnameHaftegi">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="HozoorGhiab" EntitySet="HozoorGhiab" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NomreKelasi_BarnameHaftegi1" Association="SchoolDBModel.FK_NomreKelasi_BarnameHaftegi1">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="NomreKelasi" EntitySet="NomreKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaklifKelasiJami_BarnameHaftegi" Association="SchoolDBModel.FK_TaklifKelasiJami_BarnameHaftegi">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="TaklifKelasiJami" EntitySet="TaklifKelasiJami" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaklifKelasiShakhsi_BarnameHaftegi" Association="SchoolDBModel.FK_TaklifKelasiShakhsi_BarnameHaftegi">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="TaklifKelasi" EntitySet="TaklifKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TashvighTanbihKelasi_BarnameHaftegi" Association="SchoolDBModel.FK_TashvighTanbihKelasi_BarnameHaftegi">
+            <End Role="BarnameHaftegi" EntitySet="BarnameHaftegi" />
+            <End Role="TashvighTanbihKelasi" EntitySet="TashvighTanbihKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Check_Hazine" Association="SchoolDBModel.FK_Check_Hazine">
+            <End Role="Hazine" EntitySet="Hazine" />
+            <End Role="Check" EntitySet="Check" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DaneshAmuz_Kelas" Association="SchoolDBModel.FK_DaneshAmuz_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DaneshAmuz_Ovlia" Association="SchoolDBModel.FK_DaneshAmuz_Ovlia">
+            <End Role="Ovlia" EntitySet="Ovlia" />
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HozoorGhiab_DaneshAmuz" Association="SchoolDBModel.FK_HozoorGhiab_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="HozoorGhiabKelasi" EntitySet="HozoorGhiabKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NomreEmtehani_DaneshAmuz" Association="SchoolDBModel.FK_NomreEmtehani_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="NomreEmtehani" EntitySet="NomreEmtehani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NomreKelasi_DaneshAmuz" Association="SchoolDBModel.FK_NomreKelasi_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="NomreKelasi" EntitySet="NomreKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaklifKelasiShakhsi_DaneshAmuz" Association="SchoolDBModel.FK_TaklifKelasiShakhsi_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="TaklifKelasi" EntitySet="TaklifKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TashvighTanbihKelasi_DaneshAmuz" Association="SchoolDBModel.FK_TashvighTanbihKelasi_DaneshAmuz">
+            <End Role="DaneshAmuz" EntitySet="DaneshAmuz" />
+            <End Role="TashvighTanbihKelasi" EntitySet="TashvighTanbihKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doroos_Madaares" Association="SchoolDBModel.FK_Doroos_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="Doroos" EntitySet="Doroos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doroos_Paaye" Association="SchoolDBModel.FK_Doroos_Paaye">
+            <End Role="Paaye" EntitySet="Paaye" />
+            <End Role="Doroos" EntitySet="Doroos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Moallem_Doroos_Doroos" Association="SchoolDBModel.FK_Mapping_Moallem_Doroos_Doroos">
+            <End Role="Doroos" EntitySet="Doroos" />
+            <End Role="Mapping_Moallem_Doroos" EntitySet="Mapping_Moallem_Doroos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Farakhanha_Karmandaan" Association="SchoolDBModel.FK_Farakhanha_Karmandaan">
+            <End Role="Karmandaan" EntitySet="Karmandaan" />
+            <End Role="Farakhanha" EntitySet="Farakhanha" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Farakhanha_Kelas_Farakhanha" Association="SchoolDBModel.FK_Mapping_Farakhanha_Kelas_Farakhanha">
+            <End Role="Farakhanha" EntitySet="Farakhanha" />
+            <End Role="Mapping_Farakhanha_Kelas" EntitySet="Mapping_Farakhanha_Kelas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hazine_Ovlia" Association="SchoolDBModel.FK_Hazine_Ovlia">
+            <End Role="Ovlia" EntitySet="Ovlia" />
+            <End Role="Hazine" EntitySet="Hazine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hazine_Service" Association="SchoolDBModel.FK_Hazine_Service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Hazine" EntitySet="Hazine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pardakht_Hazine" Association="SchoolDBModel.FK_Pardakht_Hazine">
+            <End Role="Hazine" EntitySet="Hazine" />
+            <End Role="Pardakht" EntitySet="Pardakht" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HozoorGhiabKelasi_HozoorGhiab" Association="SchoolDBModel.FK_HozoorGhiabKelasi_HozoorGhiab">
+            <End Role="HozoorGhiab" EntitySet="HozoorGhiab" />
+            <End Role="HozoorGhiabKelasi" EntitySet="HozoorGhiabKelasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moaven_UserInformation" Association="SchoolDBModel.FK_Moaven_UserInformation">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Karmandaan" EntitySet="Karmandaan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kelas_Madaares" Association="SchoolDBModel.FK_Kelas_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="Kelas" EntitySet="Kelas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kelas_Paaye" Association="SchoolDBModel.FK_Kelas_Paaye">
+            <End Role="Paaye" EntitySet="Paaye" />
+            <End Role="Kelas" EntitySet="Kelas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Farakhanha_Kelas_Kelas" Association="SchoolDBModel.FK_Mapping_Farakhanha_Kelas_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="Mapping_Farakhanha_Kelas" EntitySet="Mapping_Farakhanha_Kelas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaklifKelasiJami_Kelas" Association="SchoolDBModel.FK_TaklifKelasiJami_Kelas">
+            <End Role="Kelas" EntitySet="Kelas" />
+            <End Role="TaklifKelasiJami" EntitySet="TaklifKelasiJami" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Madaares_Agency" Association="SchoolDBModel.FK_Madaares_Agency">
+            <End Role="Nemayandegi" EntitySet="Nemayandegi" />
+            <End Role="Madaares" EntitySet="Madaares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Madaares_Maghaate" Association="SchoolDBModel.FK_Madaares_Maghaate">
+            <End Role="Maghaate" EntitySet="Maghaate" />
+            <End Role="Madaares" EntitySet="Madaares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Madaares_SaleTahsili" Association="SchoolDBModel.FK_Madaares_SaleTahsili">
+            <End Role="SaleTahsili" EntitySet="SaleTahsili" />
+            <End Role="Madaares" EntitySet="Madaares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moallem_Madaares" Association="SchoolDBModel.FK_Moallem_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="Moallem" EntitySet="Moallem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Service_Madaares" Association="SchoolDBModel.FK_Service_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserInformation_Madaares" Association="SchoolDBModel.FK_UserInformation_Madaares">
+            <End Role="Madaares" EntitySet="Madaares" />
+            <End Role="UserInformation" EntitySet="UserInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paaye_Maghaate" Association="SchoolDBModel.FK_Paaye_Maghaate">
+            <End Role="Maghaate" EntitySet="Maghaate" />
+            <End Role="Paaye" EntitySet="Paaye" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mapping_Moallem_Doroos_Moallem" Association="SchoolDBModel.FK_Mapping_Moallem_Doroos_Moallem">
+            <End Role="Moallem" EntitySet="Moallem" />
+            <End Role="Mapping_Moallem_Doroos" EntitySet="Mapping_Moallem_Doroos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moallem_UserInformation" Association="SchoolDBModel.FK_Moallem_UserInformation">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Moallem" EntitySet="Moallem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ovlia_UserInformation" Association="SchoolDBModel.FK_Ovlia_UserInformation">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Ovlia" EntitySet="Ovlia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payamha_UserInformation" Association="SchoolDBModel.FK_Payamha_UserInformation">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Payamha" EntitySet="Payamha" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payamha_UserInformation1" Association="SchoolDBModel.FK_Payamha_UserInformation1">
+            <End Role="UserInformation" EntitySet="UserInformation" />
+            <End Role="Payamha" EntitySet="Payamha" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AddressCity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_StateId" Type="Int32" />
+          <Property Name="isDelete" Type="Boolean" />
+          <NavigationProperty Name="AddressState" Relationship="SchoolDBModel.FK_AddressCity_AddressState" FromRole="AddressCity" ToRole="AddressState" />
+          <NavigationProperty Name="Madaares" Relationship="SchoolDBModel.FK_Madaares_AddressCity" FromRole="AddressCity" ToRole="Madaares" />
+          <NavigationProperty Name="Nemayandegi" Relationship="SchoolDBModel.FK_Nemayandegi_AddressCity" FromRole="AddressCity" ToRole="Nemayandegi" />
+        </EntityType>
+        <EntityType Name="AddressState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isDelete" Type="Boolean" />
+          <NavigationProperty Name="AddressCity" Relationship="SchoolDBModel.FK_AddressCity_AddressState" FromRole="AddressState" ToRole="AddressCity" />
+        </EntityType>
+        <EntityType Name="BarnameEmtehani">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_MoallemDoroosID" Type="Int32" />
+          <Property Name="F_KelasID" Type="Int32" />
+          <Property Name="TarikhKamel" Type="DateTime" Precision="3" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Kelas" Relationship="SchoolDBModel.FK_BarnameEmtehani_Kelas" FromRole="BarnameEmtehani" ToRole="Kelas" />
+          <NavigationProperty Name="Mapping_Moallem_Doroos" Relationship="SchoolDBModel.FK_BarnameEmtehani_Mapping_Moallem_Doroos" FromRole="BarnameEmtehani" ToRole="Mapping_Moallem_Doroos" />
+          <NavigationProperty Name="NomreEmtehani" Relationship="SchoolDBModel.FK_NomreEmtehani_BarnameEmtehani" FromRole="BarnameEmtehani" ToRole="NomreEmtehani" />
+        </EntityType>
+        <EntityType Name="BarnameHaftegi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_MoallemDoroosID" Type="Int32" />
+          <Property Name="F_KelasID" Type="Int32" />
+          <Property Name="Zang" Type="Int32" />
+          <Property Name="Ruz" Type="Int32" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="Fovgholade" Type="Boolean" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Kelas" Relationship="SchoolDBModel.FK_BarnameHaftegi_Kelas" FromRole="BarnameHaftegi" ToRole="Kelas" />
+          <NavigationProperty Name="Mapping_Moallem_Doroos" Relationship="SchoolDBModel.FK_BarnameHaftegi_Mapping_Moallem_Doroos" FromRole="BarnameHaftegi" ToRole="Mapping_Moallem_Doroos" />
+          <NavigationProperty Name="HozoorGhiab" Relationship="SchoolDBModel.FK_HozoorGhiab_BarnameHaftegi" FromRole="BarnameHaftegi" ToRole="HozoorGhiab" />
+          <NavigationProperty Name="NomreKelasi" Relationship="SchoolDBModel.FK_NomreKelasi_BarnameHaftegi1" FromRole="BarnameHaftegi" ToRole="NomreKelasi" />
+          <NavigationProperty Name="TaklifKelasiJami" Relationship="SchoolDBModel.FK_TaklifKelasiJami_BarnameHaftegi" FromRole="BarnameHaftegi" ToRole="TaklifKelasiJami" />
+          <NavigationProperty Name="TaklifKelasi" Relationship="SchoolDBModel.FK_TaklifKelasiShakhsi_BarnameHaftegi" FromRole="BarnameHaftegi" ToRole="TaklifKelasi" />
+          <NavigationProperty Name="TashvighTanbihKelasi" Relationship="SchoolDBModel.FK_TashvighTanbihKelasi_BarnameHaftegi" FromRole="BarnameHaftegi" ToRole="TashvighTanbihKelasi" />
+        </EntityType>
+        <EntityType Name="Check">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TarikheCheck" Type="DateTime" Precision="3" />
+          <Property Name="MablagheCheck" Type="Double" />
+          <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VaziateVosul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F_HazineId" Type="Int32" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Hazine" Relationship="SchoolDBModel.FK_Check_Hazine" FromRole="Check" ToRole="Hazine" />
+        </EntityType>
+        <EntityType Name="DaneshAmuz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_KelasID" Type="Int32" />
+          <Property Name="F_OvliaID" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodeMelli" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShomareShenasname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TarikhTavallod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MahalleSodoor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Jensiat" Type="Boolean" />
+          <Property Name="NesbateVali" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tovzihat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Kelas" Relationship="SchoolDBModel.FK_DaneshAmuz_Kelas" FromRole="DaneshAmuz" ToRole="Kelas" />
+          <NavigationProperty Name="Ovlia" Relationship="SchoolDBModel.FK_DaneshAmuz_Ovlia" FromRole="DaneshAmuz" ToRole="Ovlia" />
+          <NavigationProperty Name="HozoorGhiabKelasi" Relationship="SchoolDBModel.FK_HozoorGhiab_DaneshAmuz" FromRole="DaneshAmuz" ToRole="HozoorGhiabKelasi" />
+          <NavigationProperty Name="NomreEmtehani" Relationship="SchoolDBModel.FK_NomreEmtehani_DaneshAmuz" FromRole="DaneshAmuz" ToRole="NomreEmtehani" />
+          <NavigationProperty Name="NomreKelasi" Relationship="SchoolDBModel.FK_NomreKelasi_DaneshAmuz" FromRole="DaneshAmuz" ToRole="NomreKelasi" />
+          <NavigationProperty Name="TaklifKelasi" Relationship="SchoolDBModel.FK_TaklifKelasiShakhsi_DaneshAmuz" FromRole="DaneshAmuz" ToRole="TaklifKelasi" />
+          <NavigationProperty Name="TashvighTanbihKelasi" Relationship="SchoolDBModel.FK_TashvighTanbihKelasi_DaneshAmuz" FromRole="DaneshAmuz" ToRole="TashvighTanbihKelasi" />
+        </EntityType>
+        <EntityType Name="Doroos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_PayeID" Type="Int32" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="NaameDars" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZaribeDars" Type="Int32" />
+          <Property Name="Sabet" Type="Boolean" />
+          <Property Name="F_MadaaresID" Type="Int32" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Madaares" Relationship="SchoolDBModel.FK_Doroos_Madaares" FromRole="Doroos" ToRole="Madaares" />
+          <NavigationProperty Name="Paaye" Relationship="SchoolDBModel.FK_Doroos_Paaye" FromRole="Doroos" ToRole="Paaye" />
+          <NavigationProperty Name="Mapping_Moallem_Doroos" Relationship="SchoolDBModel.FK_Mapping_Moallem_Doroos_Doroos" FromRole="Doroos" ToRole="Mapping_Moallem_Doroos" />
+        </EntityType>
+        <EntityType Name="Farakhanha">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_KarmandanID" Type="Int32" />
+          <Property Name="Movzoo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Matn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TarikheFarakhan" Type="DateTime" Precision="3" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Karmandaan" Relationship="SchoolDBModel.FK_Farakhanha_Karmandaan" FromRole="Farakhanha" ToRole="Karmandaan" />
+          <NavigationProperty Name="Mapping_Farakhanha_Kelas" Relationship="SchoolDBModel.FK_Mapping_Farakhanha_Kelas_Farakhanha" FromRole="Farakhanha" ToRole="Mapping_Farakhanha_Kelas" />
+        </EntityType>
+        <EntityType Name="Hazine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_ServiceId" Type="Int32" />
+          <Property Name="Tarikh" Type="DateTime" Precision="3" />
+          <Property Name="F_OvliaId" Type="Int32" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Bedehi" Type="Double" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Check" Relationship="SchoolDBModel.FK_Check_Hazine" FromRole="Hazine" ToRole="Check" />
+          <NavigationProperty Name="Ovlia" Relationship="SchoolDBModel.FK_Hazine_Ovlia" FromRole="Hazine" ToRole="Ovlia" />
+          <NavigationProperty Name="Service" Relationship="SchoolDBModel.FK_Hazine_Service" FromRole="Hazine" ToRole="Service" />
+          <NavigationProperty Name="Pardakht" Relationship="SchoolDBModel.FK_Pardakht_Hazine" FromRole="Hazine" ToRole="Pardakht" />
+        </EntityType>
+        <EntityType Name="HozoorGhiab">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tarikh" Type="DateTime" Precision="3" />
+          <Property Name="Hafte" Type="Int32" />
+          <Property Name="isChecked" Type="Boolean" />
+          <Property Name="F_BarnameHaftegi" Type="Int32" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BarnameHaftegi" Relationship="SchoolDBModel.FK_HozoorGhiab_BarnameHaftegi" FromRole="HozoorGhiab" ToRole="BarnameHaftegi" />
+          <NavigationProperty Name="HozoorGhiabKelasi" Relationship="SchoolDBModel.FK_HozoorGhiabKelasi_HozoorGhiab" FromRole="HozoorGhiab" ToRole="HozoorGhiabKelasi" />
+        </EntityType>
+        <EntityType Name="HozoorGhiabKelasi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_DaneshAmuzID" Type="Int32" />
+          <Property Name="Takhir" Type="Double" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="Tovzihat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_HozoorGhiabID" Type="Int32" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DaneshAmuz" Relationship="SchoolDBModel.FK_HozoorGhiab_DaneshAmuz" FromRole="HozoorGhiabKelasi" ToRole="DaneshAmuz" />
+          <NavigationProperty Name="HozoorGhiab" Relationship="SchoolDBModel.FK_HozoorGhiabKelasi_HozoorGhiab" FromRole="HozoorGhiabKelasi" ToRole="HozoorGhiab" />
+        </EntityType>
+        <EntityType Name="Karmandaan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_UserInfromation" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Semat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Farakhanha" Relationship="SchoolDBModel.FK_Farakhanha_Karmandaan" FromRole="Karmandaan" ToRole="Farakhanha" />
+          <NavigationProperty Name="UserInformation" Relationship="SchoolDBModel.FK_Moaven_UserInformation" FromRole="Karmandaan" ToRole="UserInformation" />
+        </EntityType>
+        <EntityType Name="Kelas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_MadaresID" Type="Int32" />
+          <Property Name="F_PayeID" Type="Int32" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="NaameKelas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaxZang" Type="Int32" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BarnameEmtehani" Relationship="SchoolDBModel.FK_BarnameEmtehani_Kelas" FromRole="Kelas" ToRole="BarnameEmtehani" />
+          <NavigationProperty Name="BarnameHaftegi" Relationship="SchoolDBModel.FK_BarnameHaftegi_Kelas" FromRole="Kelas" ToRole="BarnameHaftegi" />
+          <NavigationProperty Name="DaneshAmuz" Relationship="SchoolDBModel.FK_DaneshAmuz_Kelas" FromRole="Kelas" ToRole="DaneshAmuz" />
+          <NavigationProperty Name="Madaares" Relationship="SchoolDBModel.FK_Kelas_Madaares" FromRole="Kelas" ToRole="Madaares" />
+          <NavigationProperty Name="Paaye" Relationship="SchoolDBModel.FK_Kelas_Paaye" FromRole="Kelas" ToRole="Paaye" />
+          <NavigationProperty Name="Mapping_Farakhanha_Kelas" Relationship="SchoolDBModel.FK_Mapping_Farakhanha_Kelas_Kelas" FromRole="Kelas" ToRole="Mapping_Farakhanha_Kelas" />
+          <NavigationProperty Name="TaklifKelasiJami" Relationship="SchoolDBModel.FK_TaklifKelasiJami_Kelas" FromRole="Kelas" ToRole="TaklifKelasiJami" />
+        </EntityType>
+        <EntityType Name="Madaares">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_NemayandegiID" Type="Int32" />
+          <Property Name="F_MaghaateID" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="NaameMadrese" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Moassesin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telephon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KodeMadrese" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_CityId" Type="Int32" />
+          <Property Name="F_SaleTahsiliId" Type="Int32" />
+          <Property Name="F_MadreseId" Type="Int32" />
+          <Property Name="ModirID" Type="Int32" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AddressCity" Relationship="SchoolDBModel.FK_Madaares_AddressCity" FromRole="Madaares" ToRole="AddressCity" />
+          <NavigationProperty Name="Doroos" Relationship="SchoolDBModel.FK_Doroos_Madaares" FromRole="Madaares" ToRole="Doroos" />
+          <NavigationProperty Name="Kelas" Relationship="SchoolDBModel.FK_Kelas_Madaares" FromRole="Madaares" ToRole="Kelas" />
+          <NavigationProperty Name="Nemayandegi" Relationship="SchoolDBModel.FK_Madaares_Agency" FromRole="Madaares" ToRole="Nemayandegi" />
+          <NavigationProperty Name="Maghaate" Relationship="SchoolDBModel.FK_Madaares_Maghaate" FromRole="Madaares" ToRole="Maghaate" />
+          <NavigationProperty Name="SaleTahsili" Relationship="SchoolDBModel.FK_Madaares_SaleTahsili" FromRole="Madaares" ToRole="SaleTahsili" />
+          <NavigationProperty Name="Moallem" Relationship="SchoolDBModel.FK_Moallem_Madaares" FromRole="Madaares" ToRole="Moallem" />
+          <NavigationProperty Name="Service" Relationship="SchoolDBModel.FK_Service_Madaares" FromRole="Madaares" ToRole="Service" />
+          <NavigationProperty Name="UserInformation" Relationship="SchoolDBModel.FK_UserInformation_Madaares" FromRole="Madaares" ToRole="UserInformation" />
+          <Property Name="NomreType" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Maghaate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="NaameMaghta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Madaares" Relationship="SchoolDBModel.FK_Madaares_Maghaate" FromRole="Maghaate" ToRole="Madaares" />
+          <NavigationProperty Name="Paaye" Relationship="SchoolDBModel.FK_Paaye_Maghaate" FromRole="Maghaate" ToRole="Paaye" />
+        </EntityType>
+        <EntityType Name="Mapping_Farakhanha_Kelas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_FarakhanhaID" Type="Int32" />
+          <Property Name="F_KelasID" Type="Int32" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Farakhanha" Relationship="SchoolDBModel.FK_Mapping_Farakhanha_Kelas_Farakhanha" FromRole="Mapping_Farakhanha_Kelas" ToRole="Farakhanha" />
+          <NavigationProperty Name="Kelas" Relationship="SchoolDBModel.FK_Mapping_Farakhanha_Kelas_Kelas" FromRole="Mapping_Farakhanha_Kelas" ToRole="Kelas" />
+        </EntityType>
+        <EntityType Name="Mapping_Moallem_Doroos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_MoallemID" Type="Int32" />
+          <Property Name="F_DoroosID" Type="Int32" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BarnameEmtehani" Relationship="SchoolDBModel.FK_BarnameEmtehani_Mapping_Moallem_Doroos" FromRole="Mapping_Moallem_Doroos" ToRole="BarnameEmtehani" />
+          <NavigationProperty Name="BarnameHaftegi" Relationship="SchoolDBModel.FK_BarnameHaftegi_Mapping_Moallem_Doroos" FromRole="Mapping_Moallem_Doroos" ToRole="BarnameHaftegi" />
+          <NavigationProperty Name="Doroos" Relationship="SchoolDBModel.FK_Mapping_Moallem_Doroos_Doroos" FromRole="Mapping_Moallem_Doroos" ToRole="Doroos" />
+          <NavigationProperty Name="Moallem" Relationship="SchoolDBModel.FK_Mapping_Moallem_Doroos_Moallem" FromRole="Mapping_Moallem_Doroos" ToRole="Moallem" />
+        </EntityType>
+        <EntityType Name="Moallem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Jensiat" Type="Boolean" />
+          <Property Name="NamePedar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShomareShenasname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TarikhTavallod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MahaleSodoor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_UserInformation" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_MadaaresID" Type="Int32" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Madaares" Relationship="SchoolDBModel.FK_Moallem_Madaares" FromRole="Moallem" ToRole="Madaares" />
+          <NavigationProperty Name="Mapping_Moallem_Doroos" Relationship="SchoolDBModel.FK_Mapping_Moallem_Doroos_Moallem" FromRole="Moallem" ToRole="Mapping_Moallem_Doroos" />
+          <NavigationProperty Name="UserInformation" Relationship="SchoolDBModel.FK_Moallem_UserInformation" FromRole="Moallem" ToRole="UserInformation" />
+        </EntityType>
+        <EntityType Name="Nemayandegi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_CityId" Type="Int32" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tell" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddressDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AddressCity" Relationship="SchoolDBModel.FK_Nemayandegi_AddressCity" FromRole="Nemayandegi" ToRole="AddressCity" />
+          <NavigationProperty Name="Madaares" Relationship="SchoolDBModel.FK_Madaares_Agency" FromRole="Nemayandegi" ToRole="Madaares" />
+        </EntityType>
+        <EntityType Name="NomreEmtehani">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_DaneshAmuzID" Type="Int32" />
+          <Property Name="F_BarnameEmtehani" Type="Int32" />
+          <Property Name="Nomre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tovzihat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BarnameEmtehani" Relationship="SchoolDBModel.FK_NomreEmtehani_BarnameEmtehani" FromRole="NomreEmtehani" ToRole="BarnameEmtehani" />
+          <NavigationProperty Name="DaneshAmuz" Relationship="SchoolDBModel.FK_NomreEmtehani_DaneshAmuz" FromRole="NomreEmtehani" ToRole="DaneshAmuz" />
+        </EntityType>
+        <EntityType Name="NomreKelasi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_DaneshAmuzID" Type="Int32" />
+          <Property Name="F_BarnameHaftegiID" Type="Int32" />
+          <Property Name="Nomre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tovzihat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hafte" Type="Int32" />
+          <Property Name="Tarikh" Type="DateTime" Precision="3" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BarnameHaftegi" Relationship="SchoolDBModel.FK_NomreKelasi_BarnameHaftegi1" FromRole="NomreKelasi" ToRole="BarnameHaftegi" />
+          <NavigationProperty Name="DaneshAmuz" Relationship="SchoolDBModel.FK_NomreKelasi_DaneshAmuz" FromRole="NomreKelasi" ToRole="DaneshAmuz" />
+        </EntityType>
+        <EntityType Name="Ovlia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_UserInformationID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DaneshAmuz" Relationship="SchoolDBModel.FK_DaneshAmuz_Ovlia" FromRole="Ovlia" ToRole="DaneshAmuz" />
+          <NavigationProperty Name="Hazine" Relationship="SchoolDBModel.FK_Hazine_Ovlia" FromRole="Ovlia" ToRole="Hazine" />
+          <NavigationProperty Name="UserInformation" Relationship="SchoolDBModel.FK_Ovlia_UserInformation" FromRole="Ovlia" ToRole="UserInformation" />
+        </EntityType>
+        <EntityType Name="Paaye">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_MaghaateID" Type="Int32" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="NaamePaye" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Doroos" Relationship="SchoolDBModel.FK_Doroos_Paaye" FromRole="Paaye" ToRole="Doroos" />
+          <NavigationProperty Name="Kelas" Relationship="SchoolDBModel.FK_Kelas_Paaye" FromRole="Paaye" ToRole="Kelas" />
+          <NavigationProperty Name="Maghaate" Relationship="SchoolDBModel.FK_Paaye_Maghaate" FromRole="Paaye" ToRole="Maghaate" />
+        </EntityType>
+        <EntityType Name="Pardakht">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tarikh" Type="DateTime" Precision="3" />
+          <Property Name="MablaghePardakhti" Type="Double" />
+          <Property Name="F_HazineId" Type="Int32" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Hazine" Relationship="SchoolDBModel.FK_Pardakht_Hazine" FromRole="Pardakht" ToRole="Hazine" />
+        </EntityType>
+        <EntityType Name="Payamha">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDateOnUTC" Type="DateTime" Precision="3" />
+          <Property Name="F_FromID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="F_ToID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="UserInformation" Relationship="SchoolDBModel.FK_Payamha_UserInformation" FromRole="Payamha" ToRole="UserInformation" />
+          <NavigationProperty Name="UserInformation1" Relationship="SchoolDBModel.FK_Payamha_UserInformation1" FromRole="Payamha" ToRole="UserInformation" />
+        </EntityType>
+        <EntityType Name="SaleTahsili">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Madaares" Relationship="SchoolDBModel.FK_Madaares_SaleTahsili" FromRole="SaleTahsili" ToRole="Madaares" />
+        </EntityType>
+        <EntityType Name="SchoolLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TableName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TableRecordID" Type="Int32" />
+          <Property Name="TableFields" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateOnUTC" Type="DateTime" Precision="3" />
+          <Property Name="OperationID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="F_MadraseId" Type="Int32" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Hazine" Relationship="SchoolDBModel.FK_Hazine_Service" FromRole="Service" ToRole="Hazine" />
+          <NavigationProperty Name="Madaares" Relationship="SchoolDBModel.FK_Service_Madaares" FromRole="Service" ToRole="Madaares" />
+        </EntityType>
+        <EntityType Name="TaklifKelasi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_DaneshAmuzID" Type="Int32" />
+          <Property Name="F_BarnameHaftegiID" Type="Int32" />
+          <Property Name="Hafte" Type="Int32" />
+          <Property Name="Tarikh" Type="DateTime" Precision="3" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="OnvaneTaklif" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TovzihateTaklif" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileTaklif" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BarnameHaftegi" Relationship="SchoolDBModel.FK_TaklifKelasiShakhsi_BarnameHaftegi" FromRole="TaklifKelasi" ToRole="BarnameHaftegi" />
+          <NavigationProperty Name="DaneshAmuz" Relationship="SchoolDBModel.FK_TaklifKelasiShakhsi_DaneshAmuz" FromRole="TaklifKelasi" ToRole="DaneshAmuz" />
+        </EntityType>
+        <EntityType Name="TaklifKelasiJami">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_KelasID" Type="Int32" />
+          <Property Name="F_BarnameHaftegiID" Type="Int32" />
+          <Property Name="Hafte" Type="Int32" />
+          <Property Name="Tarikh" Type="DateTime" Precision="3" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="OnvaneTaklif" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TovzihateTaklif" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileTaklif" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BarnameHaftegi" Relationship="SchoolDBModel.FK_TaklifKelasiJami_BarnameHaftegi" FromRole="TaklifKelasiJami" ToRole="BarnameHaftegi" />
+          <NavigationProperty Name="Kelas" Relationship="SchoolDBModel.FK_TaklifKelasiJami_Kelas" FromRole="TaklifKelasiJami" ToRole="Kelas" />
+        </EntityType>
+        <EntityType Name="TashvighTanbihKelasi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_DaneshAmuzID" Type="Int32" />
+          <Property Name="F_BarnameHaftegiID" Type="Int32" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="Hafte" Type="Int32" />
+          <Property Name="Tarikh" Type="DateTime" Precision="3" />
+          <Property Name="Tovzihat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Emtiaz" Type="Int32" />
+          <Property Name="F_ParrentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BarnameHaftegi" Relationship="SchoolDBModel.FK_TashvighTanbihKelasi_BarnameHaftegi" FromRole="TashvighTanbihKelasi" ToRole="BarnameHaftegi" />
+          <NavigationProperty Name="DaneshAmuz" Relationship="SchoolDBModel.FK_TashvighTanbihKelasi_DaneshAmuz" FromRole="TashvighTanbihKelasi" ToRole="DaneshAmuz" />
+        </EntityType>
+        <EntityType Name="UserInformation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="F_MadaaresID" Type="Int32" />
+          <Property Name="CodeMelli" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AndroidID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Karmandaan" Relationship="SchoolDBModel.FK_Moaven_UserInformation" FromRole="UserInformation" ToRole="Karmandaan" />
+          <NavigationProperty Name="Madaares" Relationship="SchoolDBModel.FK_UserInformation_Madaares" FromRole="UserInformation" ToRole="Madaares" />
+          <NavigationProperty Name="Moallem" Relationship="SchoolDBModel.FK_Moallem_UserInformation" FromRole="UserInformation" ToRole="Moallem" />
+          <NavigationProperty Name="Ovlia" Relationship="SchoolDBModel.FK_Ovlia_UserInformation" FromRole="UserInformation" ToRole="Ovlia" />
+          <NavigationProperty Name="Payamha" Relationship="SchoolDBModel.FK_Payamha_UserInformation" FromRole="UserInformation" ToRole="Payamha" />
+          <NavigationProperty Name="Payamha1" Relationship="SchoolDBModel.FK_Payamha_UserInformation1" FromRole="UserInformation" ToRole="Payamha" />
+        </EntityType>
+        <Association Name="FK_AddressCity_AddressState">
+          <End Type="SchoolDBModel.AddressState" Role="AddressState" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.AddressCity" Role="AddressCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AddressCity">
+              <PropertyRef Name="F_StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Madaares_AddressCity">
+          <End Type="SchoolDBModel.AddressCity" Role="AddressCity" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Madaares" Role="Madaares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressCity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Madaares">
+              <PropertyRef Name="F_CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nemayandegi_AddressCity">
+          <End Type="SchoolDBModel.AddressCity" Role="AddressCity" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Nemayandegi" Role="Nemayandegi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressCity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Nemayandegi">
+              <PropertyRef Name="F_CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BarnameEmtehani_Kelas">
+          <End Type="SchoolDBModel.Kelas" Role="Kelas" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.BarnameEmtehani" Role="BarnameEmtehani" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BarnameEmtehani">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BarnameEmtehani_Mapping_Moallem_Doroos">
+          <End Type="SchoolDBModel.Mapping_Moallem_Doroos" Role="Mapping_Moallem_Doroos" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.BarnameEmtehani" Role="BarnameEmtehani" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mapping_Moallem_Doroos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BarnameEmtehani">
+              <PropertyRef Name="F_MoallemDoroosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NomreEmtehani_BarnameEmtehani">
+          <End Type="SchoolDBModel.BarnameEmtehani" Role="BarnameEmtehani" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.NomreEmtehani" Role="NomreEmtehani" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameEmtehani">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NomreEmtehani">
+              <PropertyRef Name="F_BarnameEmtehani" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BarnameHaftegi_Kelas">
+          <End Type="SchoolDBModel.Kelas" Role="Kelas" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.BarnameHaftegi" Role="BarnameHaftegi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BarnameHaftegi">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BarnameHaftegi_Mapping_Moallem_Doroos">
+          <End Type="SchoolDBModel.Mapping_Moallem_Doroos" Role="Mapping_Moallem_Doroos" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.BarnameHaftegi" Role="BarnameHaftegi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mapping_Moallem_Doroos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BarnameHaftegi">
+              <PropertyRef Name="F_MoallemDoroosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HozoorGhiab_BarnameHaftegi">
+          <End Type="SchoolDBModel.BarnameHaftegi" Role="BarnameHaftegi" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.HozoorGhiab" Role="HozoorGhiab" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HozoorGhiab">
+              <PropertyRef Name="F_BarnameHaftegi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NomreKelasi_BarnameHaftegi1">
+          <End Type="SchoolDBModel.BarnameHaftegi" Role="BarnameHaftegi" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.NomreKelasi" Role="NomreKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NomreKelasi">
+              <PropertyRef Name="F_BarnameHaftegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaklifKelasiJami_BarnameHaftegi">
+          <End Type="SchoolDBModel.BarnameHaftegi" Role="BarnameHaftegi" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.TaklifKelasiJami" Role="TaklifKelasiJami" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaklifKelasiJami">
+              <PropertyRef Name="F_BarnameHaftegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaklifKelasiShakhsi_BarnameHaftegi">
+          <End Type="SchoolDBModel.BarnameHaftegi" Role="BarnameHaftegi" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.TaklifKelasi" Role="TaklifKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaklifKelasi">
+              <PropertyRef Name="F_BarnameHaftegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TashvighTanbihKelasi_BarnameHaftegi">
+          <End Type="SchoolDBModel.BarnameHaftegi" Role="BarnameHaftegi" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.TashvighTanbihKelasi" Role="TashvighTanbihKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BarnameHaftegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TashvighTanbihKelasi">
+              <PropertyRef Name="F_BarnameHaftegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Check_Hazine">
+          <End Type="SchoolDBModel.Hazine" Role="Hazine" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Check" Role="Check" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hazine">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Check">
+              <PropertyRef Name="F_HazineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DaneshAmuz_Kelas">
+          <End Type="SchoolDBModel.Kelas" Role="Kelas" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.DaneshAmuz" Role="DaneshAmuz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaneshAmuz">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DaneshAmuz_Ovlia">
+          <End Type="SchoolDBModel.Ovlia" Role="Ovlia" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.DaneshAmuz" Role="DaneshAmuz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ovlia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaneshAmuz">
+              <PropertyRef Name="F_OvliaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HozoorGhiab_DaneshAmuz">
+          <End Type="SchoolDBModel.DaneshAmuz" Role="DaneshAmuz" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.HozoorGhiabKelasi" Role="HozoorGhiabKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HozoorGhiabKelasi">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NomreEmtehani_DaneshAmuz">
+          <End Type="SchoolDBModel.DaneshAmuz" Role="DaneshAmuz" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.NomreEmtehani" Role="NomreEmtehani" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NomreEmtehani">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NomreKelasi_DaneshAmuz">
+          <End Type="SchoolDBModel.DaneshAmuz" Role="DaneshAmuz" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.NomreKelasi" Role="NomreKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NomreKelasi">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaklifKelasiShakhsi_DaneshAmuz">
+          <End Type="SchoolDBModel.DaneshAmuz" Role="DaneshAmuz" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.TaklifKelasi" Role="TaklifKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaklifKelasi">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TashvighTanbihKelasi_DaneshAmuz">
+          <End Type="SchoolDBModel.DaneshAmuz" Role="DaneshAmuz" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.TashvighTanbihKelasi" Role="TashvighTanbihKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaneshAmuz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TashvighTanbihKelasi">
+              <PropertyRef Name="F_DaneshAmuzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doroos_Madaares">
+          <End Type="SchoolDBModel.Madaares" Role="Madaares" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Doroos" Role="Doroos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Doroos">
+              <PropertyRef Name="F_MadaaresID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doroos_Paaye">
+          <End Type="SchoolDBModel.Paaye" Role="Paaye" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Doroos" Role="Doroos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paaye">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Doroos">
+              <PropertyRef Name="F_PayeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Moallem_Doroos_Doroos">
+          <End Type="SchoolDBModel.Doroos" Role="Doroos" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Mapping_Moallem_Doroos" Role="Mapping_Moallem_Doroos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doroos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mapping_Moallem_Doroos">
+              <PropertyRef Name="F_DoroosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Farakhanha_Karmandaan">
+          <End Type="SchoolDBModel.Karmandaan" Role="Karmandaan" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Farakhanha" Role="Farakhanha" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Karmandaan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Farakhanha">
+              <PropertyRef Name="F_KarmandanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Farakhanha_Kelas_Farakhanha">
+          <End Type="SchoolDBModel.Farakhanha" Role="Farakhanha" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Mapping_Farakhanha_Kelas" Role="Mapping_Farakhanha_Kelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Farakhanha">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mapping_Farakhanha_Kelas">
+              <PropertyRef Name="F_FarakhanhaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hazine_Ovlia">
+          <End Type="SchoolDBModel.Ovlia" Role="Ovlia" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Hazine" Role="Hazine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ovlia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Hazine">
+              <PropertyRef Name="F_OvliaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hazine_Service">
+          <End Type="SchoolDBModel.Service" Role="Service" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Hazine" Role="Hazine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Hazine">
+              <PropertyRef Name="F_ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pardakht_Hazine">
+          <End Type="SchoolDBModel.Hazine" Role="Hazine" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Pardakht" Role="Pardakht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hazine">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Pardakht">
+              <PropertyRef Name="F_HazineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HozoorGhiabKelasi_HozoorGhiab">
+          <End Type="SchoolDBModel.HozoorGhiab" Role="HozoorGhiab" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.HozoorGhiabKelasi" Role="HozoorGhiabKelasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HozoorGhiab">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HozoorGhiabKelasi">
+              <PropertyRef Name="F_HozoorGhiabID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moaven_UserInformation">
+          <End Type="SchoolDBModel.UserInformation" Role="UserInformation" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Karmandaan" Role="Karmandaan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Karmandaan">
+              <PropertyRef Name="F_UserInfromation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kelas_Madaares">
+          <End Type="SchoolDBModel.Madaares" Role="Madaares" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Kelas" Role="Kelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kelas">
+              <PropertyRef Name="F_MadaresID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kelas_Paaye">
+          <End Type="SchoolDBModel.Paaye" Role="Paaye" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Kelas" Role="Kelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paaye">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kelas">
+              <PropertyRef Name="F_PayeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Farakhanha_Kelas_Kelas">
+          <End Type="SchoolDBModel.Kelas" Role="Kelas" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Mapping_Farakhanha_Kelas" Role="Mapping_Farakhanha_Kelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mapping_Farakhanha_Kelas">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaklifKelasiJami_Kelas">
+          <End Type="SchoolDBModel.Kelas" Role="Kelas" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.TaklifKelasiJami" Role="TaklifKelasiJami" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kelas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaklifKelasiJami">
+              <PropertyRef Name="F_KelasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Madaares_Agency">
+          <End Type="SchoolDBModel.Nemayandegi" Role="Nemayandegi" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Madaares" Role="Madaares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nemayandegi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Madaares">
+              <PropertyRef Name="F_NemayandegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Madaares_Maghaate">
+          <End Type="SchoolDBModel.Maghaate" Role="Maghaate" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Madaares" Role="Madaares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maghaate">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Madaares">
+              <PropertyRef Name="F_MaghaateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Madaares_SaleTahsili">
+          <End Type="SchoolDBModel.SaleTahsili" Role="SaleTahsili" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Madaares" Role="Madaares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleTahsili">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Madaares">
+              <PropertyRef Name="F_SaleTahsiliId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moallem_Madaares">
+          <End Type="SchoolDBModel.Madaares" Role="Madaares" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Moallem" Role="Moallem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Moallem">
+              <PropertyRef Name="F_MadaaresID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Service_Madaares">
+          <End Type="SchoolDBModel.Madaares" Role="Madaares" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Service" Role="Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="F_MadraseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserInformation_Madaares">
+          <End Type="SchoolDBModel.Madaares" Role="Madaares" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.UserInformation" Role="UserInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Madaares">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserInformation">
+              <PropertyRef Name="F_MadaaresID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paaye_Maghaate">
+          <End Type="SchoolDBModel.Maghaate" Role="Maghaate" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Paaye" Role="Paaye" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maghaate">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Paaye">
+              <PropertyRef Name="F_MaghaateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mapping_Moallem_Doroos_Moallem">
+          <End Type="SchoolDBModel.Moallem" Role="Moallem" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Mapping_Moallem_Doroos" Role="Mapping_Moallem_Doroos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moallem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Mapping_Moallem_Doroos">
+              <PropertyRef Name="F_MoallemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moallem_UserInformation">
+          <End Type="SchoolDBModel.UserInformation" Role="UserInformation" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Moallem" Role="Moallem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Moallem">
+              <PropertyRef Name="F_UserInformation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ovlia_UserInformation">
+          <End Type="SchoolDBModel.UserInformation" Role="UserInformation" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Ovlia" Role="Ovlia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Ovlia">
+              <PropertyRef Name="F_UserInformationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payamha_UserInformation">
+          <End Type="SchoolDBModel.UserInformation" Role="UserInformation" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Payamha" Role="Payamha" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payamha">
+              <PropertyRef Name="F_FromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payamha_UserInformation1">
+          <End Type="SchoolDBModel.UserInformation" Role="UserInformation" Multiplicity="0..1" />
+          <End Type="SchoolDBModel.Payamha" Role="Payamha" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInformation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payamha">
+              <PropertyRef Name="F_ToID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchoolDBModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="AddressCity">
+            <EntityTypeMapping TypeName="SchoolDBModel.AddressCity">
+              <MappingFragment StoreEntitySet="AddressCity">
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="F_StateId" ColumnName="F_StateId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddressState">
+            <EntityTypeMapping TypeName="SchoolDBModel.AddressState">
+              <MappingFragment StoreEntitySet="AddressState">
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BarnameEmtehani">
+            <EntityTypeMapping TypeName="SchoolDBModel.BarnameEmtehani">
+              <MappingFragment StoreEntitySet="BarnameEmtehani">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="TarikhKamel" ColumnName="TarikhKamel" />
+                <ScalarProperty Name="F_KelasID" ColumnName="F_KelasID" />
+                <ScalarProperty Name="F_MoallemDoroosID" ColumnName="F_MoallemDoroosID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BarnameHaftegi">
+            <EntityTypeMapping TypeName="SchoolDBModel.BarnameHaftegi">
+              <MappingFragment StoreEntitySet="BarnameHaftegi">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="Fovgholade" ColumnName="Fovgholade" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Ruz" ColumnName="Ruz" />
+                <ScalarProperty Name="Zang" ColumnName="Zang" />
+                <ScalarProperty Name="F_KelasID" ColumnName="F_KelasID" />
+                <ScalarProperty Name="F_MoallemDoroosID" ColumnName="F_MoallemDoroosID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Check">
+            <EntityTypeMapping TypeName="SchoolDBModel.Check">
+              <MappingFragment StoreEntitySet="Check">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="F_HazineId" ColumnName="F_HazineId" />
+                <ScalarProperty Name="VaziateVosul" ColumnName="VaziateVosul" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="MablagheCheck" ColumnName="MablagheCheck" />
+                <ScalarProperty Name="TarikheCheck" ColumnName="TarikheCheck" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaneshAmuz">
+            <EntityTypeMapping TypeName="SchoolDBModel.DaneshAmuz">
+              <MappingFragment StoreEntitySet="DaneshAmuz">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="Tovzihat" ColumnName="Tovzihat" />
+                <ScalarProperty Name="NesbateVali" ColumnName="NesbateVali" />
+                <ScalarProperty Name="Jensiat" ColumnName="Jensiat" />
+                <ScalarProperty Name="MahalleSodoor" ColumnName="MahalleSodoor" />
+                <ScalarProperty Name="TarikhTavallod" ColumnName="TarikhTavallod" />
+                <ScalarProperty Name="ShomareShenasname" ColumnName="ShomareShenasname" />
+                <ScalarProperty Name="CodeMelli" ColumnName="CodeMelli" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="F_OvliaID" ColumnName="F_OvliaID" />
+                <ScalarProperty Name="F_KelasID" ColumnName="F_KelasID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doroos">
+            <EntityTypeMapping TypeName="SchoolDBModel.Doroos">
+              <MappingFragment StoreEntitySet="Doroos">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="F_MadaaresID" ColumnName="F_MadaaresID" />
+                <ScalarProperty Name="Sabet" ColumnName="Sabet" />
+                <ScalarProperty Name="ZaribeDars" ColumnName="ZaribeDars" />
+                <ScalarProperty Name="NaameDars" ColumnName="NaameDars" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="F_PayeID" ColumnName="F_PayeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Farakhanha">
+            <EntityTypeMapping TypeName="SchoolDBModel.Farakhanha">
+              <MappingFragment StoreEntitySet="Farakhanha">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="TarikheFarakhan" ColumnName="TarikheFarakhan" />
+                <ScalarProperty Name="Matn" ColumnName="Matn" />
+                <ScalarProperty Name="Movzoo" ColumnName="Movzoo" />
+                <ScalarProperty Name="F_KarmandanID" ColumnName="F_KarmandanID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hazine">
+            <EntityTypeMapping TypeName="SchoolDBModel.Hazine">
+              <MappingFragment StoreEntitySet="Hazine">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="Bedehi" ColumnName="Bedehi" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="F_OvliaId" ColumnName="F_OvliaId" />
+                <ScalarProperty Name="Tarikh" ColumnName="Tarikh" />
+                <ScalarProperty Name="F_ServiceId" ColumnName="F_ServiceId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HozoorGhiab">
+            <EntityTypeMapping TypeName="SchoolDBModel.HozoorGhiab">
+              <MappingFragment StoreEntitySet="HozoorGhiab">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="F_BarnameHaftegi" ColumnName="F_BarnameHaftegi" />
+                <ScalarProperty Name="isChecked" ColumnName="isChecked" />
+                <ScalarProperty Name="Hafte" ColumnName="Hafte" />
+                <ScalarProperty Name="Tarikh" ColumnName="Tarikh" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HozoorGhiabKelasi">
+            <EntityTypeMapping TypeName="SchoolDBModel.HozoorGhiabKelasi">
+              <MappingFragment StoreEntitySet="HozoorGhiabKelasi">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="F_HozoorGhiabID" ColumnName="F_HozoorGhiabID" />
+                <ScalarProperty Name="Tovzihat" ColumnName="Tovzihat" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Takhir" ColumnName="Takhir" />
+                <ScalarProperty Name="F_DaneshAmuzID" ColumnName="F_DaneshAmuzID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Karmandaan">
+            <EntityTypeMapping TypeName="SchoolDBModel.Karmandaan">
+              <MappingFragment StoreEntitySet="Karmandaan">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Semat" ColumnName="Semat" />
+                <ScalarProperty Name="F_UserInfromation" ColumnName="F_UserInfromation" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kelas">
+            <EntityTypeMapping TypeName="SchoolDBModel.Kelas">
+              <MappingFragment StoreEntitySet="Kelas">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="MaxZang" ColumnName="MaxZang" />
+                <ScalarProperty Name="NaameKelas" ColumnName="NaameKelas" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="F_PayeID" ColumnName="F_PayeID" />
+                <ScalarProperty Name="F_MadaresID" ColumnName="F_MadaresID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Madaares">
+            <EntityTypeMapping TypeName="SchoolDBModel.Madaares">
+              <MappingFragment StoreEntitySet="Madaares">
+                <ScalarProperty Name="NomreType" ColumnName="NomreType" />
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="ModirID" ColumnName="ModirID" />
+                <ScalarProperty Name="F_MadreseId" ColumnName="F_MadreseId" />
+                <ScalarProperty Name="F_SaleTahsiliId" ColumnName="F_SaleTahsiliId" />
+                <ScalarProperty Name="F_CityId" ColumnName="F_CityId" />
+                <ScalarProperty Name="KodeMadrese" ColumnName="KodeMadrese" />
+                <ScalarProperty Name="Telephon" ColumnName="Telephon" />
+                <ScalarProperty Name="Moassesin" ColumnName="Moassesin" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="NaameMadrese" ColumnName="NaameMadrese" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="F_MaghaateID" ColumnName="F_MaghaateID" />
+                <ScalarProperty Name="F_NemayandegiID" ColumnName="F_NemayandegiID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maghaate">
+            <EntityTypeMapping TypeName="SchoolDBModel.Maghaate">
+              <MappingFragment StoreEntitySet="Maghaate">
+                <ScalarProperty Name="NaameMaghta" ColumnName="NaameMaghta" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mapping_Farakhanha_Kelas">
+            <EntityTypeMapping TypeName="SchoolDBModel.Mapping_Farakhanha_Kelas">
+              <MappingFragment StoreEntitySet="Mapping_Farakhanha_Kelas">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="F_KelasID" ColumnName="F_KelasID" />
+                <ScalarProperty Name="F_FarakhanhaID" ColumnName="F_FarakhanhaID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mapping_Moallem_Doroos">
+            <EntityTypeMapping TypeName="SchoolDBModel.Mapping_Moallem_Doroos">
+              <MappingFragment StoreEntitySet="Mapping_Moallem_Doroos">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="F_DoroosID" ColumnName="F_DoroosID" />
+                <ScalarProperty Name="F_MoallemID" ColumnName="F_MoallemID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Moallem">
+            <EntityTypeMapping TypeName="SchoolDBModel.Moallem">
+              <MappingFragment StoreEntitySet="Moallem">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="F_MadaaresID" ColumnName="F_MadaaresID" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="F_UserInformation" ColumnName="F_UserInformation" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="MahaleSodoor" ColumnName="MahaleSodoor" />
+                <ScalarProperty Name="TarikhTavallod" ColumnName="TarikhTavallod" />
+                <ScalarProperty Name="ShomareShenasname" ColumnName="ShomareShenasname" />
+                <ScalarProperty Name="NamePedar" ColumnName="NamePedar" />
+                <ScalarProperty Name="Jensiat" ColumnName="Jensiat" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nemayandegi">
+            <EntityTypeMapping TypeName="SchoolDBModel.Nemayandegi">
+              <MappingFragment StoreEntitySet="Nemayandegi">
+                <ScalarProperty Name="AddressDetail" ColumnName="AddressDetail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tell" ColumnName="Tell" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="F_CityId" ColumnName="F_CityId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="F_UserID" ColumnName="F_UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NomreEmtehani">
+            <EntityTypeMapping TypeName="SchoolDBModel.NomreEmtehani">
+              <MappingFragment StoreEntitySet="NomreEmtehani">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Tovzihat" ColumnName="Tovzihat" />
+                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
+                <ScalarProperty Name="F_BarnameEmtehani" ColumnName="F_BarnameEmtehani" />
+                <ScalarProperty Name="F_DaneshAmuzID" ColumnName="F_DaneshAmuzID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NomreKelasi">
+            <EntityTypeMapping TypeName="SchoolDBModel.NomreKelasi">
+              <MappingFragment StoreEntitySet="NomreKelasi">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Tarikh" ColumnName="Tarikh" />
+                <ScalarProperty Name="Hafte" ColumnName="Hafte" />
+                <ScalarProperty Name="Tovzihat" ColumnName="Tovzihat" />
+                <ScalarProperty Name="Nomre" ColumnName="Nomre" />
+                <ScalarProperty Name="F_BarnameHaftegiID" ColumnName="F_BarnameHaftegiID" />
+                <ScalarProperty Name="F_DaneshAmuzID" ColumnName="F_DaneshAmuzID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ovlia">
+            <EntityTypeMapping TypeName="SchoolDBModel.Ovlia">
+              <MappingFragment StoreEntitySet="Ovlia">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="F_UserInformationID" ColumnName="F_UserInformationID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paaye">
+            <EntityTypeMapping TypeName="SchoolDBModel.Paaye">
+              <MappingFragment StoreEntitySet="Paaye">
+                <ScalarProperty Name="NaamePaye" ColumnName="NaamePaye" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="F_MaghaateID" ColumnName="F_MaghaateID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pardakht">
+            <EntityTypeMapping TypeName="SchoolDBModel.Pardakht">
+              <MappingFragment StoreEntitySet="Pardakht">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="F_HazineId" ColumnName="F_HazineId" />
+                <ScalarProperty Name="MablaghePardakhti" ColumnName="MablaghePardakhti" />
+                <ScalarProperty Name="Tarikh" ColumnName="Tarikh" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payamha">
+            <EntityTypeMapping TypeName="SchoolDBModel.Payamha">
+              <MappingFragment StoreEntitySet="Payamha">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="F_ToID" ColumnName="F_ToID" />
+                <ScalarProperty Name="F_FromID" ColumnName="F_FromID" />
+                <ScalarProperty Name="CreatedDateOnUTC" ColumnName="CreatedDateOnUTC" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleTahsili">
+            <EntityTypeMapping TypeName="SchoolDBModel.SaleTahsili">
+              <MappingFragment StoreEntitySet="SaleTahsili">
+                <ScalarProperty Name="Sal" ColumnName="Sal" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchoolLog">
+            <EntityTypeMapping TypeName="SchoolDBModel.SchoolLog">
+              <MappingFragment StoreEntitySet="SchoolLog">
+                <ScalarProperty Name="OperationID" ColumnName="OperationID" />
+                <ScalarProperty Name="DateOnUTC" ColumnName="DateOnUTC" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TableFields" ColumnName="TableFields" />
+                <ScalarProperty Name="TableRecordID" ColumnName="TableRecordID" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="SchoolDBModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="F_MadraseId" ColumnName="F_MadraseId" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaklifKelasi">
+            <EntityTypeMapping TypeName="SchoolDBModel.TaklifKelasi">
+              <MappingFragment StoreEntitySet="TaklifKelasi">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="FileTaklif" ColumnName="FileTaklif" />
+                <ScalarProperty Name="TovzihateTaklif" ColumnName="TovzihateTaklif" />
+                <ScalarProperty Name="OnvaneTaklif" ColumnName="OnvaneTaklif" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Tarikh" ColumnName="Tarikh" />
+                <ScalarProperty Name="Hafte" ColumnName="Hafte" />
+                <ScalarProperty Name="F_BarnameHaftegiID" ColumnName="F_BarnameHaftegiID" />
+                <ScalarProperty Name="F_DaneshAmuzID" ColumnName="F_DaneshAmuzID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaklifKelasiJami">
+            <EntityTypeMapping TypeName="SchoolDBModel.TaklifKelasiJami">
+              <MappingFragment StoreEntitySet="TaklifKelasiJami">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="FileTaklif" ColumnName="FileTaklif" />
+                <ScalarProperty Name="TovzihateTaklif" ColumnName="TovzihateTaklif" />
+                <ScalarProperty Name="OnvaneTaklif" ColumnName="OnvaneTaklif" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Tarikh" ColumnName="Tarikh" />
+                <ScalarProperty Name="Hafte" ColumnName="Hafte" />
+                <ScalarProperty Name="F_BarnameHaftegiID" ColumnName="F_BarnameHaftegiID" />
+                <ScalarProperty Name="F_KelasID" ColumnName="F_KelasID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TashvighTanbihKelasi">
+            <EntityTypeMapping TypeName="SchoolDBModel.TashvighTanbihKelasi">
+              <MappingFragment StoreEntitySet="TashvighTanbihKelasi">
+                <ScalarProperty Name="F_ParrentID" ColumnName="F_ParrentID" />
+                <ScalarProperty Name="Emtiaz" ColumnName="Emtiaz" />
+                <ScalarProperty Name="Tovzihat" ColumnName="Tovzihat" />
+                <ScalarProperty Name="Tarikh" ColumnName="Tarikh" />
+                <ScalarProperty Name="Hafte" ColumnName="Hafte" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="F_BarnameHaftegiID" ColumnName="F_BarnameHaftegiID" />
+                <ScalarProperty Name="F_DaneshAmuzID" ColumnName="F_DaneshAmuzID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInformation">
+            <EntityTypeMapping TypeName="SchoolDBModel.UserInformation">
+              <MappingFragment StoreEntitySet="UserInformation">
+                <ScalarProperty Name="AndroidID" ColumnName="AndroidID" />
+                <ScalarProperty Name="CodeMelli" ColumnName="CodeMelli" />
+                <ScalarProperty Name="F_MadaaresID" ColumnName="F_MadaaresID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
